@@ -1,3 +1,15 @@
+#' Clone application from Shiny App-Packages
+#'
+#' @param app name of app
+#' @param open open app in new Posit Workbench session
+#' @param ... additional arguments passed to `gert::git_clone()`
+#'
+#' @return shiny app (or app-package) branch
+#'
+#' @export
+#'
+#' @examples
+#' # clone_app("main")
 clone_app <- function(app = "main", open = TRUE, ...) {
 
   local_dir <- paste0("inst/", app)
