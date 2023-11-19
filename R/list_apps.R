@@ -29,8 +29,6 @@ list_apps <- function(regex) {
                           into = c("source", "branch_name"),
                           sep = "/")
 
-  branches <- branch_cols[c("source", "updated")]
-
   # return to original working directory
   setwd(original_dir)
 
@@ -38,6 +36,6 @@ list_apps <- function(regex) {
   unlink(tmp_git_dir, force = TRUE, recursive = TRUE)
 
   # return data
-  return(branches)
+  branch_cols[c("source", "updated")]
 
 }

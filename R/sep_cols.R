@@ -7,7 +7,7 @@
 #'
 #' @return data with new columns
 #'
-#' @export
+#' @export sep_cols
 #'
 #' @examples
 #' sep_cols(branches,
