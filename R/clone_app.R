@@ -6,7 +6,7 @@
 #'
 #' @return shiny app (or app-package) branch
 #'
-#' @export
+#' @export clone_app
 #'
 #' @examples
 #' # clone_app("main")
