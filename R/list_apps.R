@@ -31,10 +31,11 @@
 #' @export list_apps
 #'
 #' @examples
-#' list_app_pkgs()
-#' list_app_pkgs(regex = "tests")
+#' list_apps()
+#' list_apps(regex = "tests")
 list_apps <- function(regex = NULL) {
 
+  browser()
   # keep track
   original_dir <- getwd()
 
@@ -67,12 +68,12 @@ list_apps <- function(regex = NULL) {
   if (!is.null(regex)) {
 
       branch_set <- grepl(regex, branches_cols[["branch_name"]])
-      branches_df <- branches_cols[["branch_name"]][branch_set]
+      branches_cols <- branches_cols[["branch_name"]][branch_set]
 
   }
 
   # return data
-  return(branches_df)
+  return(branches_cols)
 
 
 }

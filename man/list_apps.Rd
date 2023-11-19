@@ -40,6 +40,6 @@ filtering based on regular expressions.
 }
 
 \examples{
-list_app_pkgs()
-list_app_pkgs(regex = "tests")
+list_apps()
+list_apps(regex = "tests")
 }
