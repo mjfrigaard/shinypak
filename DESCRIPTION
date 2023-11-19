@@ -3,12 +3,16 @@ Title: Getting your app into an R package
 Version: 0.1.0
 Author: Martin Frigaard <mjfrigaard@pm.me> [aut, cre]
 Maintainer: Martin Frigaard <mjfrigaard@pm.me>
-Description: Example Shiny applications from Shiny App-Packages book.
+Description: Shiny application examples from Shiny App-Packages book: 
+    <https://mjfrigaard.github.io/shiny-app-pkgs/>
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 LazyData: true
+Imports: 
+    fs,
+    gert
 Depends: 
     R (>= 2.10)
 Suggests: 
@@ -17,7 +21,4 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-Imports: 
-    fs,
-    gert
 URL: https://mjfrigaard.github.io/shinyap/, https://github.com/mjfrigaard/shinyap
