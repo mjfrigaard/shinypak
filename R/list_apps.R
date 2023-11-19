@@ -33,7 +33,7 @@
 #' @examples
 #' list_app_pkgs()
 #' list_app_pkgs(regex = "tests")
-list_apps <- function(regex) {
+list_apps <- function(regex = NULL) {
 
   # keep track
   original_dir <- getwd()
@@ -49,7 +49,7 @@ list_apps <- function(regex) {
   # get tibble of branch names and last update in moviesApp
   all_branches <- gert::git_branch_list(local = NULL, repo = ".")
 
-  branch_cols <- sep_cols(all_branches,
+  branch_vars <- sep_cols(all_branches,
                           col = "name",
                           into = c("source", "branch_name"),
                           sep = "/")
@@ -60,7 +60,19 @@ list_apps <- function(regex) {
   # remove git folder
   unlink(tmp_git_dir, force = TRUE, recursive = TRUE)
 
+  # subset the branches columns
+  branches_cols <- branch_vars[c("source", "branch_name", "updated")]
+
+  # remove regex
+  if (!is.null(regex)) {
+
+      branch_set <- grepl(regex, branches_cols[["branch_name"]])
+      branches_df <- branches_cols[["branch_name"]][branch_set]
+
+  }
+
   # return data
-  branch_cols[c("source", "branch_name", "updated")]
+  return(branches_df)
+
 
 }

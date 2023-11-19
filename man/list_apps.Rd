@@ -4,7 +4,7 @@
 \alias{list_apps}
 \title{List Branches of the moviesApp Repository}
 \usage{
-list_apps(regex)
+list_apps(regex = NULL)
 }
 \arguments{
 \item{regex}{An optional character string containing a regular expression
