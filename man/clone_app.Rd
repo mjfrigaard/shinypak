@@ -4,7 +4,7 @@
 \alias{clone_app}
 \title{Clone application from Shiny App-Packages}
 \usage{
-clone_app(app = "main", open = TRUE, ...)
+clone_app(app = "main", open = TRUE)
 }
 \arguments{
 \item{app}{name of app}
@@ -20,5 +20,5 @@ shiny app (or app-package) branch
 Clone application from Shiny App-Packages
 }
 \examples{
-# clone_app("main")
+# clone_app("02_movies-app")
 }
