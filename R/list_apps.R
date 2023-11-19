@@ -16,17 +16,28 @@ list_apps <- function(regex) {
 
   # clone repo to temp dir
   tmp_git_dir <- file.path(tempdir(), 'moviesApp')
+
   gert::git_clone("https://github.com/mjfrigaard/moviesApp", tmp_git_dir)
   # switch to git folder
   setwd(tmp_git_dir)
 
-  # get list of branches in moviesApp in temp dir
-  gert::git_remote_list()
+  # get tibble of branch names and last update in moviesApp
+  all_branches <- gert::git_branch_list(local = NULL, repo = ".")
+
+  branch_cols <- sep_cols(all_branches,
+                          col = "name",
+                          into = c("source", "branch_name"),
+                          sep = "/")
+
+  branches <- branch_cols[c("source", "updated")]
 
   # return to original working directory
   setwd(original_dir)
 
   # remove git folder
   unlink(tmp_git_dir, force = TRUE, recursive = TRUE)
+
+  # return data
+  return(branches)
 
 }
