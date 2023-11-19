@@ -35,7 +35,6 @@
 #' list_apps(regex = "tests")
 list_apps <- function(regex = NULL) {
 
-  browser()
   # keep track
   original_dir <- getwd()
 

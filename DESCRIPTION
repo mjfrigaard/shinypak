@@ -6,10 +6,10 @@ Maintainer: Martin Frigaard <mjfrigaard@pm.me>
 Description: Shiny application examples from Shiny App-Packages book: 
     <https://mjfrigaard.github.io/shiny-app-pkgs/>
 License: MIT + file LICENSE
+LazyData: true
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-LazyData: true
 Imports: 
     fs,
     gert
