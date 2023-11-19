@@ -2,19 +2,43 @@
 % Please edit documentation in R/list_apps.R
 \name{list_apps}
 \alias{list_apps}
-\title{List available app packages}
+\title{List Branches of the moviesApp Repository}
 \usage{
 list_apps(regex)
 }
 \arguments{
-\item{regex}{passed to list.files(pattern)}
+\item{regex}{An optional character string containing a regular expression
+(regex) to filter branch names}
 }
 \value{
-tibble of available app-packages
+A tibble with three columns: 'source', 'branch_name', and 'updated',
+listing the source of the branch, the branch name, and the last updated
+date.
 }
 \description{
-List available app packages
+This function clones the 'moviesApp' GitHub repository, extracts the list
+of branches along with their last update time, and then returns this information
+as a tibble. The repository is cloned to a temporary directory, which is removed
+after the function executes.
 }
+\section{How it works}{
+
+The function operates in several steps:
+\enumerate{
+\item It saves the current working directory to revert back to it later
+\item It clones the \href{https://github.com/mjfrigaard/moviesApp}{'moviesApp'}
+repository from GitHub into a temporary directory
+\item It lists all branches of the cloned repository
+\item It separates the branch \code{name}s into \code{source} and \code{branch_name}
+\item It cleans up by deleting the temporary directory and restoring the original
+working directory
+}
+
+Note that the function currently does not use the \code{regex} parameter to filter
+branches. This parameter can be implemented in future versions to allow branch
+filtering based on regular expressions.
+}
+
 \examples{
 list_app_pkgs()
 list_app_pkgs(regex = "tests")

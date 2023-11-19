@@ -1,8 +1,32 @@
-#' List available app packages
+#' List Branches of the moviesApp Repository
 #'
-#' @param regex passed to list.files(pattern)
+#' @description
+#' This function clones the 'moviesApp' GitHub repository, extracts the list
+#' of branches along with their last update time, and then returns this information
+#' as a tibble. The repository is cloned to a temporary directory, which is removed
+#' after the function executes.
 #'
-#' @return tibble of available app-packages
+#' @param regex An optional character string containing a regular expression
+#'    (regex) to filter branch names
+#'
+#' @return A tibble with three columns: 'source', 'branch_name', and 'updated',
+#'    listing the source of the branch, the branch name, and the last updated
+#'    date.
+#'
+#'
+#' @section How it works:
+#' The function operates in several steps:
+#' 1. It saves the current working directory to revert back to it later
+#' 2. It clones the ['moviesApp'](https://github.com/mjfrigaard/moviesApp)
+#'    repository from GitHub into a temporary directory
+#' 3. It lists all branches of the cloned repository
+#' 4. It separates the branch `name`s into `source` and `branch_name`
+#' 5. It cleans up by deleting the temporary directory and restoring the original
+#'    working directory
+#'
+#' Note that the function currently does not use the `regex` parameter to filter
+#' branches. This parameter can be implemented in future versions to allow branch
+#' filtering based on regular expressions.
 #'
 #' @export list_apps
 #'
@@ -17,7 +41,8 @@ list_apps <- function(regex) {
   # clone repo to temp dir
   tmp_git_dir <- file.path(tempdir(), 'moviesApp')
 
-  gert::git_clone("https://github.com/mjfrigaard/moviesApp", tmp_git_dir)
+  gert::git_clone(url = "https://github.com/mjfrigaard/moviesApp",
+    path =  tmp_git_dir)
   # switch to git folder
   setwd(tmp_git_dir)
 
@@ -36,6 +61,6 @@ list_apps <- function(regex) {
   unlink(tmp_git_dir, force = TRUE, recursive = TRUE)
 
   # return data
-  branch_cols[c("source", "updated")]
+  branch_cols[c("source", "branch_name", "updated")]
 
 }

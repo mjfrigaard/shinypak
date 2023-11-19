@@ -21,9 +21,4 @@ data with new columns
 \description{
 Separate columns (base)
 }
-\examples{
-sep_cols(branches,
-  col = "name",
-  into = c("source", "branch_name"),
-  sep = "/")
-}
+\keyword{internal}

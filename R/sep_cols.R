@@ -7,13 +7,14 @@
 #'
 #' @return data with new columns
 #'
-#' @export sep_cols
+#' @keywords internal
 #'
-#' @examples
-#' sep_cols(branches,
-#'   col = "name",
-#'   into = c("source", "branch_name"),
-#'   sep = "/")
+# #examples
+# d <- data.frame(id = 1:3, x = c("m-123", "f-455", "f-123"))
+# sep_cols(d,
+#   col = "x",
+#   into = c("chr", "num"),
+#   sep = "-")
 sep_cols <- function(data, col, into, sep) {
   # Split the column by the separator
   split_names <- strsplit(data[[col]], sep)
@@ -29,3 +30,4 @@ sep_cols <- function(data, col, into, sep) {
 
   return(data)
 }
+

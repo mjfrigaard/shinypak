@@ -2,4 +2,3 @@
 
 export(clone_app)
 export(list_apps)
-export(sep_cols)
