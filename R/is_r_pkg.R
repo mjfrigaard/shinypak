@@ -1,3 +1,14 @@
+#' Is directory an R package?
+#'
+#' @param path path to folder
+#' @param verbose verbose messages? Defaults to `TRUE`
+#'
+#' @return logical
+#'
+#' @export
+#'
+#' @examples
+#' # is_r_pkg()
 is_r_pkg <- function(path = getwd(), verbose = TRUE) {
 
   desc <- list.files(path, pattern = "^DESCRIPTION$")
