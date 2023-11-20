@@ -31,3 +31,14 @@ launch_app <- function(app) {
   setwd(original_dir)
 
 }
+
+
+launch_shiny_app <- function(dir) {
+
+}
+
+launch_shiny_app_pkg <- function(dir) {
+
+  # verify package
+
+}
