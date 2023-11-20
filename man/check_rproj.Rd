@@ -4,7 +4,7 @@
 \alias{check_rproj}
 \title{Check fields in .Rproj file}
 \usage{
-check_rproj(rproj_file_path)
+check_rproj(path)
 }
 \arguments{
 \item{path}{path to .Rproj file}

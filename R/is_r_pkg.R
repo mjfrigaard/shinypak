@@ -20,7 +20,7 @@ is_r_pkg <- function(path = getwd(), verbose = TRUE) {
     cli::cli_abort("'.Rproj' file missing")
   }
 
-  desc_status <- check_description(desc_file_path = desc)
+  desc_status <- check_description(path = desc)
 
   rproj_status <- check_rproj(rproj_file_path = rproj)
 
@@ -128,8 +128,8 @@ check_description <- function(path) {
 #'
 #' @examples
 #' # check_rproj("path/to/file.Rproj")
-check_rproj <- function(rproj_file_path) {
-  rproj_fields <- check_lines(file = rproj_file_path,
+check_rproj <- function(path) {
+  rproj_fields <- check_lines(file = path,
                               regex = c("BuildType: Package",
                                         "PackageUseDevtools:",
                                         "PackageInstallArgs:"))
