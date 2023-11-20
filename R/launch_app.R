@@ -8,37 +8,45 @@
 #'
 #' @examples
 #' # launch_app("02_movies-app")
+#' # launch_app("07_roxygen2")
 launch_app <- function(app) {
 
-  # keep track
-  original_dir <- getwd()
-
-  # get current folders
-  current_dirs <- list.dirs(path = original_dir,
-                            full.names = FALSE)
-
-  if (any(app %in% current_dirs)) {
-    setwd(app)
-    withr::local_options(list(shiny.autoload.r = FALSE))
-    shiny::runApp()
-  } else {
+  if (!dir.exists(app)) {
     clone_app(app = app, open = FALSE)
-    setwd(app)
-    withr::local_options(list(shiny.autoload.r = FALSE))
-    shiny::runApp()
   }
 
-  setwd(original_dir)
+  pkg_status <- is_r_pkg(app)
+
+  if (pkg_status) {
+    is_pkg <- TRUE
+    is_app <- FALSE
+  } else {
+    is_app <- TRUE
+    is_pkg <- FALSE
+  }
+
+  all_files <- list.files(path = app,
+                          full.names = TRUE,
+                          all.files = TRUE,
+                          include.dirs = TRUE)
+
+  app_dot_r_regex <- c("app.R$")
+
+  if (any(grepl(app_dot_r_regex, all_files))) {
+    app_file <- all_files[grepl(app_dot_r_regex, all_files)]
+    has_app_dot_r <- TRUE
+  }
+
+  if (is_pkg & !is_app & has_app_dot_r) {
+      pkgload::load_all(path = app,
+        helpers = FALSE, attach_testthat = FALSE)
+      withr::local_options(list(shiny.autoload.r = FALSE))
+      shiny::runApp(appDir = app)
+  }
+
+  if (!is_pkg & is_app & has_app_dot_r) {
+        shiny::runApp(appDir = app)
+  }
 
 }
 
-
-launch_shiny_app <- function(dir) {
-
-}
-
-launch_shiny_app_pkg <- function(dir) {
-
-  # verify package
-
-}

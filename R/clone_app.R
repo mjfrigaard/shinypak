@@ -15,22 +15,23 @@ clone_app <- function(app = "main", open = TRUE) {
   # keep track
   original_dir <- getwd()
 
-  # clone repo to temp dir
+  # clone repo
   app_dir <- file.path(original_dir, app)
 
   if (!dir.exists(app_dir)) {
     gert::git_clone(path = app_dir,
       url = "https://github.com/mjfrigaard/moviesApp",
-      branch = app)
+        branch = app,
+        verbose = FALSE)
   } else {
     unlink(app_dir, force = TRUE, recursive = TRUE)
     gert::git_clone(path = app_dir,
       url = "https://github.com/mjfrigaard/moviesApp",
-      branch = app)
+        branch = app,
+        verbose = FALSE)
   }
 
-
-  # switch to git folder
+  # switch to app folder
   setwd(app_dir)
 
   # remove .git files

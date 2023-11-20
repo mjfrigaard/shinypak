@@ -1,63 +1,3 @@
-#' Is directory an R package?
-#'
-#' @param path path to folder
-#' @param verbose verbose messages? Defaults to `TRUE`
-#'
-#' @return logical
-#'
-#' @export
-#'
-#' @examples
-#' # is_r_pkg()
-is_r_pkg <- function(path = getwd(), verbose = TRUE) {
-
-  desc <- list.files(path, pattern = "^DESCRIPTION$")
-  rproj <- list.files(path, pattern = ".Rproj$")
-
-  if (!file.exists(desc)) {
-    cli::cli_abort("'DESCRIPTION' file missing")
-  } else if (!file.exists(rproj)) {
-    cli::cli_abort("'.Rproj' file missing")
-  }
-
-  desc_status <- check_description(path = desc)
-
-  rproj_status <- check_rproj(path = rproj)
-
-  if (verbose) {
-
-      if (isTRUE(desc_status) & isTRUE(rproj_status)) {
-        cli::cli_alert_success("Package 'DESCRIPTION' & 'Rproj'")
-        return(TRUE)
-      } else if (isFALSE(desc_status) & isTRUE(rproj_status)) {
-        cli::cli_alert_danger("Missing fields in 'DESCRIPTION'")
-        cli::cli_alert_success("Package 'Rproj'")
-        return(FALSE)
-      } else if (isTRUE(desc_status) & isFALSE(rproj_status)) {
-        cli::cli_alert_danger("Missing fields in 'Rproj'")
-        cli::cli_alert_success("Package 'DESCRIPTION'")
-        return(FALSE)
-      } else {
-        cli::cli_alert_danger("Missing fields in 'DESCRIPTION' & 'Rproj'")
-        return(FALSE)
-      }
-
-  } else {
-
-      if (isTRUE(desc_status) & isTRUE(rproj_status)) {
-        return(TRUE)
-      } else if (isFALSE(desc_status) & isTRUE(rproj_status)) {
-        return(FALSE)
-      } else if (isTRUE(desc_status) & isFALSE(rproj_status)) {
-        return(FALSE)
-      } else {
-        return(FALSE)
-      }
-
-  }
-
-}
-
 #' Check the lines in text file
 #'
 #' @param file path to file
@@ -68,7 +8,7 @@ is_r_pkg <- function(path = getwd(), verbose = TRUE) {
 #' @export
 #'
 #' @examples
-#' # check_lines("path/to/DESCRIPTION")
+#' # check_lines("DESCRIPTION", "Package:")
 check_lines <- function(file, regex) {
   x <- readLines(file)
   pattern <- regex
@@ -84,41 +24,97 @@ check_lines <- function(file, regex) {
 #' @export
 #'
 #' @examples
-#' # check_description("path/to/DESCRIPTION")
-check_description <- function(path) {
+#' # check_pkg_description(getwd())
+check_pkg_description <- function(path, verbose = FALSE) {
+  if (verbose) {
+    if (!file.exists(file.path(path, "DESCRIPTION"))) {
+      cli::cli_alert_warning("'DESCRIPTION' file missing")
+      return(FALSE)
+    }
 
-  fields_regex <- paste0("^", c("Package:", "Version:", "License:",
-                                "Description:", "Title:", "Author:",
-                                "Maintainer:"), collapse = "|")
+    fields_regex <- paste0("^", c(
+      "Package:", "Version:", "License:",
+      "Description:", "Title:", "Author:",
+      "Maintainer:"
+    ), collapse = "|")
 
-  desc_fields <- check_lines(file = path,
-                              regex = fields_regex)
+    desc_fields <- check_lines(
+      file = list.files(path,
+        pattern = "DESCRIPTION$",
+        full.names = TRUE
+      ),
+      regex = fields_regex
+    )
 
-  if (length(desc_fields) == 0) {
-    cli::cli_abort("'DESCRIPTION' file missing all required fields")
-    #
-  } else if (length(desc_fields) < 7) {
-      if (!grepl(pattern = "^Package:", desc_fields)) {
-        cli::cli_abort("'DESCRIPTION' missing 'Package' field")
-      } else if (!grepl(pattern = "^Version:", desc_fields)) {
-        cli::cli_abort("'DESCRIPTION' missing 'Version' field")
-      } else if (!grepl(pattern = "^License:", desc_fields)) {
-        cli::cli_abort("'DESCRIPTION' missing 'License' field")
-      } else if (!grepl(pattern = "^Description:", desc_fields)) {
-        cli::cli_abort("'DESCRIPTION' missing 'Description' field")
-      } else if (!grepl(pattern = "^Title:", desc_fields)) {
-        cli::cli_abort("'DESCRIPTION' missing 'Title' field")
-      } else if (!grepl(pattern = "^Author:", desc_fields)) {
-        cli::cli_abort("'DESCRIPTION' missing 'Author' field")
+    if (length(desc_fields) == 0) {
+      return(FALSE)
+    } else if (length(desc_fields) > 1 & length(desc_fields) < 7) {
+      if (!any(grepl(pattern = "^Package:", desc_fields))) {
+        cli::cli_alert_warning("'DESCRIPTION' missing 'Package' field")
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Version:", desc_fields))) {
+        cli::cli_alert_warning("'DESCRIPTION' missing 'Version' field")
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^License:", desc_fields))) {
+        cli::cli_alert_warning("'DESCRIPTION' missing 'License' field")
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Description:", desc_fields))) {
+        cli::cli_alert_warning("'DESCRIPTION' missing 'Description' field")
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Title:", desc_fields))) {
+        cli::cli_alert_warning("'DESCRIPTION' missing 'Title' field")
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Author:", desc_fields))) {
+        cli::cli_alert_warning("'DESCRIPTION' missing 'Author' field")
+        return(FALSE)
       } else {
-        cli::cli_abort("'DESCRIPTION' missing 'Author' field")
+        cli::cli_alert_warning("'DESCRIPTION' missing 'Author' field")
+        return(TRUE)
       }
+    } else {
+      return(TRUE)
+    }
   } else {
-    return(TRUE)
+    if (!file.exists(file.path(path, "DESCRIPTION"))) {
+      return(FALSE)
+    }
+    fields_regex <- paste0("^", c(
+      "Package:", "Version:", "License:",
+      "Description:", "Title:", "Author:",
+      "Maintainer:"
+    ), collapse = "|")
+    desc_fields <- check_lines(
+      file = list.files(path,
+        pattern = "DESCRIPTION$",
+        full.names = TRUE
+      ),
+      regex = fields_regex
+    )
+    if (length(desc_fields) == 0) {
+      return(FALSE)
+    } else if (length(desc_fields) > 1 & length(desc_fields) < 7) {
+      if (!any(grepl(pattern = "^Package:", desc_fields))) {
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Version:", desc_fields))) {
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^License:", desc_fields))) {
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Description:", desc_fields))) {
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Title:", desc_fields))) {
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^Author:", desc_fields))) {
+        return(FALSE)
+      } else {
+        return(TRUE)
+      }
+    } else {
+      return(TRUE)
+    }
   }
 }
 
-#' Check fields in .Rproj file
+#' Check package fields in .Rproj file
 #'
 #' @param path path to .Rproj file
 #'
@@ -127,26 +123,80 @@ check_description <- function(path) {
 #' @export
 #'
 #' @examples
-#' # check_rproj("path/to/file.Rproj")
-check_rproj <- function(path) {
-  fields_regex <- paste0("^", c("BuildType: Package",
-                                "PackageUseDevtools:",
-                                 "PackageInstallArgs:"),
-                         collapse = "|")
-  rproj_fields <- check_lines(file = path,
-                              regex = fields_regex)
-  if (length(rproj_fields) == 0) {
-    cli::cli_abort("'.Rproj' file missing package development fields")
-  } else if (length(rproj_fields) < 3) {
-      if (!grepl(pattern = "^BuildType: Package", rproj_fields)) {
-        cli::cli_abort("'.Rproj' missing 'BuildType: Package'")
-      } else if (!grepl(pattern = "^PackageUseDevtools:", rproj_fields)) {
-        cli::cli_abort("'.Rproj' missing 'PackageUseDevtools' field")
+#' # check_pkg_rproj(getwd())
+check_pkg_rproj <- function(path, verbose = FALSE) {
+  rproj_file <- grep(
+    pattern = ".Rproj$",
+    x = list.files(file.path(path),
+      full.names = TRUE
+    ),
+    value = TRUE
+  )
+  if (verbose) {
+    if (!file.exists(rproj_file)) {
+      cli::cli_alert_warning("'.Rproj' file missing")
+      return(FALSE)
+    }
+
+    fields_regex <- paste0("^", c(
+      "BuildType: Package",
+      "PackageUseDevtools:",
+      "PackageInstallArgs:"
+    ),
+    collapse = "|"
+    )
+
+    rproj_fields <- check_lines(
+      file = list.files(path,
+        pattern = ".Rproj$",
+        full.names = TRUE
+      ),
+      regex = fields_regex
+    )
+
+    if (length(rproj_fields) < 3) {
+      if (!any(grepl(pattern = "^BuildType: Package", rproj_fields))) {
+        cli::cli_alert_warning("'.Rproj' missing 'BuildType: Package'")
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^PackageUseDevtools:", rproj_fields))) {
+        cli::cli_alert_warning("'.Rproj' missing 'PackageUseDevtools' field")
+        return(FALSE)
       } else {
-        cli::cli_abort("'.Rproj' missing 'PackageInstallArgs' field")
+        cli::cli_alert_warning("'.Rproj' missing 'PackageInstallArgs' field")
+        return(FALSE)
       }
+    } else {
+      return(TRUE)
+    }
   } else {
-    return(TRUE)
+    if (!file.exists(rproj_file)) {
+      return(FALSE)
+    }
+    fields_regex <- paste0("^", c(
+      "BuildType: Package",
+      "PackageUseDevtools:",
+      "PackageInstallArgs:"
+    ),
+    collapse = "|"
+    )
+    rproj_fields <- check_lines(
+      file = list.files(path,
+        pattern = ".Rproj$",
+        full.names = TRUE
+      ),
+      regex = fields_regex
+    )
+    if (length(rproj_fields) < 3) {
+      if (!any(grepl(pattern = "^BuildType: Package", rproj_fields))) {
+        return(FALSE)
+      } else if (!any(grepl(pattern = "^PackageUseDevtools:", rproj_fields))) {
+        return(FALSE)
+      } else {
+        return(FALSE)
+      }
+    } else {
+      return(TRUE)
+    }
   }
 }
 
@@ -162,3 +212,49 @@ check_rproj <- function(path) {
 #     cli::cli_abort(msg)
 #   })
 # }
+
+#' Is directory an R package?
+#'
+#' @param path path to folder
+#' @param verbose verbose messages? Defaults to `TRUE`
+#'
+#' @return logical
+#'
+#' @export
+#'
+#' @examples
+#' # is_r_pkg()
+is_r_pkg <- function(path, verbose = FALSE) {
+
+  desc_status <- check_pkg_description(path = path)
+
+  rproj_status <- check_pkg_rproj(path = path)
+
+  if (verbose) {
+    if (isTRUE(desc_status) & isTRUE(rproj_status)) {
+      cli::cli_alert_success("Package 'DESCRIPTION' & 'Rproj'")
+      return(TRUE)
+    } else if (isFALSE(desc_status) & isTRUE(rproj_status)) {
+      cli::cli_alert_danger("Missing fields in 'DESCRIPTION'")
+      cli::cli_alert_success("Package 'Rproj'")
+      return(FALSE)
+    } else if (isTRUE(desc_status) & isFALSE(rproj_status)) {
+      cli::cli_alert_danger("Missing fields in 'Rproj'")
+      cli::cli_alert_success("Package 'DESCRIPTION'")
+      return(FALSE)
+    } else {
+      cli::cli_alert_danger("Missing fields in 'DESCRIPTION' & 'Rproj'")
+      return(FALSE)
+    }
+  } else {
+    if (isTRUE(desc_status) & isTRUE(rproj_status)) {
+      return(TRUE)
+    } else if (isFALSE(desc_status) & isTRUE(rproj_status)) {
+      return(FALSE)
+    } else if (isTRUE(desc_status) & isFALSE(rproj_status)) {
+      return(FALSE)
+    } else {
+      return(FALSE)
+    }
+  }
+}

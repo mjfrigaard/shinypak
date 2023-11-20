@@ -4,7 +4,7 @@
 \alias{is_r_pkg}
 \title{Is directory an R package?}
 \usage{
-is_r_pkg(path = getwd(), verbose = TRUE)
+is_r_pkg(path, verbose = FALSE)
 }
 \arguments{
 \item{path}{path to folder}

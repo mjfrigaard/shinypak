@@ -14,6 +14,8 @@ Imports:
     fs,
     gert,
     rlang,
+    rprojroot,
+    rstudioapi,
     shiny,
     withr
 Depends: 

@@ -18,5 +18,5 @@ logical value from \code{grep()}
 Check the lines in text file
 }
 \examples{
-# check_lines("path/to/DESCRIPTION")
+# check_lines("DESCRIPTION", "Package:")
 }

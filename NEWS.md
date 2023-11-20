@@ -1,3 +1,3 @@
 # shinyap 0.1.0
 
-* Initial CRAN submission.
+* Initial `pkgdown` build

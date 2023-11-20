@@ -42,7 +42,7 @@ list_apps <- function(regex = NULL) {
   tmp_git_dir <- file.path(tempdir(), 'moviesApp')
 
   gert::git_clone(url = "https://github.com/mjfrigaard/moviesApp",
-    path =  tmp_git_dir)
+    path =  tmp_git_dir, verbose = FALSE)
   # switch to git folder
   setwd(tmp_git_dir)
 

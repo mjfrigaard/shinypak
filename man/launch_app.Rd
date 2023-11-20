@@ -17,4 +17,5 @@ Launch shiny app
 }
 \examples{
 # launch_app("02_movies-app")
+# launch_app("07_roxygen2")
 }

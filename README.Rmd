@@ -47,10 +47,9 @@ To see a list of the available app-packages in `shinyap`, use `list_apps()`[^all
 [^all-apps]: Each of the apps in `shinyap` have a corresponding branch in the [moviesApp repo](https://github.com/mjfrigaard/moviesApp/branches/all).
 
 
-```{r list_apps, eval=FALSE}
+```{r list_apps, eval=TRUE}
 list_apps()
 ```
-
 
 ## Clone an app
 
@@ -64,12 +63,4 @@ clone_app("app name")
 launch_app("app name")
 ```
 
-## Update an app (or app-package)
 
-To get the most recent version of an app-package, use `update_app()`
-
-```{r update_app, eval=FALSE}
-update_app("app name")
-```
-
-`update_app()` 
