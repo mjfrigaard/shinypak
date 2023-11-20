@@ -58,17 +58,42 @@ is_r_pkg <- function(path = getwd(), verbose = TRUE) {
 
 }
 
+#' Check the lines in text file
+#'
+#' @param file path to file
+#' @param regex
+#'
+#' @return logical value from `grep()`
+#'
+#' @export
+#'
+#' @examples
+#' # check_lines("path/to/DESCRIPTION")
 check_lines <- function(file, regex) {
   x <- readLines(file)
-  pattern <- paste0("^", regex, collapse = "|")
+  pattern <- regex
   grep(pattern = pattern, x = x, value = TRUE)
 }
 
-check_description <- function(desc_file_path) {
-  desc_fields <- check_lines(file = desc_file_path,
-                              regex = c("Package:", "Version:", "License:",
-                                        "Description:", "Title:", "Author:",
-                                        "Maintainer:"))
+#' Check fields in DESCRIPTION file
+#'
+#' @param path path to DESCRIPTION file
+#'
+#' @return logical
+#'
+#' @export
+#'
+#' @examples
+#' # check_description("path/to/DESCRIPTION")
+check_description <- function(path) {
+
+  fields_regex <- paste0("^", c("Package:", "Version:", "License:",
+                                "Description:", "Title:", "Author:",
+                                "Maintainer:"), collapse = "|")
+
+  desc_fields <- check_lines(file = path,
+                              regex = fields_regex)
+
   if (length(desc_fields) == 0) {
     cli::cli_abort("'DESCRIPTION' file missing all required fields")
     #
@@ -93,6 +118,16 @@ check_description <- function(desc_file_path) {
   }
 }
 
+#' Check fields in .Rproj file
+#'
+#' @param path path to .Rproj file
+#'
+#' @return logical
+#'
+#' @export
+#'
+#' @examples
+#' # check_rproj("path/to/file.Rproj")
 check_rproj <- function(rproj_file_path) {
   rproj_fields <- check_lines(file = rproj_file_path,
                               regex = c("BuildType: Package",
@@ -112,3 +147,16 @@ check_rproj <- function(rproj_file_path) {
     return(TRUE)
   }
 }
+
+# is_r_pkg <- function(path = ".") {
+#   path <- tryCatch({
+#     rprojroot_find_package_root_file(path = path)
+#   },
+#   error = function(e) {
+#     msg <- c(
+#       "Could not find a root 'DESCRIPTION' file that starts with '^Package' in {.path {normalizePath(path)}}.",
+#       "i" = "Are you in your project directory and does your project have a 'DESCRIPTION' file?"
+#     )
+#     cli::cli_abort(msg)
+#   })
+# }
