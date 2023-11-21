@@ -12,6 +12,11 @@
 #'     otherwise.
 #'
 #' @export
+#'
+#' @examples
+#' check_desc_file(
+#'      system.file("pkg", "DESCRIPTION",
+#'                  package = "shinyap"))
 check_desc_file <- function(file, verbose = TRUE) {
   fields <- c(
     "Package", "Version", "License",

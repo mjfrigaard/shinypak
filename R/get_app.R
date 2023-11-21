@@ -44,13 +44,20 @@ get_app <- function(app = "main", open = FALSE) {
   # clone repo
   app_dir <- file.path(original_dir, app)
 
+  cli::cli_progress_message("getting '{app}'")
+
   if (!dir.exists(app_dir)) {
+    cli::cli_progress_step("'{app}' not in local working directory")
+    cli::cli_progress_step("downloading '{app}'")
     gert::git_clone(path = app_dir,
       url = "https://github.com/mjfrigaard/moviesApp",
         branch = app,
         verbose = FALSE)
+
   } else {
+    cli::cli_progress_step("'{app}' in local working directory")
     unlink(app_dir, force = TRUE, recursive = TRUE)
+    cli::cli_progress_step("updating '{app}'")
     gert::git_clone(path = app_dir,
       url = "https://github.com/mjfrigaard/moviesApp",
         branch = app,
@@ -82,10 +89,12 @@ get_app <- function(app = "main", open = FALSE) {
 
   # open new .Rproj
   if (open) {
+    cli::cli_progress_step("opening '{app}' in new session")
     rstudioapi::openProject(new_rproj, newSession = TRUE)
+    # reset wd
+    setwd(original_dir)
   }
-
   # reset wd
   setwd(original_dir)
-
+  cli::cli_progress_step("got '{app}'")
 }

@@ -30,3 +30,11 @@ is \code{TRUE}, it will use \code{cli} package functions to alert the user about
 checks being performed and their results.
 }
 
+\examples{
+check_r_pkg(
+     system.file("pkg", package = "shinyap"),
+     verbose = TRUE)
+check_r_pkg(
+     system.file("app", package = "shinyap"),
+     verbose = TRUE)
+}

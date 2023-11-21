@@ -18,5 +18,10 @@ A logical value; \code{TRUE} if all fields are found, \code{FALSE} otherwise.
 Check .Rproj File for Required Fields
 }
 \examples{
-# check_rproj_file("path/to/project.Rproj", verbose = TRUE)
+check_rproj_file(
+     system.file("project", "project.Rproj",
+                 package = "shinyap"))
+check_rproj_file(
+     system.file("pkg", "pkg.Rproj",
+                 package = "shinyap"), verbose = TRUE)
 }

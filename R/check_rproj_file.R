@@ -8,7 +8,12 @@
 #' @export
 #'
 #' @examples
-#' # check_rproj_file("path/to/project.Rproj", verbose = TRUE)
+#' check_rproj_file(
+#'      system.file("project", "project.Rproj",
+#'                  package = "shinyap"))
+#' check_rproj_file(
+#'      system.file("pkg", "pkg.Rproj",
+#'                  package = "shinyap"), verbose = TRUE)
 check_rproj_file <- function(file, verbose = FALSE) {
   fields <- c("BuildType", "PackageUseDevtools", "PackageInstallArgs")
   result <- mapply(check_text_field, file,

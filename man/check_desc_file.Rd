@@ -21,3 +21,8 @@ This function ensures that a \code{DESCRIPTION} file contains all of the necessa
 fields for an R package. It operates verbosely by default, providing alerts
 about the checking process.
 }
+\examples{
+check_desc_file(
+     system.file("pkg", "DESCRIPTION",
+                 package = "shinyap"))
+}
