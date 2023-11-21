@@ -44,10 +44,56 @@ list_apps("tests")
 
 # Launch
 
-To launch an app from the Shiny App-Packages book, just supply the name of the branch:
+To launch an app from the [Shiny App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/), you can simply supply the name of the branch:
 
 ```{r , eval=FALSE}
-launch_app(app = "12e_tests-system")
+launch_app(app = "<branch>")
+```
+
+Let's start with one of the branches from the [early chapters](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders) (not quite an app-package yet):
+
+```{r , eval=FALSE}
+launch_app(app = "03_proj-app")
+```
+
+```{r launch_app, echo=FALSE, out.width='80%'}
+knitr::include_graphics("../man/figures/launch_app.gif")
+```
+
+`launch_app()` will automatically download the application files into a folder in the current working directory: 
+
+If the branch is storing an app-package, `launch_app()` loads the package and then launches the application:
+
+```{r , eval=FALSE}
+launch_app(app = "11b_inst-bslib")
+```
+
+
+## Helper
+
+The `check_r_pkg()` function is useful for determining if a directory contains an R package: 
+
+```{r , eval=FALSE}
+check_r_pkg("03_proj-app")
+```
+
+```{verbatim}
+#> [1] FALSE
+```
+
+If `verbose` is set to `TRUE`, details are provided on what is being checked: 
+
+```{r , eval=FALSE}
+check_r_pkg("11b_inst-bslib", verbose = TRUE)
+```
+
+```{verbatim}
+#> ℹ Checking DESCRIPTION for package fields
+#> ✔ Package, Version, License, Description, Title, Author, and Maintainer found!
+#> ℹ Checking .Rroj for project build fields
+#> ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!
+#> ✔ '11b_inst-bslib/' is an R package
+#> [1] TRUE
 ```
 
 ## Get

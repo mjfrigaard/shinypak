@@ -50,14 +50,14 @@ list_apps()
 #> 11 origin                   09_data 2023-11-17 14:55:45
 #> 12 origin             10_launch-app 2023-11-17 14:56:49
 #> 13 origin              11a_inst-www 2023-11-17 14:57:48
-#> 14 origin            11b_inst-bslib 2023-11-17 14:58:21
+#> 14 origin            11b_inst-bslib 2023-11-21 09:14:32
 #> 15 origin              11c_inst-dev 2023-11-17 14:59:04
 #> 16 origin             11d_inst-prod 2023-11-18 04:51:27
 #> 17 origin           12a_tests-specs 2023-11-18 05:30:29
 #> 18 origin        12b_tests-fixtures 2023-11-18 05:31:06
 #> 19 origin         12c_tests-helpers 2023-11-18 05:31:53
 #> 20 origin         12d_tests-modules 2023-11-18 05:32:44
-#> 21 origin          12e_tests-system 2023-11-18 05:33:35
+#> 21 origin          12e_tests-system 2023-11-21 09:08:21
 #> 22 origin           12f_tests-mocks 2023-11-18 05:34:25
 #> 23 origin       12g_tests-snapshots 2023-11-18 05:35:09
 #> 24 origin                    fw_gap 2023-11-18 05:36:02
@@ -75,13 +75,13 @@ list_apps()
 #> 36 origin       spec_topic-userData 2023-11-18 07:06:19
 ```
 
-## Clone an app
+## Get app
 
 ``` r
 get_app("app name")
 ```
 
-## Launch an app (or app package)
+## Launch app (or app package)
 
 ``` r
 launch_app("app name")

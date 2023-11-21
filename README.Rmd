@@ -51,13 +51,13 @@ To see a list of the available app-packages in `shinyap`, use `list_apps()`[^all
 list_apps()
 ```
 
-## Clone an app
+## Get app
 
 ```{r get_app, eval=FALSE}
 get_app("app name")
 ```
 
-## Launch an app (or app package)
+## Launch app (or app package)
 
 ```{r launch_app, eval=FALSE}
 launch_app("app name")
