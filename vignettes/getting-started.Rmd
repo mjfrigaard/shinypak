@@ -42,7 +42,15 @@ list_apps("11")
 list_apps("tests")
 ```
 
-## Get 
+# Launch
+
+To launch an app from the Shiny App-Packages book, just supply the name of the branch:
+
+```{r , eval=FALSE}
+launch_app(app = "12e_tests-system")
+```
+
+## Get
 
 The `get_app()` function will download and open a specified branch in a new Posit Workbench session. 
 
@@ -50,5 +58,17 @@ The `get_app()` function will download and open a specified branch in a new Posi
 get_app(app = "12e_tests-system")
 ```
 
+```{r get_app, echo=FALSE, out.width='80%'}
+knitr::include_graphics("../man/figures/get_app.gif")
+```
+
+### Get and open
+
+```{r , eval=FALSE}
+get_app(app = "12e_tests-system", open = TRUE)
+```
 
 
+```{r get_app_open, echo=FALSE, out.width='80%'}
+knitr::include_graphics("../man/figures/get_app_open.gif")
+```

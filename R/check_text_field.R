@@ -6,7 +6,7 @@
 #' @return logical
 #'
 #'
-check_txt_field <- function(file, field) {
+check_text_field <- function(file, field) {
   if (!file.exists(file.path(file))) {
     cli::cli_alert_danger("{file} doesn't exist!")
     return(FALSE)
