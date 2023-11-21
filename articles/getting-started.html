@@ -114,14 +114,14 @@ repo:</p>
 <span><span class="co">#&gt; 11 origin                   09_data 2023-11-17 22:55:45</span></span>
 <span><span class="co">#&gt; 12 origin             10_launch-app 2023-11-17 22:56:49</span></span>
 <span><span class="co">#&gt; 13 origin              11a_inst-www 2023-11-17 22:57:48</span></span>
-<span><span class="co">#&gt; 14 origin            11b_inst-bslib 2023-11-17 22:58:21</span></span>
+<span><span class="co">#&gt; 14 origin            11b_inst-bslib 2023-11-21 17:14:32</span></span>
 <span><span class="co">#&gt; 15 origin              11c_inst-dev 2023-11-17 22:59:04</span></span>
 <span><span class="co">#&gt; 16 origin             11d_inst-prod 2023-11-18 12:51:27</span></span>
 <span><span class="co">#&gt; 17 origin           12a_tests-specs 2023-11-18 13:30:29</span></span>
 <span><span class="co">#&gt; 18 origin        12b_tests-fixtures 2023-11-18 13:31:06</span></span>
 <span><span class="co">#&gt; 19 origin         12c_tests-helpers 2023-11-18 13:31:53</span></span>
 <span><span class="co">#&gt; 20 origin         12d_tests-modules 2023-11-18 13:32:44</span></span>
-<span><span class="co">#&gt; 21 origin          12e_tests-system 2023-11-18 13:33:35</span></span>
+<span><span class="co">#&gt; 21 origin          12e_tests-system 2023-11-21 17:08:21</span></span>
 <span><span class="co">#&gt; 22 origin           12f_tests-mocks 2023-11-18 13:34:25</span></span>
 <span><span class="co">#&gt; 23 origin       12g_tests-snapshots 2023-11-18 13:35:09</span></span>
 <span><span class="co">#&gt; 24 origin                      HEAD 2023-10-25 15:12:48</span></span>
@@ -151,22 +151,52 @@ branches matching a particular chapter or topic:</p>
 <div class="section level2">
 <h2 id="launch">Launch<a class="anchor" aria-label="anchor" href="#launch"></a>
 </h2>
-<p>To launch an app from the Shiny App-Packages book, just supply the
-name of the branch:</p>
+<p>To launch an app from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny App-Packages
+book</a>, you can simply supply the name of the branch:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"&lt;branch&gt;"</span><span class="op">)</span></span></code></pre></div>
+<p>Let’s start with one of the branches from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders" class="external-link">early
+chapters</a> (not quite an app-package yet):</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"03_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/launch_app.gif" width="80%"></p>
+<p><code><a href="../reference/launch_app.html">launch_app()</a></code> will automatically download the application
+files into a folder in the current working directory:</p>
+<p>If the branch is storing an app-package, <code><a href="../reference/launch_app.html">launch_app()</a></code>
+loads the package and then launches the application:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"11b_inst-bslib"</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="helper">Helper<a class="anchor" aria-label="anchor" href="#helper"></a>
+</h3>
+<p>The <code><a href="../reference/check_r_pkg.html">check_r_pkg()</a></code> function is useful for determining if
+a directory contains an R package:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/check_r_pkg.html">check_r_pkg</a></span><span class="op">(</span><span class="st">"03_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>#&gt; [1] FALSE</span></code></pre></div>
+<p>If <code>verbose</code> is set to <code>TRUE</code>, details are
+provided on what is being checked:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/check_r_pkg.html">check_r_pkg</a></span><span class="op">(</span><span class="st">"11b_inst-bslib"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>#&gt; ℹ Checking DESCRIPTION for package fields</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ Package, Version, License, Description, Title, Author, and Maintainer found!</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>#&gt; ℹ Checking .Rroj for project build fields</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ '11b_inst-bslib/' is an R package</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>#&gt; [1] TRUE</span></code></pre></div>
+</div>
 <div class="section level3">
 <h3 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
 </h3>
 <p>The <code><a href="../reference/get_app.html">get_app()</a></code> function will download and open a
 specified branch in a new Posit Workbench session.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app.gif" width="80%"></p>
 <div class="section level4">
 <h4 id="get-and-open">Get and open<a class="anchor" aria-label="anchor" href="#get-and-open"></a>
 </h4>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app_open.gif" width="80%"></p>
 </div>
