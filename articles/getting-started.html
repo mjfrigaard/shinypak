@@ -82,7 +82,82 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mjfrigaard.github.io/shinyap/">shinyap</a></span><span class="op">)</span></span></code></pre></div>
-  </main>
+<p><strong><code>shinyap</code> assumes you have GitHub and Posit
+workbench synced. Read more about setting this up on the <a href="https://docs.ropensci.org/gert/#automatic-authentication" class="external-link"><code>gert</code>
+package website</a></strong></p>
+<blockquote>
+<p>“<em>In <code>gert</code>, authentication is done automatically using
+the <a href="https://docs.ropensci.org/credentials/articles/intro.html" class="external-link"><code>credentials</code>
+package</a>. This package calls out to the local OS credential store
+which is also used by the git command line. Therefore gert will
+automatically pick up on https credentials that are safely stored in
+your OS keychain.</em>”</p>
+</blockquote>
+<div class="section level2">
+<h2 id="list-all-apps">List all apps<a class="anchor" aria-label="anchor" href="#list-all-apps"></a>
+</h2>
+<p>The apps are stored in branches on the <code>moviesApp</code>
+repo:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    source               branch_name             updated</span></span>
+<span><span class="co">#&gt; 1    &lt;NA&gt;                      main 2023-10-25 15:12:48</span></span>
+<span><span class="co">#&gt; 2  origin             02_movies-app 2023-11-19 22:23:38</span></span>
+<span><span class="co">#&gt; 3  origin               03_proj-app 2023-11-17 22:50:17</span></span>
+<span><span class="co">#&gt; 4  origin            04_description 2023-11-02 20:35:02</span></span>
+<span><span class="co">#&gt; 5  origin                  05_rproj 2023-11-02 20:35:17</span></span>
+<span><span class="co">#&gt; 6  origin        06a_create-package 2023-11-02 20:35:34</span></span>
+<span><span class="co">#&gt; 7  origin              06b_devtools 2023-11-02 20:35:52</span></span>
+<span><span class="co">#&gt; 8  origin               07_roxygen2 2023-11-17 22:53:36</span></span>
+<span><span class="co">#&gt; 9  origin           08a_pkg-exports 2023-11-17 22:54:17</span></span>
+<span><span class="co">#&gt; 10 origin           08b_pkg-imports 2023-11-17 22:54:52</span></span>
+<span><span class="co">#&gt; 11 origin                   09_data 2023-11-17 22:55:45</span></span>
+<span><span class="co">#&gt; 12 origin             10_launch-app 2023-11-17 22:56:49</span></span>
+<span><span class="co">#&gt; 13 origin              11a_inst-www 2023-11-17 22:57:48</span></span>
+<span><span class="co">#&gt; 14 origin            11b_inst-bslib 2023-11-17 22:58:21</span></span>
+<span><span class="co">#&gt; 15 origin              11c_inst-dev 2023-11-17 22:59:04</span></span>
+<span><span class="co">#&gt; 16 origin             11d_inst-prod 2023-11-18 12:51:27</span></span>
+<span><span class="co">#&gt; 17 origin           12a_tests-specs 2023-11-18 13:30:29</span></span>
+<span><span class="co">#&gt; 18 origin        12b_tests-fixtures 2023-11-18 13:31:06</span></span>
+<span><span class="co">#&gt; 19 origin         12c_tests-helpers 2023-11-18 13:31:53</span></span>
+<span><span class="co">#&gt; 20 origin         12d_tests-modules 2023-11-18 13:32:44</span></span>
+<span><span class="co">#&gt; 21 origin          12e_tests-system 2023-11-18 13:33:35</span></span>
+<span><span class="co">#&gt; 22 origin           12f_tests-mocks 2023-11-18 13:34:25</span></span>
+<span><span class="co">#&gt; 23 origin       12g_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 24 origin                      HEAD 2023-10-25 15:12:48</span></span>
+<span><span class="co">#&gt; 25 origin                    fw_gap 2023-11-18 13:36:02</span></span>
+<span><span class="co">#&gt; 26 origin                    fw_lap 2023-11-10 20:35:13</span></span>
+<span><span class="co">#&gt; 27 origin                    fw_rap 2023-11-06 22:55:08</span></span>
+<span><span class="co">#&gt; 28 origin                      main 2023-10-25 15:12:48</span></span>
+<span><span class="co">#&gt; 29 origin   spec_topic-debugging-01 2023-11-18 13:39:47</span></span>
+<span><span class="co">#&gt; 30 origin   spec_topic-debugging-02 2023-11-18 13:40:34</span></span>
+<span><span class="co">#&gt; 31 origin   spec_topic-debugging-03 2023-11-18 13:41:07</span></span>
+<span><span class="co">#&gt; 32 origin   spec_topic-debugging-04 2023-11-18 13:41:46</span></span>
+<span><span class="co">#&gt; 33 origin   spec_topic-debugging-05 2023-11-18 13:42:23</span></span>
+<span><span class="co">#&gt; 34 origin spec_topic-reactiveValues 2023-11-18 13:44:24</span></span>
+<span><span class="co">#&gt; 35 origin   spec_topic-trace-matrix 2023-11-18 15:26:20</span></span>
+<span><span class="co">#&gt; 36 origin       spec_topic-userData 2023-11-18 15:06:19</span></span></code></pre></div>
+<p>You can also specify a <code>regex</code> to return a vector of
+branches matching a particular chapter or topic:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"11"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "11a_inst-www"   "11b_inst-bslib" "11c_inst-dev"   "11d_inst-prod"</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"tests"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "12a_tests-specs"     "12b_tests-fixtures"  "12c_tests-helpers"  </span></span>
+<span><span class="co">#&gt; [4] "12d_tests-modules"   "12e_tests-system"    "12f_tests-mocks"    </span></span>
+<span><span class="co">#&gt; [7] "12g_tests-snapshots"</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
+</h2>
+<p>The <code><a href="../reference/get_app.html">get_app()</a></code> function will download and open a
+specified branch in a new Posit Workbench session.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span><span class="op">)</span></span></code></pre></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

@@ -19,22 +19,22 @@
     <loc>https://mjfrigaard.github.io/shinyap/news/index.html</loc>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/check_lines.html</loc>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/check_desc_file.html</loc>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/check_pkg_description.html</loc>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/check_r_pkg.html</loc>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/check_pkg_rproj.html</loc>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/check_rproj_file.html</loc>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/clone_app.html</loc>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/check_txt_field.html</loc>
+  </url>
+  <url>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/get_app.html</loc>
   </url>
   <url>
     <loc>https://mjfrigaard.github.io/shinyap/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/is_r_pkg.html</loc>
   </url>
   <url>
     <loc>https://mjfrigaard.github.io/shinyap/reference/launch_app.html</loc>
