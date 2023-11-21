@@ -36,56 +36,57 @@ To see a list of the available app-packages in `shinyap`, use
 
 ``` r
 list_apps()
-#>    source               branch_name             updated
-#> 1    <NA>                      main 2023-10-25 08:12:48
-#> 2  origin             02_movies-app 2023-11-19 14:23:38
-#> 3  origin               03_proj-app 2023-11-17 14:50:17
-#> 4  origin            04_description 2023-11-02 13:35:02
-#> 5  origin                  05_rproj 2023-11-02 13:35:17
-#> 6  origin        06a_create-package 2023-11-02 13:35:34
-#> 7  origin              06b_devtools 2023-11-02 13:35:52
-#> 8  origin               07_roxygen2 2023-11-17 14:53:36
-#> 9  origin           08a_pkg-exports 2023-11-17 14:54:17
-#> 10 origin           08b_pkg-imports 2023-11-17 14:54:52
-#> 11 origin                   09_data 2023-11-17 14:55:45
-#> 12 origin             10_launch-app 2023-11-17 14:56:49
-#> 13 origin              11a_inst-www 2023-11-17 14:57:48
-#> 14 origin            11b_inst-bslib 2023-11-21 09:14:32
-#> 15 origin              11c_inst-dev 2023-11-17 14:59:04
-#> 16 origin             11d_inst-prod 2023-11-18 04:51:27
-#> 17 origin           12a_tests-specs 2023-11-18 05:30:29
-#> 18 origin        12b_tests-fixtures 2023-11-18 05:31:06
-#> 19 origin         12c_tests-helpers 2023-11-18 05:31:53
-#> 20 origin         12d_tests-modules 2023-11-18 05:32:44
-#> 21 origin          12e_tests-system 2023-11-21 09:08:21
-#> 22 origin           12f_tests-mocks 2023-11-18 05:34:25
-#> 23 origin       12g_tests-snapshots 2023-11-18 05:35:09
-#> 24 origin                    fw_gap 2023-11-18 05:36:02
-#> 25 origin                    fw_lap 2023-11-10 12:35:13
-#> 26 origin                    fw_rap 2023-11-06 14:55:08
-#> 27 origin                      HEAD 2023-10-25 08:12:48
-#> 28 origin                      main 2023-10-25 08:12:48
-#> 29 origin   spec_topic-debugging-01 2023-11-18 05:39:47
-#> 30 origin   spec_topic-debugging-02 2023-11-18 05:40:34
-#> 31 origin   spec_topic-debugging-03 2023-11-18 05:41:07
-#> 32 origin   spec_topic-debugging-04 2023-11-18 05:41:46
-#> 33 origin   spec_topic-debugging-05 2023-11-18 05:42:23
-#> 34 origin spec_topic-reactiveValues 2023-11-18 05:44:24
-#> 35 origin   spec_topic-trace-matrix 2023-11-18 07:26:20
-#> 36 origin       spec_topic-userData 2023-11-18 07:06:19
-```
-
-## Get app
-
-``` r
-get_app("app name")
+#>    source         branch_name             updated
+#> 1    <NA>                main 2023-10-25 08:12:48
+#> 2  origin   01_whole-app-game 2023-11-21 10:53:52
+#> 3  origin      02a_movies-app 2023-11-19 14:23:38
+#> 4  origin        02b_proj-app 2023-11-17 14:50:17
+#> 5  origin     03a_description 2023-11-02 13:35:02
+#> 6  origin           03b_rproj 2023-11-02 13:35:17
+#> 7  origin  03c_create-package 2023-11-02 13:35:34
+#> 8  origin         04_devtools 2023-11-02 13:35:52
+#> 9  origin         05_roxygen2 2023-11-17 14:53:36
+#> 10 origin     06a_pkg-exports 2023-11-17 14:54:17
+#> 11 origin     06b_pkg-imports 2023-11-17 14:54:52
+#> 12 origin             07_data 2023-11-17 14:55:45
+#> 13 origin       08_launch-app 2023-11-17 14:56:49
+#> 14 origin        09a_inst-www 2023-11-17 14:57:48
+#> 15 origin      09b_inst-bslib 2023-11-21 09:14:32
+#> 16 origin        09c_inst-dev 2023-11-17 14:59:04
+#> 17 origin       09d_inst-prod 2023-11-18 04:51:27
+#> 18 origin      11_tests-specs 2023-11-18 05:30:29
+#> 19 origin  12a_tests-fixtures 2023-11-18 05:31:06
+#> 20 origin   12b_tests-helpers 2023-11-18 05:31:53
+#> 21 origin     12f_tests-mocks 2023-11-18 05:34:25
+#> 22 origin 12g_tests-snapshots 2023-11-18 05:35:09
+#> 23 origin    13_tests-modules 2023-11-18 05:32:44
+#> 24 origin     14_tests-system 2023-11-21 09:08:21
+#> 25 origin            15_golem 2023-11-18 05:36:02
+#> 26 origin       16_leprechaun 2023-11-10 12:35:13
+#> 27 origin            17_rhino 2023-11-06 14:55:08
+#> 28 origin       18a_debugging 2023-11-18 05:39:47
+#> 29 origin       18b_debugging 2023-11-18 05:40:34
+#> 30 origin       18c_debugging 2023-11-18 05:41:07
+#> 31 origin       18d_debugging 2023-11-18 05:41:46
+#> 32 origin       18e_debugging 2023-11-18 05:42:23
+#> 33 origin 19a_reactive-values 2023-11-18 05:44:24
+#> 34 origin       19b_user-data 2023-11-18 07:06:19
+#> 35 origin  20_tests-snapshots 2023-11-18 05:35:09
+#> 36 origin      21_tests-mocks 2023-11-18 05:34:25
+#> 37 origin    22a_trace-matrix 2023-11-18 07:26:20
+#> 38 origin                HEAD 2023-10-25 08:12:48
+#> 39 origin                main 2023-10-25 08:12:48
 ```
 
 ## Launch app (or app package)
 
+Launch an application from any section in the book using:
+
 ``` r
-launch_app("app name")
+launch_app(app = "02b_proj-app")
 ```
+
+<img src="man/figures/launch_app.gif" width="100%" style="display: block; margin: auto;" />
 
 [^1]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)

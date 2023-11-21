@@ -51,16 +51,16 @@ To see a list of the available app-packages in `shinyap`, use `list_apps()`[^all
 list_apps()
 ```
 
-## Get app
-
-```{r get_app, eval=FALSE}
-get_app("app name")
-```
-
 ## Launch app (or app package)
 
-```{r launch_app, eval=FALSE}
-launch_app("app name")
+Launch an application from any section in the book using:
+
+```{r , eval=FALSE}
+launch_app(app = "02b_proj-app")
+```
+
+```{r launch_app, echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics("man/figures/launch_app.gif")
 ```
 
 

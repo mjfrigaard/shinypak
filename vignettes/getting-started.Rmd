@@ -53,28 +53,29 @@ launch_app(app = "<branch>")
 Let's start with one of the branches from the [early chapters](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders) (not quite an app-package yet):
 
 ```{r , eval=FALSE}
-launch_app(app = "03_proj-app")
+launch_app(app = "02b_proj-app")
 ```
 
-```{r launch_app, echo=FALSE, out.width='80%'}
+```{r launch_app, echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("../man/figures/launch_app.gif")
 ```
 
-`launch_app()` will automatically download the application files into a folder in the current working directory: 
-
-If the branch is storing an app-package, `launch_app()` loads the package and then launches the application:
+`launch_app()` will automatically download the application files into a folder in the current working directory. If the branch is storing an app-package, `launch_app()` loads the package and then launches the application:
 
 ```{r , eval=FALSE}
-launch_app(app = "11b_inst-bslib")
+launch_app(app = "09b_inst-bslib")
 ```
 
+```{r launch_app_pkg, echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics("../man/figures/launch_app_pkg.gif")
+```
 
 ## Helper
 
 The `check_r_pkg()` function is useful for determining if a directory contains an R package: 
 
 ```{r , eval=FALSE}
-check_r_pkg("03_proj-app")
+check_r_pkg("02b_proj-app")
 ```
 
 ```{verbatim}
@@ -84,7 +85,7 @@ check_r_pkg("03_proj-app")
 If `verbose` is set to `TRUE`, details are provided on what is being checked: 
 
 ```{r , eval=FALSE}
-check_r_pkg("11b_inst-bslib", verbose = TRUE)
+check_r_pkg("09b_inst-bslib", verbose = TRUE)
 ```
 
 ```{verbatim}
@@ -92,29 +93,32 @@ check_r_pkg("11b_inst-bslib", verbose = TRUE)
 #> ✔ Package, Version, License, Description, Title, Author, and Maintainer found!
 #> ℹ Checking .Rroj for project build fields
 #> ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!
-#> ✔ '11b_inst-bslib/' is an R package
+#> ✔ '09b_inst-bslib/' is an R package
 #> [1] TRUE
 ```
 
 ## Get
 
-The `get_app()` function will download and open a specified branch in a new Posit Workbench session. 
+`launch_app()` calls the `get_app()` function, which will only download the specified branch into the current working directory. 
 
 ```{r , eval=FALSE}
-get_app(app = "12e_tests-system")
+get_app(app = "14_tests-system")
 ```
 
-```{r get_app, echo=FALSE, out.width='80%'}
+```{r get_app, echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("../man/figures/get_app.gif")
 ```
 
 ### Get and open
 
+You can open the new app project by supplying the `open = TRUE` argument:
+
 ```{r , eval=FALSE}
-get_app(app = "12e_tests-system", open = TRUE)
+get_app(app = "14_tests-system", open = TRUE)
 ```
 
-
-```{r get_app_open, echo=FALSE, out.width='80%'}
+```{r get_app_open, echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("../man/figures/get_app_open.gif")
 ```
+
+If the app is already downloaded, the files are updated with the latest commit to the branch. 
