@@ -18,3 +18,37 @@ knitr::opts_chunk$set(
 library(shinyap)
 ```
 
+**`shinyap` assumes you have GitHub and Posit workbench synced. Read more about setting this up on the [`gert` package website](https://docs.ropensci.org/gert/#automatic-authentication)**
+
+> "*In `gert`, authentication is done automatically using the [`credentials` package](https://docs.ropensci.org/credentials/articles/intro.html). This package calls out to the local OS credential store which is also used by the git command line. Therefore gert will automatically pick up on https credentials that are safely stored in your OS keychain.*"
+
+
+## List all apps 
+
+The apps are stored in branches on the `moviesApp` repo:
+
+```{r}
+list_apps()
+```
+
+You can also specify a `regex` to return a vector of branches matching a particular chapter or topic: 
+
+```{r}
+list_apps("11")
+```
+
+
+```{r}
+list_apps("tests")
+```
+
+## Get 
+
+The `get_app()` function will download and open a specified branch in a new Posit Workbench session. 
+
+```{r , eval=FALSE}
+get_app(app = "12e_tests-system")
+```
+
+
+

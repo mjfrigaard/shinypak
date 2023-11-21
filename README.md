@@ -78,7 +78,7 @@ list_apps()
 ## Clone an app
 
 ``` r
-clone_app("app name")
+get_app("app name")
 ```
 
 ## Launch an app (or app package)

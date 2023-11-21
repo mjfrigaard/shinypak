@@ -12,41 +12,32 @@
 launch_app <- function(app) {
 
   if (!dir.exists(app)) {
-    clone_app(app = app, open = FALSE)
+    cli::cli_progress_message("cloning {app} from 'moviesApp'")
+    get_app(app = app, open = FALSE)
+    if (!dir.exists(app)) {
+      cli::cli_alert_success("{app} cloned from 'moviesApp'")
+    }
   }
-
-  pkg_status <- is_r_pkg(app)
-
-  if (pkg_status) {
-    is_pkg <- TRUE
-    is_app <- FALSE
-  } else {
-    is_app <- TRUE
-    is_pkg <- FALSE
-  }
-
-  all_files <- list.files(path = app,
+  app_dot_r <- list.files(path = app,
+                          pattern = "app.R$",
                           full.names = TRUE,
-                          all.files = TRUE,
-                          include.dirs = TRUE)
+                          all.files = FALSE,
+                          include.dirs = FALSE)
+  has_app_dot_r <- any(grepl(pattern = "app.R$",
+                             x = app_dot_r))
 
-  app_dot_r_regex <- c("app.R$")
-
-  if (any(grepl(app_dot_r_regex, all_files))) {
-    app_file <- all_files[grepl(app_dot_r_regex, all_files)]
-    has_app_dot_r <- TRUE
-  }
-
-  if (is_pkg & !is_app & has_app_dot_r) {
+  # launch app-package (load first)
+  if (isTRUE(check_r_pkg(app)) & isTRUE(has_app_dot_r)) {
       pkgload::load_all(path = app,
-        helpers = FALSE, attach_testthat = FALSE)
+        helpers = FALSE,
+        attach_testthat = FALSE)
       withr::local_options(list(shiny.autoload.r = FALSE))
+      cli::cli_alert_success("Launching app with shiny::runApp('{app}')")
       shiny::runApp(appDir = app)
+  } else if (isFALSE(check_r_pkg(app)) & isTRUE(has_app_dot_r)) {
+      cli::cli_alert_success("Launching app with: shiny::shinyAppDir('{app_dot_r}')")
+      shiny::shinyAppDir(appDir = app)
   }
-
-  if (!is_pkg & is_app & has_app_dot_r) {
-        shiny::runApp(appDir = app)
-  }
-
 }
+
 

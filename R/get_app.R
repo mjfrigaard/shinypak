@@ -1,16 +1,42 @@
-#' Clone application from Shiny App-Packages
+#' Clone a Specific Branch of the moviesApp Repository and Optionally Open it
 #'
-#' @param app name of app
-#' @param open open app in new Posit Workbench session
-#' @param ... additional arguments passed to `gert::git_clone()`
+#' @description
+#' Clones a specified branch of the 'moviesApp' GitHub repository into the
+#' current working directory. It cleans the cloned directory by removing .git
+#' files, .DS_Store, and .Rbuildignore files, renames the R project file,
+#' and optionally opens it in a new RStudio session.
 #'
-#' @return shiny app (or app-package) branch
+#' @param app The name of the branch to be cloned as a character string. If
+#' not specified, defaults to "main".
+#' @param open A logical parameter, when set to TRUE, the function will attempt
+#' to open the new R project in a new RStudio session using
+#' `rstudioapi::openProject`. Defaults to `FALSE`.
 #'
-#' @export clone_app
+#' @return Invisible NULL. The function is called for its side effects.
+#'
+#'
+#'
+#' @section Details:
+#' If the directory for the branch already exists, it is deleted and re-cloned
+#' to ensure the latest version is present.
+#' After cloning, the function performs cleanup operations:
+#' - Deletes `.git` directory and files.
+#' - Removes `.DS_Store` files.
+#' - Deletes any `.Rbuildignore` files present.
+#' It then renames the R project file to match the name of the cloned branch
+#' and, if specified, opens the project in RStudio.
+#'
+#' @section Note:
+#' - The `rstudioapi::openProject` function requires RStudio to be installed
+#'   and will only work if R is running inside RStudio.
+#' - The working directory is temporarily changed during the function's
+#'   execution but is reset at the end.
+#'
+#' @export
 #'
 #' @examples
-#' # clone_app("02_movies-app")
-clone_app <- function(app = "main", open = TRUE) {
+#' # get_app("02_movies-app")
+get_app <- function(app = "main", open = FALSE) {
 
   # keep track
   original_dir <- getwd()

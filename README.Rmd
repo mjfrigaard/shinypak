@@ -53,8 +53,8 @@ list_apps()
 
 ## Clone an app
 
-```{r clone_app, eval=FALSE}
-clone_app("app name")
+```{r get_app, eval=FALSE}
+get_app("app name")
 ```
 
 ## Launch an app (or app package)
