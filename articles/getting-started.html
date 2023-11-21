@@ -93,9 +93,9 @@ which is also used by the git command line. Therefore gert will
 automatically pick up on https credentials that are safely stored in
 your OS keychain.</em>”</p>
 </blockquote>
-<div class="section level2">
-<h2 id="list-all-apps">List all apps<a class="anchor" aria-label="anchor" href="#list-all-apps"></a>
-</h2>
+<div class="section level3">
+<h3 id="list-all-apps">List all apps<a class="anchor" aria-label="anchor" href="#list-all-apps"></a>
+</h3>
 <p>The apps are stored in branches on the <code>moviesApp</code>
 repo:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -149,12 +149,28 @@ branches matching a particular chapter or topic:</p>
 <span><span class="co">#&gt; [7] "12g_tests-snapshots"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
+<h2 id="launch">Launch<a class="anchor" aria-label="anchor" href="#launch"></a>
 </h2>
+<p>To launch an app from the Shiny App-Packages book, just supply the
+name of the branch:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
+</h3>
 <p>The <code><a href="../reference/get_app.html">get_app()</a></code> function will download and open a
 specified branch in a new Posit Workbench session.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/get_app.gif" width="80%"></p>
+<div class="section level4">
+<h4 id="get-and-open">Get and open<a class="anchor" aria-label="anchor" href="#get-and-open"></a>
+</h4>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/get_app_open.gif" width="80%"></p>
+</div>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
