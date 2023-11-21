@@ -56,7 +56,7 @@ Let's start with one of the branches from the [early chapters](https://mjfrigaar
 launch_app(app = "02b_proj-app")
 ```
 
-```{r launch_app, echo=FALSE, out.width='80%', fig.align='center'}
+```{r launch_app, echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("../man/figures/launch_app.gif")
 ```
 
@@ -66,7 +66,7 @@ knitr::include_graphics("../man/figures/launch_app.gif")
 launch_app(app = "09b_inst-bslib")
 ```
 
-```{r launch_app_pkg, echo=FALSE, out.width='80%', fig.align='center'}
+```{r launch_app_pkg, echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("../man/figures/launch_app_pkg.gif")
 ```
 
@@ -105,7 +105,7 @@ check_r_pkg("09b_inst-bslib", verbose = TRUE)
 get_app(app = "14_tests-system")
 ```
 
-```{r get_app, echo=FALSE, out.width='80%', fig.align='center'}
+```{r get_app, echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("../man/figures/get_app.gif")
 ```
 
@@ -117,7 +117,7 @@ You can open the new app project by supplying the `open = TRUE` argument:
 get_app(app = "14_tests-system", open = TRUE)
 ```
 
-```{r get_app_open, echo=FALSE, out.width='80%', fig.align='center'}
+```{r get_app_open, echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("../man/figures/get_app_open.gif")
 ```
 
