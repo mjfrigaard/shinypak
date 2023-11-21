@@ -103,24 +103,24 @@ filtering based on regular expressions.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">list_apps</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 36 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 39 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    source branch_name        updated            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #BB0000;">NA</span>     main               2023-10-25 <span style="color: #949494;">15:12:48</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> origin 02_movies-app      2023-11-19 <span style="color: #949494;">22:23:38</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> origin 03_proj-app        2023-11-17 <span style="color: #949494;">22:50:17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> origin 04_description     2023-11-02 <span style="color: #949494;">20:35:02</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> origin 05_rproj           2023-11-02 <span style="color: #949494;">20:35:17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> origin 06a_create-package 2023-11-02 <span style="color: #949494;">20:35:34</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> origin 06b_devtools       2023-11-02 <span style="color: #949494;">20:35:52</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> origin 07_roxygen2        2023-11-17 <span style="color: #949494;">22:53:36</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> origin 08a_pkg-exports    2023-11-17 <span style="color: #949494;">22:54:17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> origin 08b_pkg-imports    2023-11-17 <span style="color: #949494;">22:54:52</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 26 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> origin 01_whole-app-game  2023-11-21 <span style="color: #949494;">18:53:52</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> origin 02a_movies-app     2023-11-19 <span style="color: #949494;">22:23:38</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> origin 02b_proj-app       2023-11-17 <span style="color: #949494;">22:50:17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> origin 03a_description    2023-11-02 <span style="color: #949494;">20:35:02</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> origin 03b_rproj          2023-11-02 <span style="color: #949494;">20:35:17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> origin 03c_create-package 2023-11-02 <span style="color: #949494;">20:35:34</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> origin 04_devtools        2023-11-02 <span style="color: #949494;">20:35:52</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> origin 05_roxygen2        2023-11-17 <span style="color: #949494;">22:53:36</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> origin 06a_pkg-exports    2023-11-17 <span style="color: #949494;">22:54:17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 29 more rows</span></span>
 <span class="r-in"><span><span class="fu">list_apps</span><span class="op">(</span>regex <span class="op">=</span> <span class="st">"tests"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "12a_tests-specs"     "12b_tests-fixtures"  "12c_tests-helpers"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "12d_tests-modules"   "12e_tests-system"    "12f_tests-mocks"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "12g_tests-snapshots"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "11_tests-specs"      "12a_tests-fixtures"  "12b_tests-helpers"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "12f_tests-mocks"     "12g_tests-snapshots" "13_tests-modules"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "14_tests-system"     "20_tests-snapshots"  "21_tests-mocks"     </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -100,53 +100,56 @@ your OS keychain.</em>”</p>
 repo:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;    source               branch_name             updated</span></span>
-<span><span class="co">#&gt; 1    &lt;NA&gt;                      main 2023-10-25 15:12:48</span></span>
-<span><span class="co">#&gt; 2  origin             02_movies-app 2023-11-19 22:23:38</span></span>
-<span><span class="co">#&gt; 3  origin               03_proj-app 2023-11-17 22:50:17</span></span>
-<span><span class="co">#&gt; 4  origin            04_description 2023-11-02 20:35:02</span></span>
-<span><span class="co">#&gt; 5  origin                  05_rproj 2023-11-02 20:35:17</span></span>
-<span><span class="co">#&gt; 6  origin        06a_create-package 2023-11-02 20:35:34</span></span>
-<span><span class="co">#&gt; 7  origin              06b_devtools 2023-11-02 20:35:52</span></span>
-<span><span class="co">#&gt; 8  origin               07_roxygen2 2023-11-17 22:53:36</span></span>
-<span><span class="co">#&gt; 9  origin           08a_pkg-exports 2023-11-17 22:54:17</span></span>
-<span><span class="co">#&gt; 10 origin           08b_pkg-imports 2023-11-17 22:54:52</span></span>
-<span><span class="co">#&gt; 11 origin                   09_data 2023-11-17 22:55:45</span></span>
-<span><span class="co">#&gt; 12 origin             10_launch-app 2023-11-17 22:56:49</span></span>
-<span><span class="co">#&gt; 13 origin              11a_inst-www 2023-11-17 22:57:48</span></span>
-<span><span class="co">#&gt; 14 origin            11b_inst-bslib 2023-11-21 17:14:32</span></span>
-<span><span class="co">#&gt; 15 origin              11c_inst-dev 2023-11-17 22:59:04</span></span>
-<span><span class="co">#&gt; 16 origin             11d_inst-prod 2023-11-18 12:51:27</span></span>
-<span><span class="co">#&gt; 17 origin           12a_tests-specs 2023-11-18 13:30:29</span></span>
-<span><span class="co">#&gt; 18 origin        12b_tests-fixtures 2023-11-18 13:31:06</span></span>
-<span><span class="co">#&gt; 19 origin         12c_tests-helpers 2023-11-18 13:31:53</span></span>
-<span><span class="co">#&gt; 20 origin         12d_tests-modules 2023-11-18 13:32:44</span></span>
-<span><span class="co">#&gt; 21 origin          12e_tests-system 2023-11-21 17:08:21</span></span>
-<span><span class="co">#&gt; 22 origin           12f_tests-mocks 2023-11-18 13:34:25</span></span>
-<span><span class="co">#&gt; 23 origin       12g_tests-snapshots 2023-11-18 13:35:09</span></span>
-<span><span class="co">#&gt; 24 origin                      HEAD 2023-10-25 15:12:48</span></span>
-<span><span class="co">#&gt; 25 origin                    fw_gap 2023-11-18 13:36:02</span></span>
-<span><span class="co">#&gt; 26 origin                    fw_lap 2023-11-10 20:35:13</span></span>
-<span><span class="co">#&gt; 27 origin                    fw_rap 2023-11-06 22:55:08</span></span>
-<span><span class="co">#&gt; 28 origin                      main 2023-10-25 15:12:48</span></span>
-<span><span class="co">#&gt; 29 origin   spec_topic-debugging-01 2023-11-18 13:39:47</span></span>
-<span><span class="co">#&gt; 30 origin   spec_topic-debugging-02 2023-11-18 13:40:34</span></span>
-<span><span class="co">#&gt; 31 origin   spec_topic-debugging-03 2023-11-18 13:41:07</span></span>
-<span><span class="co">#&gt; 32 origin   spec_topic-debugging-04 2023-11-18 13:41:46</span></span>
-<span><span class="co">#&gt; 33 origin   spec_topic-debugging-05 2023-11-18 13:42:23</span></span>
-<span><span class="co">#&gt; 34 origin spec_topic-reactiveValues 2023-11-18 13:44:24</span></span>
-<span><span class="co">#&gt; 35 origin   spec_topic-trace-matrix 2023-11-18 15:26:20</span></span>
-<span><span class="co">#&gt; 36 origin       spec_topic-userData 2023-11-18 15:06:19</span></span></code></pre></div>
+<span><span class="co">#&gt;    source         branch_name             updated</span></span>
+<span><span class="co">#&gt; 1    &lt;NA&gt;                main 2023-10-25 15:12:48</span></span>
+<span><span class="co">#&gt; 2  origin   01_whole-app-game 2023-11-21 18:53:52</span></span>
+<span><span class="co">#&gt; 3  origin      02a_movies-app 2023-11-19 22:23:38</span></span>
+<span><span class="co">#&gt; 4  origin        02b_proj-app 2023-11-17 22:50:17</span></span>
+<span><span class="co">#&gt; 5  origin     03a_description 2023-11-02 20:35:02</span></span>
+<span><span class="co">#&gt; 6  origin           03b_rproj 2023-11-02 20:35:17</span></span>
+<span><span class="co">#&gt; 7  origin  03c_create-package 2023-11-02 20:35:34</span></span>
+<span><span class="co">#&gt; 8  origin         04_devtools 2023-11-02 20:35:52</span></span>
+<span><span class="co">#&gt; 9  origin         05_roxygen2 2023-11-17 22:53:36</span></span>
+<span><span class="co">#&gt; 10 origin     06a_pkg-exports 2023-11-17 22:54:17</span></span>
+<span><span class="co">#&gt; 11 origin     06b_pkg-imports 2023-11-17 22:54:52</span></span>
+<span><span class="co">#&gt; 12 origin             07_data 2023-11-17 22:55:45</span></span>
+<span><span class="co">#&gt; 13 origin       08_launch-app 2023-11-17 22:56:49</span></span>
+<span><span class="co">#&gt; 14 origin        09a_inst-www 2023-11-17 22:57:48</span></span>
+<span><span class="co">#&gt; 15 origin      09b_inst-bslib 2023-11-21 17:14:32</span></span>
+<span><span class="co">#&gt; 16 origin        09c_inst-dev 2023-11-17 22:59:04</span></span>
+<span><span class="co">#&gt; 17 origin       09d_inst-prod 2023-11-18 12:51:27</span></span>
+<span><span class="co">#&gt; 18 origin      11_tests-specs 2023-11-18 13:30:29</span></span>
+<span><span class="co">#&gt; 19 origin  12a_tests-fixtures 2023-11-18 13:31:06</span></span>
+<span><span class="co">#&gt; 20 origin   12b_tests-helpers 2023-11-18 13:31:53</span></span>
+<span><span class="co">#&gt; 21 origin     12f_tests-mocks 2023-11-18 13:34:25</span></span>
+<span><span class="co">#&gt; 22 origin 12g_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 23 origin    13_tests-modules 2023-11-18 13:32:44</span></span>
+<span><span class="co">#&gt; 24 origin     14_tests-system 2023-11-21 17:08:21</span></span>
+<span><span class="co">#&gt; 25 origin            15_golem 2023-11-18 13:36:02</span></span>
+<span><span class="co">#&gt; 26 origin       16_leprechaun 2023-11-10 20:35:13</span></span>
+<span><span class="co">#&gt; 27 origin            17_rhino 2023-11-06 22:55:08</span></span>
+<span><span class="co">#&gt; 28 origin       18a_debugging 2023-11-18 13:39:47</span></span>
+<span><span class="co">#&gt; 29 origin       18b_debugging 2023-11-18 13:40:34</span></span>
+<span><span class="co">#&gt; 30 origin       18c_debugging 2023-11-18 13:41:07</span></span>
+<span><span class="co">#&gt; 31 origin       18d_debugging 2023-11-18 13:41:46</span></span>
+<span><span class="co">#&gt; 32 origin       18e_debugging 2023-11-18 13:42:23</span></span>
+<span><span class="co">#&gt; 33 origin 19a_reactive-values 2023-11-18 13:44:24</span></span>
+<span><span class="co">#&gt; 34 origin       19b_user-data 2023-11-18 15:06:19</span></span>
+<span><span class="co">#&gt; 35 origin  20_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 36 origin      21_tests-mocks 2023-11-18 13:34:25</span></span>
+<span><span class="co">#&gt; 37 origin    22a_trace-matrix 2023-11-18 15:26:20</span></span>
+<span><span class="co">#&gt; 38 origin                HEAD 2023-10-25 15:12:48</span></span>
+<span><span class="co">#&gt; 39 origin                main 2023-10-25 15:12:48</span></span></code></pre></div>
 <p>You can also specify a <code>regex</code> to return a vector of
 branches matching a particular chapter or topic:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"11"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "11a_inst-www"   "11b_inst-bslib" "11c_inst-dev"   "11d_inst-prod"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "11_tests-specs"</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"tests"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "12a_tests-specs"     "12b_tests-fixtures"  "12c_tests-helpers"  </span></span>
-<span><span class="co">#&gt; [4] "12d_tests-modules"   "12e_tests-system"    "12f_tests-mocks"    </span></span>
-<span><span class="co">#&gt; [7] "12g_tests-snapshots"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "11_tests-specs"      "12a_tests-fixtures"  "12b_tests-helpers"  </span></span>
+<span><span class="co">#&gt; [4] "12f_tests-mocks"     "12g_tests-snapshots" "13_tests-modules"   </span></span>
+<span><span class="co">#&gt; [7] "14_tests-system"     "20_tests-snapshots"  "21_tests-mocks"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="launch">Launch<a class="anchor" aria-label="anchor" href="#launch"></a>
@@ -158,47 +161,53 @@ book</a>, you can simply supply the name of the branch:</p>
 <p>Let’s start with one of the branches from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders" class="external-link">early
 chapters</a> (not quite an app-package yet):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"03_proj-app"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="../reference/figures/launch_app.gif" width="80%"></p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"02b_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/launch_app.gif" width="80%" style="display: block; margin: auto;"></p>
 <p><code><a href="../reference/launch_app.html">launch_app()</a></code> will automatically download the application
-files into a folder in the current working directory:</p>
-<p>If the branch is storing an app-package, <code><a href="../reference/launch_app.html">launch_app()</a></code>
-loads the package and then launches the application:</p>
+files into a folder in the current working directory. If the branch is
+storing an app-package, <code><a href="../reference/launch_app.html">launch_app()</a></code> loads the package and
+then launches the application:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"11b_inst-bslib"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch_app.html">launch_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"09b_inst-bslib"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/launch_app_pkg.gif" width="80%" style="display: block; margin: auto;"></p>
 <div class="section level3">
 <h3 id="helper">Helper<a class="anchor" aria-label="anchor" href="#helper"></a>
 </h3>
 <p>The <code><a href="../reference/check_r_pkg.html">check_r_pkg()</a></code> function is useful for determining if
 a directory contains an R package:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/check_r_pkg.html">check_r_pkg</a></span><span class="op">(</span><span class="st">"03_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/check_r_pkg.html">check_r_pkg</a></span><span class="op">(</span><span class="st">"02b_proj-app"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>#&gt; [1] FALSE</span></code></pre></div>
 <p>If <code>verbose</code> is set to <code>TRUE</code>, details are
 provided on what is being checked:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/check_r_pkg.html">check_r_pkg</a></span><span class="op">(</span><span class="st">"11b_inst-bslib"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/check_r_pkg.html">check_r_pkg</a></span><span class="op">(</span><span class="st">"09b_inst-bslib"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>#&gt; ℹ Checking DESCRIPTION for package fields</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ Package, Version, License, Description, Title, Author, and Maintainer found!</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>#&gt; ℹ Checking .Rroj for project build fields</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ '11b_inst-bslib/' is an R package</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>#&gt; ✔ '09b_inst-bslib/' is an R package</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
 </h3>
-<p>The <code><a href="../reference/get_app.html">get_app()</a></code> function will download and open a
-specified branch in a new Posit Workbench session.</p>
+<p><code><a href="../reference/launch_app.html">launch_app()</a></code> calls the <code><a href="../reference/get_app.html">get_app()</a></code> function,
+which will only download the specified branch into the current working
+directory.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="../reference/figures/get_app.gif" width="80%"></p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"14_tests-system"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/get_app.gif" width="80%" style="display: block; margin: auto;"></p>
 <div class="section level4">
 <h4 id="get-and-open">Get and open<a class="anchor" aria-label="anchor" href="#get-and-open"></a>
 </h4>
+<p>You can open the new app project by supplying the
+<code>open = TRUE</code> argument:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"12e_tests-system"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="../reference/figures/get_app_open.gif" width="80%"></p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"14_tests-system"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/get_app_open.gif" width="80%" style="display: block; margin: auto;"></p>
+<p>If the app is already downloaded, the files are updated with the
+latest commit to the branch.</p>
 </div>
 </div>
 </div>
