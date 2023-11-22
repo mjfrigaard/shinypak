@@ -38,3 +38,4 @@ check_rproj_file <- function(file, verbose = FALSE) {
     }
   }
 }
+system.file("project", "project.Rproj", package = "shinyap")

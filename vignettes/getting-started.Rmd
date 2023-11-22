@@ -122,3 +122,15 @@ knitr::include_graphics("../man/figures/get_app_open.gif")
 ```
 
 If the app is already downloaded, the files are updated with the latest commit to the branch. 
+
+## Lookup Table 
+
+`topic_lookup` connects `topics`, `chapters`, and `branches`:
+
+```{r topic_lookup, eval=FALSE}
+topic_lookup
+```
+
+```{r, echo=FALSE}
+knitr::kable(topic_lookup)
+```

@@ -7,7 +7,7 @@
 #'
 #' @return data with new columns
 #'
-#' @keywords internal
+#' @export
 #'
 # #examples
 # d <- data.frame(id = 1:3, x = c("m-123", "f-455", "f-123"))

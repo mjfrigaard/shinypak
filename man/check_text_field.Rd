@@ -4,7 +4,7 @@
 \alias{check_text_field}
 \title{Check for fields in text file}
 \usage{
-check_text_field(file, field)
+check_text_field(file, field, verbose = FALSE)
 }
 \arguments{
 \item{file}{path to plain text file}

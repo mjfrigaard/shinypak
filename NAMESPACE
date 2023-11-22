@@ -3,6 +3,8 @@
 export(check_desc_file)
 export(check_r_pkg)
 export(check_rproj_file)
+export(check_text_field)
 export(get_app)
 export(launch_app)
 export(list_apps)
+export(sep_cols)

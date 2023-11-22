@@ -51,7 +51,7 @@ list_apps <- function(regex = NULL) {
 
   branch_vars <- sep_cols(all_branches,
                           col = "name",
-                          into = c("source", "branch_name"),
+                          into = c("source", "branch"),
                           sep = "/")
 
   # return to original working directory
@@ -61,18 +61,22 @@ list_apps <- function(regex = NULL) {
   unlink(tmp_git_dir, force = TRUE, recursive = TRUE)
 
   # subset the branches columns
-  branches_cols <- branch_vars[c("source", "branch_name", "updated")]
+  branches_cols <- branch_vars[c("branch", "updated")]
 
   # remove regex
   if (!is.null(regex)) {
 
-      branch_set <- grepl(regex, branches_cols[["branch_name"]])
-      branches_cols <- branches_cols[["branch_name"]][branch_set]
+      branch_set <- grep(regex, branches_cols[["branch"]], value = TRUE)
+      branches_cols <- subset(x = branches_cols,
+                              branch %in% branch_set,
+                              select = c(branch, updated))
 
   }
 
   # return data
+  colnames(branches_cols) <- c("branch", "last_updated")
   return(branches_cols)
 
 
 }
+
