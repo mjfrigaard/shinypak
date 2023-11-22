@@ -82,12 +82,12 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">check_rproj_file</span><span class="op">(</span></span></span>
 <span class="r-in"><span>     <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"project"</span>, <span class="st">"project.Rproj"</span>,</span></span>
 <span class="r-in"><span>                 package <span class="op">=</span> <span class="st">"shinyap"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span>  doesn't exist!</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>file("") only supports open = "w+" and open = "w+b": using the former</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
 <span class="r-in"><span><span class="fu">check_rproj_file</span><span class="op">(</span></span></span>
 <span class="r-in"><span>     <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"pkg"</span>, <span class="st">"pkg.Rproj"</span>,</span></span>
 <span class="r-in"><span>                 package <span class="op">=</span> <span class="st">"shinyap"</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span>  doesn't exist!</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>file("") only supports open = "w+" and open = "w+b": using the former</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Checking .Rroj for project build fields</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> BuildType, PackageUseDevtools, and PackageInstallArgs not in .Rproj!</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>

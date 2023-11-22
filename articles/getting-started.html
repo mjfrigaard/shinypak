@@ -100,56 +100,64 @@ your OS keychain.</em>”</p>
 repo:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;    source         branch_name             updated</span></span>
-<span><span class="co">#&gt; 1    &lt;NA&gt;                main 2023-10-25 15:12:48</span></span>
-<span><span class="co">#&gt; 2  origin   01_whole-app-game 2023-11-21 18:53:52</span></span>
-<span><span class="co">#&gt; 3  origin      02a_movies-app 2023-11-19 22:23:38</span></span>
-<span><span class="co">#&gt; 4  origin        02b_proj-app 2023-11-17 22:50:17</span></span>
-<span><span class="co">#&gt; 5  origin     03a_description 2023-11-02 20:35:02</span></span>
-<span><span class="co">#&gt; 6  origin           03b_rproj 2023-11-02 20:35:17</span></span>
-<span><span class="co">#&gt; 7  origin  03c_create-package 2023-11-02 20:35:34</span></span>
-<span><span class="co">#&gt; 8  origin         04_devtools 2023-11-02 20:35:52</span></span>
-<span><span class="co">#&gt; 9  origin         05_roxygen2 2023-11-17 22:53:36</span></span>
-<span><span class="co">#&gt; 10 origin     06a_pkg-exports 2023-11-17 22:54:17</span></span>
-<span><span class="co">#&gt; 11 origin     06b_pkg-imports 2023-11-17 22:54:52</span></span>
-<span><span class="co">#&gt; 12 origin             07_data 2023-11-17 22:55:45</span></span>
-<span><span class="co">#&gt; 13 origin       08_launch-app 2023-11-17 22:56:49</span></span>
-<span><span class="co">#&gt; 14 origin        09a_inst-www 2023-11-17 22:57:48</span></span>
-<span><span class="co">#&gt; 15 origin      09b_inst-bslib 2023-11-21 17:14:32</span></span>
-<span><span class="co">#&gt; 16 origin        09c_inst-dev 2023-11-17 22:59:04</span></span>
-<span><span class="co">#&gt; 17 origin       09d_inst-prod 2023-11-18 12:51:27</span></span>
-<span><span class="co">#&gt; 18 origin      11_tests-specs 2023-11-18 13:30:29</span></span>
-<span><span class="co">#&gt; 19 origin  12a_tests-fixtures 2023-11-18 13:31:06</span></span>
-<span><span class="co">#&gt; 20 origin   12b_tests-helpers 2023-11-18 13:31:53</span></span>
-<span><span class="co">#&gt; 21 origin     12f_tests-mocks 2023-11-18 13:34:25</span></span>
-<span><span class="co">#&gt; 22 origin 12g_tests-snapshots 2023-11-18 13:35:09</span></span>
-<span><span class="co">#&gt; 23 origin    13_tests-modules 2023-11-18 13:32:44</span></span>
-<span><span class="co">#&gt; 24 origin     14_tests-system 2023-11-21 17:08:21</span></span>
-<span><span class="co">#&gt; 25 origin            15_golem 2023-11-18 13:36:02</span></span>
-<span><span class="co">#&gt; 26 origin       16_leprechaun 2023-11-10 20:35:13</span></span>
-<span><span class="co">#&gt; 27 origin            17_rhino 2023-11-06 22:55:08</span></span>
-<span><span class="co">#&gt; 28 origin       18a_debugging 2023-11-18 13:39:47</span></span>
-<span><span class="co">#&gt; 29 origin       18b_debugging 2023-11-18 13:40:34</span></span>
-<span><span class="co">#&gt; 30 origin       18c_debugging 2023-11-18 13:41:07</span></span>
-<span><span class="co">#&gt; 31 origin       18d_debugging 2023-11-18 13:41:46</span></span>
-<span><span class="co">#&gt; 32 origin       18e_debugging 2023-11-18 13:42:23</span></span>
-<span><span class="co">#&gt; 33 origin 19a_reactive-values 2023-11-18 13:44:24</span></span>
-<span><span class="co">#&gt; 34 origin       19b_user-data 2023-11-18 15:06:19</span></span>
-<span><span class="co">#&gt; 35 origin  20_tests-snapshots 2023-11-18 13:35:09</span></span>
-<span><span class="co">#&gt; 36 origin      21_tests-mocks 2023-11-18 13:34:25</span></span>
-<span><span class="co">#&gt; 37 origin    22a_trace-matrix 2023-11-18 15:26:20</span></span>
-<span><span class="co">#&gt; 38 origin                HEAD 2023-10-25 15:12:48</span></span>
-<span><span class="co">#&gt; 39 origin                main 2023-10-25 15:12:48</span></span></code></pre></div>
+<span><span class="co">#&gt;                 branch        last_updated</span></span>
+<span><span class="co">#&gt; 1                 main 2023-11-22 07:17:49</span></span>
+<span><span class="co">#&gt; 2    01_whole-app-game 2023-11-22 07:23:27</span></span>
+<span><span class="co">#&gt; 3       02a_movies-app 2023-11-22 07:24:21</span></span>
+<span><span class="co">#&gt; 4         02b_proj-app 2023-11-22 07:26:46</span></span>
+<span><span class="co">#&gt; 5      03a_description 2023-11-22 07:28:17</span></span>
+<span><span class="co">#&gt; 6            03b_rproj 2023-11-02 20:35:17</span></span>
+<span><span class="co">#&gt; 7   03c_create-package 2023-11-02 20:35:34</span></span>
+<span><span class="co">#&gt; 8          04_devtools 2023-11-02 20:35:52</span></span>
+<span><span class="co">#&gt; 9          05_roxygen2 2023-11-17 22:53:36</span></span>
+<span><span class="co">#&gt; 10     06a_pkg-exports 2023-11-17 22:54:17</span></span>
+<span><span class="co">#&gt; 11     06b_pkg-imports 2023-11-17 22:54:52</span></span>
+<span><span class="co">#&gt; 12             07_data 2023-11-17 22:55:45</span></span>
+<span><span class="co">#&gt; 13       08_launch-app 2023-11-17 22:56:49</span></span>
+<span><span class="co">#&gt; 14        09a_inst-www 2023-11-17 22:57:48</span></span>
+<span><span class="co">#&gt; 15      09b_inst-bslib 2023-11-21 17:14:32</span></span>
+<span><span class="co">#&gt; 16        09c_inst-dev 2023-11-17 22:59:04</span></span>
+<span><span class="co">#&gt; 17       09d_inst-prod 2023-11-18 12:51:27</span></span>
+<span><span class="co">#&gt; 18      11_tests-specs 2023-11-18 13:30:29</span></span>
+<span><span class="co">#&gt; 19  12a_tests-fixtures 2023-11-18 13:31:06</span></span>
+<span><span class="co">#&gt; 20   12b_tests-helpers 2023-11-18 13:31:53</span></span>
+<span><span class="co">#&gt; 21     12f_tests-mocks 2023-11-18 13:34:25</span></span>
+<span><span class="co">#&gt; 22 12g_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 23    13_tests-modules 2023-11-18 13:32:44</span></span>
+<span><span class="co">#&gt; 24     14_tests-system 2023-11-21 17:08:21</span></span>
+<span><span class="co">#&gt; 25            15_golem 2023-11-18 13:36:02</span></span>
+<span><span class="co">#&gt; 26       16_leprechaun 2023-11-10 20:35:13</span></span>
+<span><span class="co">#&gt; 27            17_rhino 2023-11-22 06:24:11</span></span>
+<span><span class="co">#&gt; 28       18a_debugging 2023-11-18 13:39:47</span></span>
+<span><span class="co">#&gt; 29       18b_debugging 2023-11-18 13:40:34</span></span>
+<span><span class="co">#&gt; 30       18c_debugging 2023-11-18 13:41:07</span></span>
+<span><span class="co">#&gt; 31       18d_debugging 2023-11-18 13:41:46</span></span>
+<span><span class="co">#&gt; 32       18e_debugging 2023-11-18 13:42:23</span></span>
+<span><span class="co">#&gt; 33 19a_reactive-values 2023-11-18 13:44:24</span></span>
+<span><span class="co">#&gt; 34       19b_user-data 2023-11-18 15:06:19</span></span>
+<span><span class="co">#&gt; 35  20_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 36      21_tests-mocks 2023-11-18 13:34:25</span></span>
+<span><span class="co">#&gt; 37    22a_trace-matrix 2023-11-18 15:26:20</span></span>
+<span><span class="co">#&gt; 38                HEAD 2023-11-22 07:17:49</span></span>
+<span><span class="co">#&gt; 39                main 2023-11-22 07:17:49</span></span></code></pre></div>
 <p>You can also specify a <code>regex</code> to return a vector of
 branches matching a particular chapter or topic:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"11"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "11_tests-specs"</span></span></code></pre></div>
+<span><span class="co">#&gt;            branch        last_updated</span></span>
+<span><span class="co">#&gt; 18 11_tests-specs 2023-11-18 13:30:29</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"tests"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "11_tests-specs"      "12a_tests-fixtures"  "12b_tests-helpers"  </span></span>
-<span><span class="co">#&gt; [4] "12f_tests-mocks"     "12g_tests-snapshots" "13_tests-modules"   </span></span>
-<span><span class="co">#&gt; [7] "14_tests-system"     "20_tests-snapshots"  "21_tests-mocks"</span></span></code></pre></div>
+<span><span class="co">#&gt;                 branch        last_updated</span></span>
+<span><span class="co">#&gt; 18      11_tests-specs 2023-11-18 13:30:29</span></span>
+<span><span class="co">#&gt; 19  12a_tests-fixtures 2023-11-18 13:31:06</span></span>
+<span><span class="co">#&gt; 20   12b_tests-helpers 2023-11-18 13:31:53</span></span>
+<span><span class="co">#&gt; 21     12f_tests-mocks 2023-11-18 13:34:25</span></span>
+<span><span class="co">#&gt; 22 12g_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 23    13_tests-modules 2023-11-18 13:32:44</span></span>
+<span><span class="co">#&gt; 24     14_tests-system 2023-11-21 17:08:21</span></span>
+<span><span class="co">#&gt; 35  20_tests-snapshots 2023-11-18 13:35:09</span></span>
+<span><span class="co">#&gt; 36      21_tests-mocks 2023-11-18 13:34:25</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="launch">Launch<a class="anchor" aria-label="anchor" href="#launch"></a>
@@ -209,6 +217,258 @@ directory.</p>
 <p>If the app is already downloaded, the files are updated with the
 latest commit to the branch.</p>
 </div>
+</div>
+<div class="section level3">
+<h3 id="lookup-table">Lookup Table<a class="anchor" aria-label="anchor" href="#lookup-table"></a>
+</h3>
+<p><code>topic_lookup</code> connects <code>topics</code>,
+<code>chapters</code>, and <code>branches</code>:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">topic_lookup</span></span></code></pre></div>
+<table class="table">
+<thead><tr class="header">
+<th align="left">part</th>
+<th align="left">chapter</th>
+<th align="left">branch</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">intro</td>
+<td align="left">shiny</td>
+<td align="left">main</td>
+</tr>
+<tr class="even">
+<td align="left">intro</td>
+<td align="left">whole_game</td>
+<td align="left">01_whole-app-game</td>
+</tr>
+<tr class="odd">
+<td align="left">intro</td>
+<td align="left">shiny</td>
+<td align="left">02a_movies-app</td>
+</tr>
+<tr class="even">
+<td align="left">intro</td>
+<td align="left">shiny</td>
+<td align="left">02b_proj-app</td>
+</tr>
+<tr class="odd">
+<td align="left">intro</td>
+<td align="left">packages</td>
+<td align="left">03a_description</td>
+</tr>
+<tr class="even">
+<td align="left">intro</td>
+<td align="left">packages</td>
+<td align="left">03b_rproj</td>
+</tr>
+<tr class="odd">
+<td align="left">intro</td>
+<td align="left">packages</td>
+<td align="left">03c_create-package</td>
+</tr>
+<tr class="even">
+<td align="left">intro</td>
+<td align="left">development</td>
+<td align="left">04_devtools</td>
+</tr>
+<tr class="odd">
+<td align="left">app_packages</td>
+<td align="left">document</td>
+<td align="left">05_roxygen2</td>
+</tr>
+<tr class="even">
+<td align="left">app_packages</td>
+<td align="left">dependencies</td>
+<td align="left">06a_pkg-exports</td>
+</tr>
+<tr class="odd">
+<td align="left">app_packages</td>
+<td align="left">dependencies</td>
+<td align="left">06b_pkg-imports</td>
+</tr>
+<tr class="even">
+<td align="left">app_packages</td>
+<td align="left">data</td>
+<td align="left">07_data</td>
+</tr>
+<tr class="odd">
+<td align="left">app_packages</td>
+<td align="left">launch</td>
+<td align="left">08_launch-app</td>
+</tr>
+<tr class="even">
+<td align="left">app_packages</td>
+<td align="left">external</td>
+<td align="left">09a_inst-www</td>
+</tr>
+<tr class="odd">
+<td align="left">app_packages</td>
+<td align="left">external</td>
+<td align="left">09b_inst-bslib</td>
+</tr>
+<tr class="even">
+<td align="left">app_packages</td>
+<td align="left">external</td>
+<td align="left">09c_inst-dev</td>
+</tr>
+<tr class="odd">
+<td align="left">app_packages</td>
+<td align="left">external</td>
+<td align="left">09d_inst-prod</td>
+</tr>
+<tr class="even">
+<td align="left">tests</td>
+<td align="left">test_suite</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">tests</td>
+<td align="left">test_specs</td>
+<td align="left">11_tests-specs</td>
+</tr>
+<tr class="even">
+<td align="left">tests</td>
+<td align="left">test_tools</td>
+<td align="left">12a_tests-fixtures</td>
+</tr>
+<tr class="odd">
+<td align="left">tests</td>
+<td align="left">test_tools</td>
+<td align="left">12b_tests-helpers</td>
+</tr>
+<tr class="even">
+<td align="left">tests</td>
+<td align="left">test_modules</td>
+<td align="left">13_tests-modules</td>
+</tr>
+<tr class="odd">
+<td align="left">tests</td>
+<td align="left">test_system</td>
+<td align="left">14_tests-system</td>
+</tr>
+<tr class="even">
+<td align="left">frameworks</td>
+<td align="left">golem</td>
+<td align="left">15_golem</td>
+</tr>
+<tr class="odd">
+<td align="left">frameworks</td>
+<td align="left">leprechaun</td>
+<td align="left">16_leprechaun</td>
+</tr>
+<tr class="even">
+<td align="left">frameworks</td>
+<td align="left">rhino</td>
+<td align="left">17_rhino</td>
+</tr>
+<tr class="odd">
+<td align="left">deploy</td>
+<td align="left">docker</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">deploy</td>
+<td align="left">cicd</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">deploy</td>
+<td align="left">code_tools</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">special_topics</td>
+<td align="left">debugging</td>
+<td align="left">18a_debugging</td>
+</tr>
+<tr class="odd">
+<td align="left">special_topics</td>
+<td align="left">debugging</td>
+<td align="left">18b_debugging</td>
+</tr>
+<tr class="even">
+<td align="left">special_topics</td>
+<td align="left">debugging</td>
+<td align="left">18c_debugging</td>
+</tr>
+<tr class="odd">
+<td align="left">special_topics</td>
+<td align="left">debugging</td>
+<td align="left">18d_debugging</td>
+</tr>
+<tr class="even">
+<td align="left">special_topics</td>
+<td align="left">debugging</td>
+<td align="left">18e_debugging</td>
+</tr>
+<tr class="odd">
+<td align="left">special_topics</td>
+<td align="left">values_vs_data</td>
+<td align="left">19a_reactive-values</td>
+</tr>
+<tr class="even">
+<td align="left">special_topics</td>
+<td align="left">values_vs_data</td>
+<td align="left">19b_user-data</td>
+</tr>
+<tr class="odd">
+<td align="left">special_topics</td>
+<td align="left">test_snapshots</td>
+<td align="left">20_tests-snapshots</td>
+</tr>
+<tr class="even">
+<td align="left">special_topics</td>
+<td align="left">test_mocks</td>
+<td align="left">21_tests-mocks</td>
+</tr>
+<tr class="odd">
+<td align="left">special_topics</td>
+<td align="left">NA</td>
+<td align="left">22a_trace-matrix</td>
+</tr>
+<tr class="even">
+<td align="left">special_topics</td>
+<td align="left">css</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">special_topics</td>
+<td align="left">js</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">appendices</td>
+<td align="left">glossary</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">appendices</td>
+<td align="left">github</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">appendices</td>
+<td align="left">bdd</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">appendices</td>
+<td align="left">dependency_trees</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">appendices</td>
+<td align="left">create</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">appendices</td>
+<td align="left">comparisons</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
