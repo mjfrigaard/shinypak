@@ -1,8 +1,8 @@
-#' Check `DESCRIPTION` File for Required Fields
+#' Check `DESCRIPTION` File for Package Fields
 #'
+#' @description
 #' This function ensures that a `DESCRIPTION` file contains all of the necessary
-#' fields for an R package. It operates verbosely by default, providing alerts
-#' about the checking process.
+#' fields for an R package []()
 #'
 #' @param file A character string specifying the path to the `DESCRIPTION` file.
 #' @param verbose A logical parameter; if set to TRUE, detailed messages will
@@ -14,10 +14,13 @@
 #' @export
 #'
 #' @examples
-#' check_desc_file(
+#' is_pkg_description(
 #'      system.file("pkg", "DESCRIPTION",
 #'                  package = "shinyap"))
-check_desc_file <- function(file, verbose = TRUE) {
+#' is_pkg_description(
+#'      system.file("pkg", "DESCRIPTION",
+#'                  package = "shinyap"), verbose = TRUE)
+is_pkg_description <- function(file, verbose = FALSE) {
   fields <- c(
     "Package", "Version", "License",
     "Description", "Title", "Author",

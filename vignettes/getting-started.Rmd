@@ -47,23 +47,23 @@ list_apps("tests")
 To launch an app from the [Shiny App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/), you can simply supply the name of the branch:
 
 ```{r , eval=FALSE}
-launch_app(app = "<branch>")
+launch(app = "<branch>")
 ```
 
 Let's start with one of the branches from the [early chapters](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders) (not quite an app-package yet):
 
 ```{r , eval=FALSE}
-launch_app(app = "02b_proj-app")
+launch(app = "02b_proj-app")
 ```
 
-```{r launch_app, echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics("../man/figures/launch_app.gif")
+```{r launch, echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics("../man/figures/launch.gif")
 ```
 
-`launch_app()` will automatically download the application files into a folder in the current working directory. If the branch is storing an app-package, `launch_app()` loads the package and then launches the application:
+`launch()` will automatically download the application files into a folder in the current working directory. If the branch is storing an app-package, `launch()` loads the package and then launches the application:
 
 ```{r , eval=FALSE}
-launch_app(app = "09b_inst-bslib")
+launch(app = "09b_inst-bslib")
 ```
 
 ```{r launch_app_pkg, echo=FALSE, out.width='100%', fig.align='center'}
@@ -72,10 +72,10 @@ knitr::include_graphics("../man/figures/launch_app_pkg.gif")
 
 ## Helper
 
-The `check_r_pkg()` function is useful for determining if a directory contains an R package: 
+The `is_r_package()` function is useful for determining if a directory contains an R package: 
 
 ```{r , eval=FALSE}
-check_r_pkg("02b_proj-app")
+is_r_package("02b_proj-app")
 ```
 
 ```{verbatim}
@@ -85,7 +85,7 @@ check_r_pkg("02b_proj-app")
 If `verbose` is set to `TRUE`, details are provided on what is being checked: 
 
 ```{r , eval=FALSE}
-check_r_pkg("09b_inst-bslib", verbose = TRUE)
+is_r_package("09b_inst-bslib", verbose = TRUE)
 ```
 
 ```{verbatim}
@@ -99,7 +99,7 @@ check_r_pkg("09b_inst-bslib", verbose = TRUE)
 
 ## Get
 
-`launch_app()` calls the `get_app()` function, which will only download the specified branch into the current working directory. 
+`launch()` calls the `get_app()` function, which will only download the specified branch into the current working directory. 
 
 ```{r , eval=FALSE}
 get_app(app = "14_tests-system")

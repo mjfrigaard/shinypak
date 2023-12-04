@@ -14,19 +14,19 @@
 #' @export
 #'
 #' @section Details:
-#' This function wraps around `check_desc_file` and `check_rproj_file`
+#' This function wraps around `is_pkg_description` and `is_pkg_rproj`
 #' functions to check both the `DESCRIPTION` and `.Rproj` files. If `verbose`
 #' is `TRUE`, it will use `cli` package functions to alert the user about the
 #' checks being performed and their results.
 #'
 #' @examples
-#' check_r_pkg(
+#' is_r_package(
 #'      system.file("pkg", package = "shinyap"),
 #'      verbose = TRUE)
-#' check_r_pkg(
+#' is_r_package(
 #'      system.file("app", package = "shinyap"),
 #'      verbose = TRUE)
-check_r_pkg <- function(path, verbose = FALSE) {
+is_r_package <- function(path, verbose = FALSE) {
 
   desc <- list.files(
     path = path, "DESCRIPTION$",
@@ -38,9 +38,9 @@ check_r_pkg <- function(path, verbose = FALSE) {
     full.names = TRUE
   )
 
-  is_pkg_desc <- check_desc_file(desc, verbose = verbose)
+  is_pkg_desc <- is_pkg_description(desc, verbose = verbose)
 
-  is_pkg_rproj <- check_rproj_file(rproj, verbose = verbose)
+  is_pkg_rproj <- is_pkg_rproj(rproj, verbose = verbose)
 
   if (verbose) {
     if (isTRUE(is_pkg_desc) & isTRUE(is_pkg_rproj)) {
@@ -55,7 +55,7 @@ check_r_pkg <- function(path, verbose = FALSE) {
       return(FALSE)
     } else {
       desc_msg <- paste0(path, "DESCRIPTION", collapse = "/")
-      cli::cli_alert_danger("'{desc}' & '{rproj}' are not configured as an R package")
+      cli::cli_alert_danger("'{path}' is not an R package")
       return(FALSE)
     }
   } else {

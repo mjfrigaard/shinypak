@@ -7,9 +7,9 @@
 #' @export
 #'
 #' @examples
-#' # launch_app("02_movies-app")
-#' # launch_app("07_roxygen2")
-launch_app <- function(app) {
+#' # launch("02_movies-app")
+#' # launch("07_roxygen2")
+launch <- function(app) {
 
   if (!dir.exists(app)) {
     cli::cli_progress_message("cloning {app} from 'moviesApp'")
@@ -27,14 +27,14 @@ launch_app <- function(app) {
                              x = app_dot_r))
 
   # launch app-package (load first)
-  if (isTRUE(check_r_pkg(app)) & isTRUE(has_app_dot_r)) {
+  if (isTRUE(is_r_package(app)) & isTRUE(has_app_dot_r)) {
       pkgload::load_all(path = app,
         helpers = FALSE,
         attach_testthat = FALSE)
       withr::local_options(list(shiny.autoload.r = FALSE))
       cli::cli_alert_success("Launching app with shiny::runApp('{app}')")
       shiny::runApp(appDir = app)
-  } else if (isFALSE(check_r_pkg(app)) & isTRUE(has_app_dot_r)) {
+  } else if (isFALSE(is_r_package(app)) & isTRUE(has_app_dot_r)) {
       cli::cli_alert_success("Launching app with: shiny::shinyAppDir('{app_dot_r}')")
       shiny::shinyAppDir(appDir = app)
   }

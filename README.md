@@ -83,10 +83,10 @@ list_apps()
 Launch an application from any section in the book using:
 
 ``` r
-launch_app(app = "02b_proj-app")
+launch(app = "02b_proj-app")
 ```
 
-<img src="man/figures/launch_app.gif" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/launch.gif" width="100%" style="display: block; margin: auto;" />
 
 [^1]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)

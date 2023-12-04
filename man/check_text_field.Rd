@@ -17,3 +17,9 @@ logical
 \description{
 Check for fields in text file
 }
+\examples{
+check_text_field("Package: shinyap \n Title: Getting your app into an R package",
+"Package")
+check_text_field("Package: shinyap \n Title: Getting your app into an R package",
+"Package", verbose = TRUE)
+}

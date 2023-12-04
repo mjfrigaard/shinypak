@@ -1,4 +1,4 @@
-#' Check .Rproj File for Required Fields
+#' Check `.Rproj` File for Package Fields
 #'
 #' @param file character string specifying the path to the `.Rproj` file.
 #' @param verbose logical; if  `TRUE`, detailed messages will be displayed
@@ -8,13 +8,13 @@
 #' @export
 #'
 #' @examples
-#' check_rproj_file(
+#' is_pkg_rproj(
 #'      system.file("project", "project.Rproj",
 #'                  package = "shinyap"))
-#' check_rproj_file(
+#' is_pkg_rproj(
 #'      system.file("pkg", "pkg.Rproj",
 #'                  package = "shinyap"), verbose = TRUE)
-check_rproj_file <- function(file, verbose = FALSE) {
+is_pkg_rproj <- function(file, verbose = FALSE) {
   fields <- c("BuildType", "PackageUseDevtools", "PackageInstallArgs")
   result <- mapply(check_text_field, file,
     MoreArgs = list(field = paste0(fields, ":")),
@@ -38,4 +38,3 @@ check_rproj_file <- function(file, verbose = FALSE) {
     }
   }
 }
-system.file("project", "project.Rproj", package = "shinyap")
