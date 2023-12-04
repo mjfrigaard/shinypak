@@ -19,15 +19,6 @@
     <loc>https://mjfrigaard.github.io/shinyap/news/index.html</loc>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/check_desc_file.html</loc>
-  </url>
-  <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/check_r_pkg.html</loc>
-  </url>
-  <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/check_rproj_file.html</loc>
-  </url>
-  <url>
     <loc>https://mjfrigaard.github.io/shinyap/reference/check_text_field.html</loc>
   </url>
   <url>
@@ -37,7 +28,16 @@
     <loc>https://mjfrigaard.github.io/shinyap/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/shinyap/reference/launch_app.html</loc>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/is_pkg_description.html</loc>
+  </url>
+  <url>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/is_pkg_rproj.html</loc>
+  </url>
+  <url>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/is_r_package.html</loc>
+  </url>
+  <url>
+    <loc>https://mjfrigaard.github.io/shinyap/reference/launch.html</loc>
   </url>
   <url>
     <loc>https://mjfrigaard.github.io/shinyap/reference/list_apps.html</loc>
