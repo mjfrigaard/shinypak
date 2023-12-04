@@ -18,7 +18,7 @@ otherwise.
 }
 \description{
 This function ensures that a \code{DESCRIPTION} file contains all of the necessary
-fields for an R package \url{}
+fields for an R package in Writing R Extensions (https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file).
 }
 \examples{
 is_pkg_description(

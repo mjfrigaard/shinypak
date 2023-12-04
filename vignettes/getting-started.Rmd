@@ -57,7 +57,7 @@ launch(app = "02b_proj-app")
 ```
 
 ```{r launch, echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics("../man/figures/launch.gif")
+knitr::include_graphics("../man/figures/launch_app.gif")
 ```
 
 `launch()` will automatically download the application files into a folder in the current working directory. If the branch is storing an app-package, `launch()` loads the package and then launches the application:
