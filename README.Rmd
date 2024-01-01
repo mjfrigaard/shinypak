@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `shinyap` is to provide easy access to the apps in the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book.
+The primary goal of `shinyap` is to provide easy access to the apps in the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book. `shinyap` also has functions for checking the files and folders in a Shiny app-package. 
 
 ## Installation
 

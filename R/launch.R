@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-#' # launch("02_movies-app")
-#' # launch("07_roxygen2")
+#' # launch("02.1_movies-app")
+#' # launch("05_roxygen2")
 launch <- function(app) {
 
   if (!dir.exists(app)) {
