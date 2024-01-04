@@ -128,7 +128,7 @@ If the app is already downloaded, the files are updated with the latest commit t
 
 ## Lookup Table 
 
-`topic_lookup` connects `topics`, `chapters`, and `branches`:
+`topic_lookup` connects `branch`, `part`, and `chapter`:
 
 ```{r topic_lookup, eval=FALSE}
 topic_lookup
