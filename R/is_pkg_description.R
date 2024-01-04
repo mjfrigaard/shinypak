@@ -31,6 +31,7 @@ is_pkg_description <- function(file, verbose = FALSE) {
     SIMPLIFY = TRUE,
     USE.NAMES = FALSE
   )
+
   if (verbose) {
     cli::cli_alert_info("Checking DESCRIPTION for package fields")
     if (isTRUE(result)) {

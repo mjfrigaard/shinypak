@@ -89,7 +89,7 @@ Launch an application from any section in the book using:
 launch(app = "02.3_proj-app")
 ```
 
-<img src="man/figures/launch_app.gif" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/launch_readme.gif" width="100%" style="display: block; margin: auto;" />
 
 [^1]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)

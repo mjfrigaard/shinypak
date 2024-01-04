@@ -34,7 +34,7 @@ list_apps()
 You can also specify a `regex` to return a vector of branches matching a particular chapter or topic: 
 
 ```{r}
-list_apps("11")
+list_apps("12")
 ```
 
 
@@ -60,15 +60,7 @@ launch(app = "02.2_proj-app")
 knitr::include_graphics("../man/figures/launch_app.gif")
 ```
 
-`launch()` will automatically download the application files into a folder in the current working directory. If the branch is storing an app-package, `launch()` loads the package and then launches the application:
-
-```{r , eval=FALSE}
-launch(app = "09.2_inst-bslib")
-```
-
-```{r launch_app_pkg, echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics("../man/figures/launch_app_pkg.gif")
-```
+`launch()` will automatically download the application files into a folder in the current working directory. 
 
 ## Helper
 
@@ -82,7 +74,18 @@ is_r_package("02.2_proj-app")
 #> [1] FALSE
 ```
 
-If `verbose` is set to `TRUE`, details are provided on what is being checked: 
+If the branch is storing an app-package, `launch()` loads the package and then launches the application:
+
+```{r , eval=FALSE}
+launch(app = "09.2_inst-bslib")
+```
+
+```{r launch_app_pkg, echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics("../man/figures/launch_app_pkg.gif")
+```
+
+
+We can set the `verbose` argument to `TRUE` `in is_r_package()` to see the details on what is being checked: 
 
 ```{r , eval=FALSE}
 is_r_package("09.2_inst-bslib", verbose = TRUE)

@@ -38,9 +38,9 @@ is_r_package <- function(path, verbose = FALSE) {
     full.names = TRUE
   )
 
-  is_pkg_desc <- is_pkg_description(desc, verbose = verbose)
+  is_pkg_desc <- is_pkg_description(file = desc, verbose = verbose)
 
-  is_pkg_rproj <- is_pkg_rproj(rproj, verbose = verbose)
+  is_pkg_rproj <- is_pkg_rproj(file = rproj, verbose = verbose)
 
   if (verbose) {
     if (isTRUE(is_pkg_desc) & isTRUE(is_pkg_rproj)) {

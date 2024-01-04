@@ -60,7 +60,7 @@ launch(app = "02.3_proj-app")
 ```
 
 ```{r launch, echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics("man/figures/launch_app.gif")
+knitr::include_graphics("man/figures/launch_readme.gif")
 ```
 
 
