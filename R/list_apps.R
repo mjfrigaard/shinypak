@@ -75,7 +75,10 @@ list_apps <- function(regex = NULL) {
 
   # return data
   colnames(branches_cols) <- c("branch", "last_updated")
-  return(branches_cols)
+  # get unique
+  branches <- unique(branches_cols)
+
+  return(branches[order(branches$branch),])
 
 
 }

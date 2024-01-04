@@ -38,47 +38,47 @@ To see a list of the available app-packages in `shinyap`, use
 
 ``` r
 list_apps()
-#>                 branch        last_updated
-#> 1                 main 2023-11-22 00:17:49
-#> 2    01_whole-app-game 2023-11-22 00:23:27
-#> 3       02a_movies-app 2023-11-22 00:24:21
-#> 4         02b_proj-app 2023-11-22 00:26:46
-#> 5      03a_description 2023-12-06 14:28:52
-#> 6            03b_rproj 2023-11-02 13:35:17
-#> 7   03c_create-package 2023-11-02 13:35:34
-#> 8          04_devtools 2023-11-02 13:35:52
-#> 9          05_roxygen2 2023-11-17 15:53:36
-#> 10     06a_pkg-exports 2023-11-17 15:54:17
-#> 11     06b_pkg-imports 2023-11-17 15:54:52
-#> 12             07_data 2023-12-08 20:15:19
-#> 13       08_launch-app 2023-11-17 15:56:49
-#> 14        09a_inst-www 2023-11-17 15:57:48
-#> 15      09b_inst-bslib 2023-11-21 10:14:32
-#> 16        09c_inst-dev 2023-11-17 15:59:04
-#> 17       09d_inst-prod 2023-11-18 05:51:27
-#> 18      11_tests-specs 2023-11-18 06:30:29
-#> 19  12a_tests-fixtures 2023-11-18 06:31:06
-#> 20   12b_tests-helpers 2023-11-18 06:31:53
-#> 21     12f_tests-mocks 2023-11-18 06:34:25
-#> 22 12g_tests-snapshots 2023-11-18 06:35:09
-#> 23    13_tests-modules 2023-11-18 06:32:44
-#> 24     14_tests-system 2023-11-21 10:08:21
-#> 25            15_golem 2023-11-18 06:36:02
-#> 26       16_leprechaun 2023-11-10 13:35:13
-#> 27            17_rhino 2023-12-30 21:49:09
-#> 28           18_docker 2023-11-21 10:08:21
-#> 29       18a_debugging 2023-11-18 06:39:47
-#> 30       18b_debugging 2023-11-18 06:40:34
-#> 31       18c_debugging 2023-11-18 06:41:07
-#> 32       18d_debugging 2023-11-18 06:41:46
-#> 33       18e_debugging 2023-11-18 06:42:23
-#> 34 19a_reactive-values 2023-11-18 06:44:24
-#> 35       19b_user-data 2023-11-18 08:06:19
-#> 36  20_tests-snapshots 2023-11-18 06:35:09
-#> 37      21_tests-mocks 2023-11-18 06:34:25
-#> 38    22a_trace-matrix 2023-11-18 08:26:20
-#> 39                HEAD 2023-11-22 00:17:49
-#> 40                main 2023-11-22 00:17:49
+#>                  branch        last_updated
+#> 2     01_whole-app-game 2024-01-01 14:11:32
+#> 1        02.1_shiny-app 2024-01-01 13:20:43
+#> 4       02.2_movies-app 2024-01-04 11:54:24
+#> 5         02.3_proj-app 2023-11-22 00:26:46
+#> 6      03.1_description 2023-12-06 14:28:52
+#> 7            03.2_rproj 2023-11-02 13:35:17
+#> 8   03.3_create-package 2023-11-02 13:35:34
+#> 9           04_devtools 2023-11-02 13:35:52
+#> 10          05_roxygen2 2023-11-17 15:53:36
+#> 11     06.1_pkg-exports 2023-11-17 15:54:17
+#> 12     06.2_pkg-imports 2023-11-17 15:54:52
+#> 13              07_data 2023-12-08 20:15:19
+#> 14        08_launch-app 2023-11-17 15:56:49
+#> 15        09.1_inst-www 2023-11-17 15:57:48
+#> 16      09.2_inst-bslib 2023-11-21 10:14:32
+#> 17        09.3_inst-dev 2023-11-17 15:59:04
+#> 18       09.4_inst-prod 2023-11-18 05:51:27
+#> 19       11_tests-specs 2023-11-18 06:30:29
+#> 20  12.1_tests-fixtures 2023-11-18 06:31:06
+#> 21   12.2_tests-helpers 2023-11-18 06:31:53
+#> 22     13_tests-modules 2023-11-18 06:32:44
+#> 23      14_tests-system 2023-11-21 10:08:21
+#> 24            15_docker 2024-01-03 13:31:10
+#> 25             18_golem 2023-11-18 06:36:02
+#> 26        19_leprechaun 2023-11-10 13:35:13
+#> 27             20_rhino 2023-12-30 21:49:09
+#> 28       21.1_debugging 2023-11-18 06:39:47
+#> 29       21.2_debugging 2023-11-18 06:40:34
+#> 30       21.3_debugging 2023-11-18 06:41:07
+#> 31       21.4_debugging 2023-11-18 06:41:46
+#> 32       21.5_debugging 2023-11-18 06:42:23
+#> 35   22_reactive-values 2023-11-18 06:44:24
+#> 36         22_user-data 2023-11-18 08:06:19
+#> 33 22.1_reactive-values 2023-11-18 06:44:24
+#> 34       22.2_user-data 2023-11-18 08:06:19
+#> 37   23_tests-snapshots 2023-11-18 06:35:09
+#> 38       24_tests-mocks 2023-11-18 06:34:25
+#> 39                 HEAD 2024-01-01 13:20:43
+#> 40                 main 2023-11-22 00:17:49
+#> 41      st_trace-matrix 2023-11-18 08:26:20
 ```
 
 ## Launch app (or app package)
@@ -86,7 +86,7 @@ list_apps()
 Launch an application from any section in the book using:
 
 ``` r
-launch(app = "02b_proj-app")
+launch(app = "02.3_proj-app")
 ```
 
 <img src="man/figures/launch_app.gif" width="100%" style="display: block; margin: auto;" />
