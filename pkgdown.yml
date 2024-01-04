@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   getting-started: getting-started.html
-last_built: 2024-01-04T20:24Z
+last_built: 2024-01-04T21:12Z
 urls:
   reference: https://mjfrigaard.github.io/shinyap/reference
   article: https://mjfrigaard.github.io/shinyap/articles
