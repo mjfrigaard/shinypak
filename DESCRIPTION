@@ -3,27 +3,29 @@ Title: Getting your app into an R package
 Version: 0.1.0
 Author: Martin Frigaard <mjfrigaard@pm.me> [aut, cre]
 Maintainer: Martin Frigaard <mjfrigaard@pm.me>
-Description: Shiny application examples from Shiny App-Packages book: 
+Description: Shiny application examples from Shiny App-Packages book:
     <https://mjfrigaard.github.io/shiny-app-pkgs/>
 License: MIT + file LICENSE
-LazyData: true
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+URL: https://mjfrigaard.github.io/shinypak/,
+    https://github.com/mjfrigaard/shinypak
+Depends: 
+    R (>= 2.10)
 Imports: 
-    fs,
+    cli,
     gert,
-    rlang,
-    rprojroot,
+    pkgload,
+    readr,
     rstudioapi,
     shiny,
     withr
-Depends: 
-    R (>= 2.10)
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
-VignetteBuilder: knitr
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
-URL: https://mjfrigaard.github.io/shinypak/, https://github.com/mjfrigaard/shinypak
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
