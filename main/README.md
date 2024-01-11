@@ -1,12 +1,12 @@
 <h1 align="center"> <code>moviesApp</code> </h1>
 <h3 align="center"> A Shiny App-Package </h3>
-<h5 align="center"> Code examples for <a href="https://mjfrigaard.github.io/shinyap/"> Shiny App-Packages </a> </h5>
+<h5 align="center"> Code examples for <a href="https://mjfrigaard.github.io/shinypak/"> Shiny App-Packages </a> </h5>
 
 <hr>
 
 # moviesApp
 
-`moviesApp` provides the code examples in for the [Shiny App-Packages](https://mjfrigaard.github.io/shinyap/) book and the [Developing & Testing Your Shiny Application](https://mjfrigaard.github.io/dev-test-shiny/) workshop provided at R in Pharma (2023).
+`moviesApp` provides the code examples in for the [Shiny App-Packages](https://mjfrigaard.github.io/shinypak/) book and the [Developing & Testing Your Shiny Application](https://mjfrigaard.github.io/dev-test-shiny/) workshop provided at R in Pharma (2023).
 
 **Movie review data application**
 
@@ -23,13 +23,13 @@ The branches in this repo contain a Shiny application in the various stages of d
 </div>
 
 <p align="left">
-  If you're following along in the <a href="https://mjfrigaard.github.io/shinyap/">Shiny App-Packages</a> book, look for the Git Branch icon in the margin:
+  If you're following along in the <a href="https://mjfrigaard.github.io/shinypak/">Shiny App-Packages</a> book, look for the Git Branch icon in the margin:
   </p>
 
 <div>
 
 <p align="right"> 
-  <img src="https://raw.githubusercontent.com/mjfrigaard/shinyap/main/images/new_branch_ico.png" alt="Git branch icon" width="33%">
+  <img src="https://raw.githubusercontent.com/mjfrigaard/shinypak/main/images/new_branch_ico.png" alt="Git branch icon" width="33%">
 
 </div>
 

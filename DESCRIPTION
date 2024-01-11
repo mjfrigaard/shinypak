@@ -1,4 +1,4 @@
-Package: shinyap
+Package: shinypak
 Title: Getting your app into an R package
 Version: 0.1.0
 Author: Martin Frigaard <mjfrigaard@pm.me> [aut, cre]
@@ -26,4 +26,4 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-URL: https://mjfrigaard.github.io/shinyap/, https://github.com/mjfrigaard/shinyap
+URL: https://mjfrigaard.github.io/shinypak/, https://github.com/mjfrigaard/shinypak

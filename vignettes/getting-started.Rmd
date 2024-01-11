@@ -15,10 +15,10 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(shinyap)
+library(shinypak)
 ```
 
-**`shinyap` assumes you have GitHub and Posit workbench synced. Read more about setting this up on the [`gert` package website](https://docs.ropensci.org/gert/#automatic-authentication)**
+**`shinypak` assumes you have GitHub and Posit workbench synced. Read more about setting this up on the [`gert` package website](https://docs.ropensci.org/gert/#automatic-authentication)**
 
 > "*In `gert`, authentication is done automatically using the [`credentials` package](https://docs.ropensci.org/credentials/articles/intro.html). This package calls out to the local OS credential store which is also used by the git command line. Therefore gert will automatically pick up on https credentials that are safely stored in your OS keychain.*"
 
@@ -44,7 +44,7 @@ list_apps("tests")
 
 # Launch
 
-To launch an app from the [Shiny App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/), you can simply supply the name of the branch:
+To launch an app from the [Shiny App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/), you can supply the name of the branch to `launch()`:
 
 ```{r , eval=FALSE}
 launch(app = "<branch>")
@@ -102,7 +102,7 @@ is_r_package("09.2_inst-bslib", verbose = TRUE)
 
 ## Get
 
-`launch()` calls the `get_app()` function, which will only download the specified branch into the current working directory. 
+`launch()` calls the `get_app()` function. If you call `get_app()`, the specified branch and application will be downloaded into the current working directory:
 
 ```{r , eval=FALSE}
 get_app(app = "14_tests-system")
@@ -111,8 +111,6 @@ get_app(app = "14_tests-system")
 ```{r get_app, echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("../man/figures/get_app.gif")
 ```
-
-### Get and open
 
 You can open the new app project by supplying the `open = TRUE` argument:
 

@@ -13,45 +13,48 @@ knitr::opts_chunk$set(
 )
 ```
 
-# `shinyap`
+# `shinypak`
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of `shinyap` is to provide easy access to the apps in the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book. `shinyap` also has functions for checking the files and folders in a Shiny app-package. 
+The primary goal of `shinypak` is to provide easy access to the applications in [`moviesApp`](https://github.com/mjfrigaard/moviesApp), the example application for the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book. 
+
+
+`shinypak` also has functions for checking the files and folders in a Shiny app-package. 
 
 ## Installation
 
-You can install the development version of `shinyap` from [GitHub](https://github.com/) with:
+You can install the development version of `shinypak` from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
-pak::pak("mjfrigaard/shinyap")
+pak::pak("mjfrigaard/shinypak")
 ```
 
 ```{r}
-library(shinyap)
+library(shinypak)
 ```
 
 ## Git/GitHub configuration
 
-`shinyap` uses the [`gert` package](https://docs.ropensci.org/gert/) for Git/GitHub management (and assumes authentication was done automatically using the `credentials` package).[^credentials]
+`shinypak` uses the [`gert` package](https://docs.ropensci.org/gert/) for Git/GitHub management (and assumes authentication was done automatically using the `credentials` package).[^credentials]
 
 [^credentials]: Check out the documentation for the [`credentials` package](https://docs.ropensci.org/credentials/articles/intro.html)
 
 
 ## Available app-packages
 
-To see a list of the available app-packages in `shinyap`, use `list_apps()`[^all-apps]
+The example applications are stored in the [branches](https://github.com/mjfrigaard/moviesApp/branches/all) of the `moviesApp` repo. To see a list of the available app-packages, use `list_apps()`[^all-apps]
 
-[^all-apps]: Each of the apps in `shinyap` have a corresponding branch in the [moviesApp repo](https://github.com/mjfrigaard/moviesApp/branches/all).
+[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [moviesApp repo](https://github.com/mjfrigaard/moviesApp/branches/all).
 
 
 ```{r list_apps, eval=TRUE}
 list_apps()
 ```
 
-## Launch app (or app package)
+## Launching apps and app-packages
 
 Launch an application from any section in the book using:
 

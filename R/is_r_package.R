@@ -21,10 +21,10 @@
 #'
 #' @examples
 #' is_r_package(
-#'      system.file("pkg", package = "shinyap"),
+#'      system.file("pkg", package = "shinypak"),
 #'      verbose = TRUE)
 #' is_r_package(
-#'      system.file("app", package = "shinyap"),
+#'      system.file("app", package = "shinypak"),
 #'      verbose = TRUE)
 is_r_package <- function(path, verbose = FALSE) {
 

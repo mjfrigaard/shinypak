@@ -1,4 +1,4 @@
-# shinyap 0.1.0
+# shinypak 0.1.0
 
 * Initial `pkgdown` build
 

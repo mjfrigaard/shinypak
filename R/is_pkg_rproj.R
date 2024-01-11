@@ -10,10 +10,10 @@
 #' @examples
 #' is_pkg_rproj(
 #'      system.file("project", "project.Rproj",
-#'                  package = "shinyap"))
+#'                  package = "shinypak"))
 #' is_pkg_rproj(
 #'      system.file("pkg", "pkg.Rproj",
-#'                  package = "shinyap"), verbose = TRUE)
+#'                  package = "shinypak"), verbose = TRUE)
 is_pkg_rproj <- function(file, verbose = FALSE) {
   fields <- c("BuildType", "PackageUseDevtools", "PackageInstallArgs")
   result <- mapply(check_text_field, file,

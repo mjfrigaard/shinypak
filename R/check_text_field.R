@@ -8,9 +8,9 @@
 #' @export
 #'
 #' @examples
-#' check_text_field("Package: shinyap \n Title: Getting your app into an R package",
+#' check_text_field("Package: shinypak \n Title: Getting your app into an R package",
 #' "Package")
-#' check_text_field("Package: shinyap \n Title: Getting your app into an R package",
+#' check_text_field("Package: shinypak \n Title: Getting your app into an R package",
 #' "Package", verbose = TRUE)
 check_text_field <- function(file, field, verbose = FALSE) {
   file_lines <- readr::read_lines(file)

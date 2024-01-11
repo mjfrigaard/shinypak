@@ -16,10 +16,10 @@
 #' @examples
 #' is_pkg_description(
 #'      system.file("pkg", "DESCRIPTION",
-#'                  package = "shinyap"))
+#'                  package = "shinypak"))
 #' is_pkg_description(
 #'      system.file("pkg", "DESCRIPTION",
-#'                  package = "shinyap"), verbose = TRUE)
+#'                  package = "shinypak"), verbose = TRUE)
 is_pkg_description <- function(file, verbose = FALSE) {
   fields <- c(
     "Package", "Version", "License",

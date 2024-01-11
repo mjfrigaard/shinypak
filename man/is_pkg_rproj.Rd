@@ -20,8 +20,8 @@ Check \code{.Rproj} File for Package Fields
 \examples{
 is_pkg_rproj(
      system.file("project", "project.Rproj",
-                 package = "shinyap"))
+                 package = "shinypak"))
 is_pkg_rproj(
      system.file("pkg", "pkg.Rproj",
-                 package = "shinyap"), verbose = TRUE)
+                 package = "shinypak"), verbose = TRUE)
 }

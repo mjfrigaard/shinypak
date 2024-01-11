@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(shinyap)
+library(shinypak)
 
-test_check("shinyap")
+test_check("shinypak")

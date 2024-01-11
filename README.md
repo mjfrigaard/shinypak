@@ -1,87 +1,94 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `shinyap`
+# `shinypak`
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of `shinyap` is to provide easy access to the apps in
-the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/)
-book. `shinyap` also has functions for checking the files and folders in
-a Shiny app-package.
+The primary goal of `shinypak` is to provide easy access to the
+applications in [`moviesApp`](https://github.com/mjfrigaard/moviesApp),
+the example application for the [Shiny
+App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book.
+
+`shinypak` also has functions for checking the files and folders in a
+Shiny app-package.
 
 ## Installation
 
-You can install the development version of `shinyap` from
+You can install the development version of `shinypak` from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
-pak::pak("mjfrigaard/shinyap")
+pak::pak("mjfrigaard/shinypak")
 ```
 
 ``` r
-library(shinyap)
+library(shinypak)
 ```
 
 ## Git/GitHub configuration
 
-`shinyap` uses the [`gert` package](https://docs.ropensci.org/gert/) for
-Git/GitHub management (and assumes authentication was done automatically
-using the `credentials` package).[^1]
+`shinypak` uses the [`gert` package](https://docs.ropensci.org/gert/)
+for Git/GitHub management (and assumes authentication was done
+automatically using the `credentials` package).[^1]
 
 ## Available app-packages
 
-To see a list of the available app-packages in `shinyap`, use
+The example applications are stored in the
+[branches](https://github.com/mjfrigaard/moviesApp/branches/all) of the
+`moviesApp` repo. To see a list of the available app-packages, use
 `list_apps()`[^2]
 
 ``` r
 list_apps()
 #>                  branch        last_updated
 #> 2     01_whole-app-game 2024-01-01 14:11:32
-#> 1        02.1_shiny-app 2024-01-01 13:20:43
-#> 4       02.2_movies-app 2024-01-04 11:54:24
-#> 5         02.3_proj-app 2023-11-22 00:26:46
-#> 6      03.1_description 2023-12-06 14:28:52
-#> 7            03.2_rproj 2023-11-02 13:35:17
-#> 8   03.3_create-package 2023-11-02 13:35:34
-#> 9           04_devtools 2023-11-02 13:35:52
-#> 10          05_roxygen2 2023-11-17 15:53:36
-#> 11     06.1_pkg-exports 2023-11-17 15:54:17
-#> 12     06.2_pkg-imports 2023-11-17 15:54:52
-#> 13              07_data 2023-12-08 20:15:19
-#> 14        08_launch-app 2023-11-17 15:56:49
-#> 15        09.1_inst-www 2023-11-17 15:57:48
-#> 16      09.2_inst-bslib 2023-11-21 10:14:32
-#> 17        09.3_inst-dev 2023-11-17 15:59:04
-#> 18       09.4_inst-prod 2023-11-18 05:51:27
-#> 19       11_tests-specs 2023-11-18 06:30:29
-#> 20  12.1_tests-fixtures 2023-11-18 06:31:06
-#> 21   12.2_tests-helpers 2023-11-18 06:31:53
-#> 22     13_tests-modules 2023-11-18 06:32:44
-#> 23      14_tests-system 2023-11-21 10:08:21
-#> 24            15_docker 2024-01-03 13:31:10
-#> 25             18_golem 2023-11-18 06:36:02
-#> 26        19_leprechaun 2023-11-10 13:35:13
-#> 27             20_rhino 2023-12-30 21:49:09
-#> 28       21.1_debugging 2023-11-18 06:39:47
-#> 29       21.2_debugging 2023-11-18 06:40:34
-#> 30       21.3_debugging 2023-11-18 06:41:07
-#> 31       21.4_debugging 2023-11-18 06:41:46
-#> 32       21.5_debugging 2023-11-18 06:42:23
-#> 35   22_reactive-values 2023-11-18 06:44:24
-#> 36         22_user-data 2023-11-18 08:06:19
-#> 33 22.1_reactive-values 2023-11-18 06:44:24
-#> 34       22.2_user-data 2023-11-18 08:06:19
-#> 37   23_tests-snapshots 2023-11-18 06:35:09
-#> 38       24_tests-mocks 2023-11-18 06:34:25
-#> 39                 HEAD 2024-01-01 13:20:43
-#> 40                 main 2023-11-22 00:17:49
-#> 41      st_trace-matrix 2023-11-18 08:26:20
+#> 1        02.1_shiny-app 2024-01-04 13:05:58
+#> 4       02.2_movies-app 2024-01-04 13:07:59
+#> 5         02.3_proj-app 2024-01-04 13:08:58
+#> 6      03.1_description 2024-01-04 13:10:00
+#> 7            03.2_rproj 2024-01-04 13:25:06
+#> 8   03.3_create-package 2024-01-04 13:29:41
+#> 9           04_devtools 2024-01-04 13:30:48
+#> 10          05_roxygen2 2024-01-04 13:04:01
+#> 11     06.1_pkg-exports 2024-01-04 13:34:20
+#> 12     06.2_pkg-imports 2024-01-04 13:35:38
+#> 13              07_data 2024-01-04 13:37:37
+#> 14        08_launch-app 2024-01-04 13:38:35
+#> 15        09.1_inst-www 2024-01-04 13:39:48
+#> 16      09.2_inst-bslib 2024-01-04 13:40:43
+#> 17        09.3_inst-dev 2024-01-04 13:41:55
+#> 18       09.4_inst-prod 2024-01-04 13:42:51
+#> 19       11_tests-specs 2024-01-04 13:43:52
+#> 20  12.1_tests-fixtures 2024-01-04 13:44:58
+#> 21   12.2_tests-helpers 2024-01-04 13:45:57
+#> 22     13_tests-modules 2024-01-04 13:47:00
+#> 23      14_tests-system 2024-01-04 13:49:46
+#> 24            15_docker 2024-01-05 12:31:47
+#> 25      16.1_cicd-style 2024-01-10 22:54:15
+#> 26      16.2_cicd-shiny 2024-01-10 23:17:33
+#> 27             18_golem 2024-01-04 13:54:56
+#> 28        19_leprechaun 2024-01-04 13:55:57
+#> 29             20_rhino 2024-01-04 13:57:52
+#> 30       21.1_debugging 2024-01-04 13:59:02
+#> 31       21.2_debugging 2024-01-04 13:59:56
+#> 32       21.3_debugging 2024-01-04 14:00:50
+#> 33       21.4_debugging 2024-01-04 14:01:41
+#> 34       21.5_debugging 2024-01-04 14:02:27
+#> 37   22_reactive-values 2023-11-18 06:44:24
+#> 38         22_user-data 2023-11-18 08:06:19
+#> 35 22.1_reactive-values 2024-01-04 14:03:30
+#> 36       22.2_user-data 2024-01-04 14:04:20
+#> 39   23_tests-snapshots 2024-01-04 14:05:08
+#> 40       24_tests-mocks 2024-01-04 14:06:06
+#> 41                 HEAD 2024-01-04 13:05:58
+#> 42                 main 2023-11-22 00:17:49
+#> 43      st_trace-matrix 2024-01-04 14:07:07
 ```
 
-## Launch app (or app package)
+## Launching apps and app-packages
 
 Launch an application from any section in the book using:
 
@@ -94,6 +101,7 @@ launch(app = "02.3_proj-app")
 [^1]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)
 
-[^2]: Each of the apps in `shinyap` have a corresponding branch in the
-    [moviesApp
+[^2]: Each of the apps in `shinypak` have a corresponding chapter in
+    [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/)
+    and branch in the [moviesApp
     repo](https://github.com/mjfrigaard/moviesApp/branches/all).
