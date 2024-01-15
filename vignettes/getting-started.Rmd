@@ -31,7 +31,7 @@ The apps are stored in branches on the `moviesApp` repo:
 list_apps()
 ```
 
-You can also specify a `regex` to return a vector of branches matching a particular chapter or topic: 
+You can also specify a `regex` to return a table of branches matching a particular chapter or topic: 
 
 ```{r}
 list_apps("12")
