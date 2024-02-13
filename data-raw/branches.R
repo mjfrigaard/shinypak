@@ -9,11 +9,12 @@ branches <- data.frame(branch = c("01_whole-app-game",
                        "13_tests-modules","14_tests-system","15_docker",
                        "16.1_cicd-style","16.2_cicd-shiny","16.3_cicd-docker","17_golem",
                        "18_leprechaun","19_rhino","20_css","21_js",
-                       "22_python","22.1_reactive-values","22.2_user-data",
-                       "23_tests-snapshots","23.1_debug-error","23.2_debug-selected_vars",
+                       "22_python","23.1_debug-error","23.2_debug-selected_vars",
                        "23.3_debug-var_inputs","23.4_debug-scatter_plot",
-                       "23.5_debug-print","24_app-data","24_tests-mocks",
-                       "A_G-mocks-snapshots","HEAD","main","st_trace-matrix"))
+                       "23.5_debug-print","24.1.0_reactive-values","24.1.1_step_01",
+                       "24.1.2_step_02","24.1.3_step_03","24.1.4_step_04",
+                       "24.2_user-data","24.2.0_user-data","24.2.1_step_01",
+                       "24.2.2_step_02","A.E_mocks-snapshots"))
 usethis::use_data(branches, overwrite = TRUE)
 
 topic_lookup <- data.frame(
@@ -27,11 +28,12 @@ topic_lookup <- data.frame(
                        "13_tests-modules","14_tests-system","15_docker",
                        "16.1_cicd-style","16.2_cicd-shiny","16.3_cicd-docker","17_golem",
                        "18_leprechaun","19_rhino","20_css","21_js",
-                       "22_python","22.1_reactive-values","22.2_user-data",
-                       "23_tests-snapshots","23.1_debug-error","23.2_debug-selected_vars",
+                       "22_python","23.1_debug-error","23.2_debug-selected_vars",
                        "23.3_debug-var_inputs","23.4_debug-scatter_plot",
-                       "23.5_debug-print","24_app-data","24_tests-mocks",
-                       "A_G-mocks-snapshots","HEAD","main","st_trace-matrix"),
+                       "23.5_debug-print","24.1.0_reactive-values","24.1.1_step_01",
+                       "24.1.2_step_02","24.1.3_step_03","24.1.4_step_04",
+                       "24.2_user-data","24.2.0_user-data","24.2.1_step_01",
+                       "24.2.2_step_02","A.E_mocks-snapshots"),
               part = c("Intro","Intro","Intro",
                        "Intro","Intro","Intro","Intro","Intro","App-packages",
                        "App-packages","App-packages","App-packages",
@@ -39,10 +41,11 @@ topic_lookup <- data.frame(
                        "App-packages","Tests","Tests","Tests","Tests","Tests",
                        "Deploy","Deploy","Deploy","Deploy","Frameworks",
                        "Frameworks","Frameworks","Non-R Code","Non-R Code",
-                       "Non-R Code","Deprecated","Deprecated","Special Topics",
+                       "Non-R Code","Special Topics","Special Topics",
                        "Special Topics","Special Topics","Special Topics",
                        "Special Topics","Special Topics","Special Topics",
-                       "Deprecated","Appendix",NA,NA,"Appendix"),
+                       "Special Topics","Special Topics","Special Topics","Special Topics",
+                       "Special Topics","Special Topics","Appendix"),
            chapter = c("Whole app game","Shiny",
                        "Shiny","Shiny","Packages","Packages","Packages",
                        "Development","Documentation","Dependencies","Dependencies",
@@ -50,11 +53,12 @@ topic_lookup <- data.frame(
                        "External files","External files","Specifications",
                        "Test tools","Test tools","Testing modules","System tests",
                        "Docker","CI/CD","CI/CD","CI/CD","golem",
-                       "leprechaun","rhino","CSS","JavaScript","Python","Deprecated",
-                       "Deprecated","Values vs. data","Debugging","Debugging",
-                       "Debugging","Debugging","Debugging",
-                       "Values vs. data","Deprecated","Test mocks and snapshots",NA,NA,
-                       "Traceability Matrix")
+                       "leprechaun","rhino","CSS","JavaScript","Python","Debugging",
+                       "Debugging","Debugging","Debugging","Debugging",
+                       "Values vs. data","Values vs. data","Values vs. data",
+                       "Values vs. data","Values vs. data","Values vs. data",
+                       "Values vs. data","Values vs. data","Values vs. data",
+                       "Test mocks and snapshots")
 )
 
 usethis::use_data(topic_lookup, overwrite = TRUE)
