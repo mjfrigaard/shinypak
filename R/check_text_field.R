@@ -5,7 +5,7 @@
 #'
 #' @return logical
 #'
-#' @export
+#' @keywords internal
 #'
 #' @examples
 #' check_text_field("Package: shinypak \n Title: Getting your app into an R package",

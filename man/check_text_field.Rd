@@ -23,3 +23,4 @@ check_text_field("Package: shinypak \n Title: Getting your app into an R package
 check_text_field("Package: shinypak \n Title: Getting your app into an R package",
 "Package", verbose = TRUE)
 }
+\keyword{internal}
