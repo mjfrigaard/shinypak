@@ -5,3 +5,5 @@
 * Updates to `launch()` function
 
 * New .gifs for README and vignettes
+
+* New git repos
