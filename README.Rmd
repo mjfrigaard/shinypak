@@ -30,7 +30,7 @@ The primary goal of `shinypak` is to provide easy access all the application exa
 
 You can install the development version of `shinypak` from [GitHub](https://github.com/) after installing `remotes`:
 
-```{r remotes, message=FALSE, warning=FALSE, results='hide'}
+```{r remotes, message=FALSE, warning=FALSE, results='hide', eval=FALSE}
 install.packages('remotes')
 remotes::install_github("mjfrigaard/shinypak")
 ```

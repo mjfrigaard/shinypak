@@ -64,18 +64,18 @@ knitr::kable(
 )
 ```
 
-|     | branch                 | part           | chapter                  |
-|:----|:-----------------------|:---------------|:-------------------------|
-| 38  | 24.1.0_reactive-values | Special Topics | Values vs. data          |
-| 39  | 24.1.1_step_01         | Special Topics | Values vs. data          |
-| 40  | 24.1.2_step_02         | Special Topics | Values vs. data          |
-| 41  | 24.1.3_step_03         | Special Topics | Values vs. data          |
-| 42  | 24.1.4_step_04         | Special Topics | Values vs. data          |
-| 43  | 24.2_user-data         | Special Topics | Values vs. data          |
-| 44  | 24.2.0_user-data       | Special Topics | Values vs. data          |
-| 45  | 24.2.1_step_01         | Special Topics | Values vs. data          |
-| 46  | 24.2.2_step_02         | Special Topics | Values vs. data          |
-| 47  | A.E_mocks-snapshots    | Appendix       | Test mocks and snapshots |
+|     | branch              | part           | chapter                          |
+|:----|:--------------------|:---------------|:---------------------------------|
+| 44  | 26.1.1_step_01      | Special Topics | App Data                         |
+| 45  | 26.1.2_step_02      | Special Topics | App Data                         |
+| 46  | 26.1.3_step_03      | Special Topics | App Data                         |
+| 47  | 26.1.4_step_04      | Special Topics | App Data                         |
+| 48  | 26.2.0_user-data    | Special Topics | App Data                         |
+| 49  | 26.2.1_step_01      | Special Topics | App Data                         |
+| 50  | 26.2.2_step_02      | Special Topics | App Data                         |
+| 51  | 27_stack-traces     | Special Topics | Stack traces                     |
+| 52  | 28_dependency-hell  | Special Topics | Dependency hell                  |
+| 53  | A.E_mocks-snapshots | Appendix       | Appendix E — Mocks and snapshots |
 
 ## Launching apps and app-packages
 
