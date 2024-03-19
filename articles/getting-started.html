@@ -183,37 +183,43 @@ book</a>, you can supply the name of the branch to
 <code><a href="../reference/launch.html">launch()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"&lt;branch&gt;"</span><span class="op">)</span></span></code></pre></div>
-<p>Let’s start with one of the branches from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders" class="external-link">early
-chapters</a> (not quite an app-package yet):</p>
+<p>For example, we’ll start with one of the branches from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders" class="external-link">early
+chapters of Shiny App-Packages</a> (the app is not quite an app-package
+yet):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"02.2_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"02.3_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="../reference/launch.html">launch()</a></code> will check if the application has already been
+downloaded, download the application files into a folder in the current
+working directory, then launch the app:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">✔</span> <span class="st">'02.3_proj-app'</span> not in local working directory <span class="pp">[</span><span class="ss">59ms</span><span class="pp">]</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">✔</span> downloading <span class="st">'02.3_proj-app'</span> <span class="pp">[</span><span class="ss">10.7s</span><span class="pp">]</span> </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">✔</span> got <span class="st">'02.3_proj-app'</span> <span class="pp">[</span><span class="ss">163ms</span><span class="pp">]</span>         </span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="ex">✔</span> Launching app with: shiny::shinyAppDir<span class="er">(</span><span class="st">'02.3_proj-app/app.R'</span><span class="kw">)</span> </span></code></pre></div>
 <p><img src="../reference/figures/launch_readme.gif" width="100%" style="display: block; margin: auto;"></p>
-<p><code><a href="../reference/launch.html">launch()</a></code> will automatically download the application
-files into a folder in the current working directory.</p>
+<p>If the branch is storing an app-package, <code><a href="../reference/launch.html">launch()</a></code> loads
+the package and then launches the application:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"09.2_inst-bslib"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="../reference/figures/launch_app_pkg.gif" width="100%" style="display: block; margin: auto;"></p>
 <div class="section level3">
 <h3 id="helper">Helper<a class="anchor" aria-label="anchor" href="#helper"></a>
 </h3>
 <p>The <code><a href="../reference/is_r_package.html">is_r_package()</a></code> function is useful for determining if
-a directory contains an R package:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span><span class="st">"02.2_proj-app"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>#&gt; [1] FALSE</span></code></pre></div>
-<p>If the branch is storing an app-package, <code><a href="../reference/launch.html">launch()</a></code> loads
-the package and then launches the application:</p>
+a directory contains an R package. If <code>path</code> contains a
+folder that isn’t an R package, it will return <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"09.2_inst-bslib"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="../reference/figures/launch_app_pkg.gif" width="100%" style="display: block; margin: auto;"></p>
-<p>We can set the <code>verbose</code> argument to <code>TRUE</code>
-<code>in is_r_package()</code> to see the details on what is being
-checked:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"02.2_proj-app"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>#&gt; [1] FALSE</span></code></pre></div>
+<p>If the <code>verbose</code> argument is set to <code>TRUE</code>, the
+details are printed on what is being checked:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span><span class="st">"09.2_inst-bslib"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>#&gt; ℹ Checking DESCRIPTION for package fields</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>#&gt; ✔ Package, Version, License, Description, Title, Author, and Maintainer found!</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>#&gt; ℹ Checking .Rroj for project build fields</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>#&gt; ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>#&gt; ✔ '09b_inst-bslib/' is an R package</span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>#&gt; [1] TRUE</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>#&gt; ℹ Checking DESCRIPTION for package fields</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>#&gt; ✔ Package, Version, License, Description, Title, Author, and Maintainer found!</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>#&gt; ℹ Checking .Rroj for project build fields</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>#&gt; ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>#&gt; ✔ '09b_inst-bslib/' is an R package</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
@@ -221,12 +227,12 @@ checked:</p>
 <p><code><a href="../reference/launch.html">launch()</a></code> calls the <code><a href="../reference/get_app.html">get_app()</a></code> function. If
 you call <code><a href="../reference/get_app.html">get_app()</a></code>, the specified branch and application
 will be downloaded into the current working directory:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"14_tests-system"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app.gif" width="100%" style="display: block; margin: auto;"></p>
 <p>You can open the new app project by supplying the
 <code>open = TRUE</code> argument:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"14_tests-system"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app_open.gif" width="100%" style="display: block; margin: auto;"></p>
 <p>If the app is already downloaded, the files are updated with the
@@ -237,7 +243,7 @@ latest commit to the branch.</p>
 </h3>
 <p><code>topic_lookup</code> connects <code>branch</code>,
 <code>part</code>, and <code>chapter</code>:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">topic_lookup</span></span></code></pre></div>
 <table class="table">
 <colgroup>
