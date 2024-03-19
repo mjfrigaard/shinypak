@@ -50,28 +50,23 @@ To launch an app from the [Shiny App-Packages book](https://mjfrigaard.github.io
 launch(app = "<branch>")
 ```
 
-Let's start with one of the branches from the [early chapters](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders) (not quite an app-package yet):
+For example, we'll start with one of the branches from the [early chapters of Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders) (the app is not quite an app-package yet):
 
 ```{r , eval=FALSE}
-launch(app = "02.2_proj-app")
+launch(app = "02.3_proj-app")
+```
+
+`launch()` will check if the application has already been downloaded, download the application files into a folder in the current working directory, then launch the app:
+
+``` bash
+✔ '02.3_proj-app' not in local working directory [59ms]
+✔ downloading '02.3_proj-app' [10.7s] 
+✔ got '02.3_proj-app' [163ms]         
+✔ Launching app with: shiny::shinyAppDir('02.3_proj-app/app.R') 
 ```
 
 ```{r launch, echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("../man/figures/launch_readme.gif")
-```
-
-`launch()` will automatically download the application files into a folder in the current working directory. 
-
-## Helper
-
-The `is_r_package()` function is useful for determining if a directory contains an R package: 
-
-```{r , eval=FALSE}
-is_r_package("02.2_proj-app")
-```
-
-```{verbatim}
-#> [1] FALSE
 ```
 
 If the branch is storing an app-package, `launch()` loads the package and then launches the application:
@@ -85,7 +80,19 @@ knitr::include_graphics("../man/figures/launch_app_pkg.gif")
 ```
 
 
-We can set the `verbose` argument to `TRUE` `in is_r_package()` to see the details on what is being checked: 
+## Helper
+
+The `is_r_package()` function is useful for determining if a directory contains an R package. If `path` contains a folder that isn't an R package, it will return `FALSE`.
+
+```{r , eval=FALSE}
+is_r_package(path = "02.2_proj-app")
+```
+
+```{verbatim}
+#> [1] FALSE
+```
+
+If the `verbose` argument is set to `TRUE`, the details are printed on what is being checked: 
 
 ```{r , eval=FALSE}
 is_r_package("09.2_inst-bslib", verbose = TRUE)
