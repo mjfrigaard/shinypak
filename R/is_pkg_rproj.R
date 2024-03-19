@@ -5,15 +5,15 @@
 #'
 #' @return A logical value; `TRUE` if all fields are found, `FALSE` otherwise.
 #'
+#' @keywords internal
+#'
 #' @export
 #'
 #' @examples
-#' is_pkg_rproj(
-#'      system.file("project", "project.Rproj",
-#'                  package = "shinypak"))
-#' is_pkg_rproj(
-#'      system.file("pkg", "pkg.Rproj",
-#'                  package = "shinypak"), verbose = TRUE)
+#' is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"),
+#'              verbose = TRUE)
+#' is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"))
+#'
 is_pkg_rproj <- function(file, verbose = FALSE) {
   fields <- c("BuildType", "PackageUseDevtools", "PackageInstallArgs")
   result <- mapply(check_text_field, file,

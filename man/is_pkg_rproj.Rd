@@ -18,10 +18,9 @@ A logical value; \code{TRUE} if all fields are found, \code{FALSE} otherwise.
 Check \code{.Rproj} File for Package Fields
 }
 \examples{
-is_pkg_rproj(
-     system.file("project", "project.Rproj",
-                 package = "shinypak"))
-is_pkg_rproj(
-     system.file("pkg", "pkg.Rproj",
-                 package = "shinypak"), verbose = TRUE)
+is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"),
+             verbose = TRUE)
+is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"))
+
 }
+\keyword{internal}

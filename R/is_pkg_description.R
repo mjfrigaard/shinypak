@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function ensures that a `DESCRIPTION` file contains all of the necessary
-#' fields for an R package in Writing R Extensions (https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file).
+#' fields for an R package in [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file).
 #'
 #' @param file A character string specifying the path to the `DESCRIPTION` file.
 #' @param verbose A logical parameter; if set to TRUE, detailed messages will
@@ -10,6 +10,8 @@
 #'
 #' @return A logical value; `TRUE` if all required fields are present, `FALSE`
 #'     otherwise.
+#'
+#' @keywords internal
 #'
 #' @export
 #'

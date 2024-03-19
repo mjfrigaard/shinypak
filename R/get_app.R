@@ -1,18 +1,18 @@
 #' Clone a Specific Branch of the moviesApp Repository and Optionally Open it
 #'
 #' @description
-#' Clones a specified branch of the 'moviesApp' GitHub repository into the
-#' current working directory. It cleans the cloned directory by removing .git
-#' files, .DS_Store, and .Rbuildignore files, renames the R project file,
+#' Clones a specified branch of the `moviesApp` GitHub repository into the
+#' current working directory. It cleans the cloned directory by removing `.git`
+#' files, `.DS_Store`, and `.Rbuildignore` files, renames the R project file,
 #' and optionally opens it in a new RStudio session.
 #'
 #' @param app The name of the branch to be cloned as a character string. If
 #' not specified, defaults to "main".
-#' @param open A logical parameter, when set to TRUE, the function will attempt
+#' @param open A logical parameter, when set to `TRUE`, the function will attempt
 #' to open the new R project in a new RStudio session using
 #' `rstudioapi::openProject`. Defaults to `FALSE`.
 #'
-#' @return Invisible NULL. The function is called for its side effects.
+#' @return Invisible `NULL`. The function is called for its side effects.
 #'
 #'
 #'

@@ -18,7 +18,7 @@ otherwise.
 }
 \description{
 This function ensures that a \code{DESCRIPTION} file contains all of the necessary
-fields for an R package in Writing R Extensions (https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file).
+fields for an R package in \href{https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}{Writing R Extensions}.
 }
 \examples{
 is_pkg_description(
@@ -28,3 +28,4 @@ is_pkg_description(
      system.file("pkg", "DESCRIPTION",
                  package = "shinypak"), verbose = TRUE)
 }
+\keyword{internal}
