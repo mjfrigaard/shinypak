@@ -1,5 +1,10 @@
 #' Separate columns (base)
 #'
+#' @description
+#' This is a utility function used to create the list of applications in the Git
+#' branches.
+#'
+#'
 #' @param data data.frame or tibble
 #' @param col column to split
 #' @param into columns to split into
@@ -8,6 +13,8 @@
 #' @return data with new columns
 #'
 #' @keywords internal
+#'
+#' @export
 #'
 # #examples
 # d <- data.frame(id = 1:3, x = c("m-123", "f-455", "f-123"))

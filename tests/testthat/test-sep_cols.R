@@ -1,4 +1,4 @@
-test_that("multiplication works", {
+test_that("sep_cols() works", {
   expected <- data.frame(
     id = 1:3,
     x = c("m-123", "f-455", "f-123"),

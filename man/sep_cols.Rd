@@ -19,6 +19,7 @@ sep_cols(data, col, into, sep)
 data with new columns
 }
 \description{
-Separate columns (base)
+This is a utility function used to create the list of applications in the Git
+branches.
 }
 \keyword{internal}

@@ -5,6 +5,8 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
+options(
+  repos = "https://packagemanager.rstudio.com/all/__linux__/focal/latest")
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -18,21 +20,22 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of `shinypak` is to provide easy access to the applications in [`moviesApp`](https://github.com/mjfrigaard/moviesApp), the example application for the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book. 
+The primary goal of `shinypak` is to provide easy access all the application examples in [`moviesApp`](https://github.com/mjfrigaard/moviesApp).[^all-apps]
 
+[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [moviesApp repo](https://github.com/mjfrigaard/moviesApp/branches/all).
 
-`shinypak` also has functions for checking the files and folders in a Shiny app-package. 
+`shinypak` also has helper functions for checking the files and folders in a Shiny app-package. 
 
 ## Installation
 
-You can install the development version of `shinypak` from [GitHub](https://github.com/) with:
+You can install the development version of `shinypak` from [GitHub](https://github.com/) after installing `remotes`:
 
-``` r
-# install.packages("pak")
-pak::pak("mjfrigaard/shinypak")
+```{r remotes, message=FALSE, warning=FALSE, results='hide'}
+install.packages('remotes')
+remotes::install_github("mjfrigaard/shinypak")
 ```
 
-```{r}
+```{r pkg, message=FALSE, warning=FALSE, results='hide'}
 library(shinypak)
 ```
 
@@ -45,14 +48,21 @@ library(shinypak)
 
 ## Available app-packages
 
-The example applications are stored in the [branches](https://github.com/mjfrigaard/moviesApp/branches/all) of the `moviesApp` repo. To see a list of the available app-packages, use `list_apps()`[^all-apps]
-
-[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [moviesApp repo](https://github.com/mjfrigaard/moviesApp/branches/all).
+The applications in `shinypak` are from the chapters of the [Shiny App-Packages book](https://bit.ly/ShinyAppPkgs). A full list of the available apps and topics are available in `topic_lookup`:
 
 
-```{r list_apps, eval=TRUE}
-list_apps()
+```{r head-topic_lookup, eval=TRUE}
+knitr::kable(
+  head(topic_lookup, 10)
+)
 ```
+
+```{r tail-topic_lookup, eval=TRUE}
+knitr::kable(
+  tail(topic_lookup, 10)
+)
+```
+
 
 ## Launching apps and app-packages
 

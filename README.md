@@ -6,22 +6,21 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of `shinypak` is to provide easy access to the
-applications in [`moviesApp`](https://github.com/mjfrigaard/moviesApp),
-the example application for the [Shiny
-App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book.
+The primary goal of `shinypak` is to provide easy access all the
+application examples in
+[`moviesApp`](https://github.com/mjfrigaard/moviesApp).[^1]
 
-`shinypak` also has functions for checking the files and folders in a
-Shiny app-package.
+`shinypak` also has helper functions for checking the files and folders
+in a Shiny app-package.
 
 ## Installation
 
 You can install the development version of `shinypak` from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/) after installing `remotes`:
 
 ``` r
-# install.packages("pak")
-pak::pak("mjfrigaard/shinypak")
+install.packages('remotes')
+remotes::install_github("mjfrigaard/shinypak")
 ```
 
 ``` r
@@ -32,68 +31,51 @@ library(shinypak)
 
 `shinypak` uses the [`gert` package](https://docs.ropensci.org/gert/)
 for Git/GitHub management (and assumes authentication was done
-automatically using the `credentials` package).[^1]
+automatically using the `credentials` package).[^2]
 
 ## Available app-packages
 
-The example applications are stored in the
-[branches](https://github.com/mjfrigaard/moviesApp/branches/all) of the
-`moviesApp` repo. To see a list of the available app-packages, use
-`list_apps()`[^2]
+The applications in `shinypak` are from the chapters of the [Shiny
+App-Packages book](https://bit.ly/ShinyAppPkgs). A full list of the
+available apps and topics are available in `topic_lookup`:
 
 ``` r
-list_apps()
-#>                      branch        last_updated
-#> 2         01_whole-app-game 2024-01-17 12:30:27
-#> 1            02.1_shiny-app 2024-01-17 12:35:35
-#> 4           02.2_movies-app 2024-01-17 12:37:19
-#> 5             02.3_proj-app 2024-01-17 12:39:28
-#> 6          03.1_description 2024-01-17 12:40:11
-#> 7                03.2_rproj 2024-01-17 12:41:14
-#> 8       03.3_create-package 2024-01-17 12:42:45
-#> 9               04_devtools 2024-01-17 12:44:38
-#> 10              05_roxygen2 2024-01-17 12:45:34
-#> 11         06.1_pkg-exports 2024-01-17 12:46:25
-#> 12         06.2_pkg-imports 2024-01-17 12:47:55
-#> 13                  07_data 2024-01-18 11:17:13
-#> 14            08_launch-app 2024-01-17 13:46:38
-#> 15            09.1_inst-www 2024-01-17 13:47:20
-#> 16          09.2_inst-bslib 2024-01-17 13:48:37
-#> 17            09.3_inst-dev 2024-01-17 13:49:44
-#> 18           09.4_inst-prod 2024-01-17 13:50:27
-#> 19           11_tests-specs 2024-01-17 13:45:33
-#> 20      12.1_tests-fixtures 2024-01-17 13:54:42
-#> 21       12.2_tests-helpers 2024-01-17 13:55:58
-#> 22         13_tests-modules 2024-01-17 14:05:39
-#> 23          14_tests-system 2024-01-17 14:10:43
-#> 24                15_docker 2024-01-17 14:14:42
-#> 25          16.1_cicd-style 2024-01-17 14:18:40
-#> 26          16.2_cicd-shiny 2024-01-17 14:23:25
-#> 27         16.3_cicd-docker 2024-01-17 22:04:03
-#> 28                 17_golem 2024-01-17 14:49:00
-#> 29            18_leprechaun 2024-01-18 10:59:53
-#> 30                 19_rhino 2024-02-13 00:04:59
-#> 31                   20_css 2024-02-12 21:36:02
-#> 32                    21_js 2024-02-12 21:45:16
-#> 33                22_python 2024-02-12 21:43:57
-#> 39       23_tests-snapshots 2024-01-15 12:13:33
-#> 34         23.1_debug-error 2024-02-13 04:29:39
-#> 35 23.2_debug-selected_vars 2024-01-15 10:29:25
-#> 36    23.3_debug-var_inputs 2024-01-15 10:25:12
-#> 37  23.4_debug-scatter_plot 2024-01-15 10:21:58
-#> 38         23.5_debug-print 2024-01-15 10:04:21
-#> 40   24.1.0_reactive-values 2024-02-13 10:22:35
-#> 41           24.1.1_step_01 2024-02-13 10:14:41
-#> 42           24.1.2_step_02 2024-02-13 09:23:49
-#> 43           24.1.3_step_03 2024-02-13 09:38:31
-#> 44           24.1.4_step_04 2024-02-13 12:21:19
-#> 45         24.2.0_user-data 2024-02-13 12:04:32
-#> 46           24.2.1_step_01 2024-02-13 12:03:00
-#> 47           24.2.2_step_02 2024-02-13 12:01:57
-#> 48      A.E_mocks-snapshots 2024-02-13 12:48:31
-#> 49                     HEAD 2024-01-17 12:35:35
-#> 50                     main 2023-11-22 00:17:49
+knitr::kable(
+  head(topic_lookup, 10)
+)
 ```
+
+| branch              | part         | chapter        |
+|:--------------------|:-------------|:---------------|
+| 01_whole-app-game   | Intro        | Whole app game |
+| 02.1_shiny-app      | Intro        | Shiny          |
+| 02.2_movies-app     | Intro        | Shiny          |
+| 02.3_proj-app       | Intro        | Shiny          |
+| 03.1_description    | Intro        | Packages       |
+| 03.2_rproj          | Intro        | Packages       |
+| 03.3_create-package | Intro        | Packages       |
+| 04_devtools         | Intro        | Development    |
+| 05_roxygen2         | App-packages | Documentation  |
+| 06.1_pkg-exports    | App-packages | Dependencies   |
+
+``` r
+knitr::kable(
+  tail(topic_lookup, 10)
+)
+```
+
+|     | branch                 | part           | chapter                  |
+|:----|:-----------------------|:---------------|:-------------------------|
+| 38  | 24.1.0_reactive-values | Special Topics | Values vs. data          |
+| 39  | 24.1.1_step_01         | Special Topics | Values vs. data          |
+| 40  | 24.1.2_step_02         | Special Topics | Values vs. data          |
+| 41  | 24.1.3_step_03         | Special Topics | Values vs. data          |
+| 42  | 24.1.4_step_04         | Special Topics | Values vs. data          |
+| 43  | 24.2_user-data         | Special Topics | Values vs. data          |
+| 44  | 24.2.0_user-data       | Special Topics | Values vs. data          |
+| 45  | 24.2.1_step_01         | Special Topics | Values vs. data          |
+| 46  | 24.2.2_step_02         | Special Topics | Values vs. data          |
+| 47  | A.E_mocks-snapshots    | Appendix       | Test mocks and snapshots |
 
 ## Launching apps and app-packages
 
@@ -105,10 +87,10 @@ launch(app = "02.3_proj-app")
 
 <img src="man/figures/launch_readme.gif" width="100%" style="display: block; margin: auto;" />
 
-[^1]: Check out the documentation for the [`credentials`
-    package](https://docs.ropensci.org/credentials/articles/intro.html)
-
-[^2]: Each of the apps in `shinypak` have a corresponding chapter in
+[^1]: Each of the apps in `shinypak` have a corresponding chapter in
     [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/)
     and branch in the [moviesApp
     repo](https://github.com/mjfrigaard/moviesApp/branches/all).
+
+[^2]: Check out the documentation for the [`credentials`
+    package](https://docs.ropensci.org/credentials/articles/intro.html)
