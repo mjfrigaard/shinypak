@@ -76,10 +76,12 @@ list_apps <- function(regex = NULL) {
   # return data
   colnames(branches_cols) <- c("branch", "last_updated")
   # get unique
-  branches <- unique(branches_cols)
-
-  return(branches[order(branches$branch),])
-
-
+  unique_branches <- unique(branches_cols)
+  # order
+  ord_branches <- unique_branches[order(unique_branches$branch),]
+  # remove non-listed branches
+  branches <- subset(x = ord_branches,
+                     branch %nin% c("HEAD", "main", "gh-pages"))
+  return(branches)
 }
 
