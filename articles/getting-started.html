@@ -5,67 +5,51 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="shinypak">
 <title>Getting started • shinypak</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Ubuntu-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/Ubuntu_Mono-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/Fira_Sans_Condensed-0.4.9/font.css" rel="stylesheet">
-<!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Getting started">
-<meta property="og:description" content="shinypak">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Getting started">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="../index.html">shinypak</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="active nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/getting-started.html">Getting started</a>
-  </div>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/getting-started.html">Getting started</a></li>
+  </ul>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">Changelog</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/mjfrigaard/shinypak/" aria-label="github">
-    <span class="fab fa fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mjfrigaard/shinypak/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-article">
 
@@ -74,10 +58,11 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>Getting started</h1>
+
+      <h1>Getting started</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/mjfrigaard/shinypak/blob/HEAD/vignettes/getting-started.Rmd" class="external-link"><code>vignettes/getting-started.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mjfrigaard/shinypak/blob/main/vignettes/getting-started.Rmd" class="external-link"><code>vignettes/getting-started.Rmd</code></a></small>
       <div class="d-none name"><code>getting-started.Rmd</code></div>
     </div>
 
@@ -99,81 +84,83 @@ your OS keychain.</em>”</p>
 <div class="section level3">
 <h3 id="list-all-apps">List all apps<a class="anchor" aria-label="anchor" href="#list-all-apps"></a>
 </h3>
-<p>The apps are stored in branches on the <code>moviesApp</code>
+<p>The apps are stored in branches on the <code>shinyAppPkgs</code>
 repo:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                      branch        last_updated</span></span>
-<span><span class="co">#&gt; 2         01_whole-app-game 2024-01-17 19:30:27</span></span>
-<span><span class="co">#&gt; 1            02.1_shiny-app 2024-01-17 19:35:35</span></span>
-<span><span class="co">#&gt; 4           02.2_movies-app 2024-01-17 19:37:19</span></span>
-<span><span class="co">#&gt; 5             02.3_proj-app 2024-01-17 19:39:28</span></span>
-<span><span class="co">#&gt; 6          03.1_description 2024-01-17 19:40:11</span></span>
-<span><span class="co">#&gt; 7                03.2_rproj 2024-01-17 19:41:14</span></span>
-<span><span class="co">#&gt; 8       03.3_create-package 2024-01-17 19:42:45</span></span>
-<span><span class="co">#&gt; 9               04_devtools 2024-01-17 19:44:38</span></span>
-<span><span class="co">#&gt; 10              05_roxygen2 2024-01-17 19:45:34</span></span>
-<span><span class="co">#&gt; 11         06.1_pkg-exports 2024-01-17 19:46:25</span></span>
-<span><span class="co">#&gt; 12         06.2_pkg-imports 2024-01-17 19:47:55</span></span>
-<span><span class="co">#&gt; 13                  07_data 2024-01-18 18:17:13</span></span>
-<span><span class="co">#&gt; 14            08_launch-app 2024-01-17 20:46:38</span></span>
-<span><span class="co">#&gt; 15            09.1_inst-www 2024-01-17 20:47:20</span></span>
-<span><span class="co">#&gt; 16          09.2_inst-bslib 2024-01-17 20:48:37</span></span>
-<span><span class="co">#&gt; 17            09.3_inst-dev 2024-01-17 20:49:44</span></span>
-<span><span class="co">#&gt; 18           09.4_inst-prod 2024-01-17 20:50:27</span></span>
-<span><span class="co">#&gt; 19           11_tests-specs 2024-02-21 17:09:11</span></span>
-<span><span class="co">#&gt; 20      12.1_tests-fixtures 2024-02-21 17:11:15</span></span>
-<span><span class="co">#&gt; 21       12.2_tests-helpers 2024-02-21 17:12:29</span></span>
-<span><span class="co">#&gt; 22     12.3_tests-snapshots 2024-02-21 17:31:28</span></span>
-<span><span class="co">#&gt; 23         13_tests-modules 2024-02-21 17:33:30</span></span>
-<span><span class="co">#&gt; 24          14_tests-system 2024-02-21 19:02:02</span></span>
-<span><span class="co">#&gt; 25                15_docker 2024-02-15 15:21:03</span></span>
-<span><span class="co">#&gt; 26           16.1_gha-style 2024-02-22 04:56:59</span></span>
-<span><span class="co">#&gt; 27           16.2_gha-shiny 2024-02-22 05:39:17</span></span>
-<span><span class="co">#&gt; 28          16.3_gha-docker 2024-02-22 06:51:38</span></span>
-<span><span class="co">#&gt; 29               17_pkgdown 2024-02-28 11:51:46</span></span>
-<span><span class="co">#&gt; 30          18.1_css-inline 2024-03-18 05:47:45</span></span>
-<span><span class="co">#&gt; 31        18.2_css-internal 2024-03-18 18:54:15</span></span>
-<span><span class="co">#&gt; 32            18.3_css-file 2024-03-18 21:20:11</span></span>
-<span><span class="co">#&gt; 33                    19_js 2024-03-19 14:56:18</span></span>
-<span><span class="co">#&gt; 34                20_python 2024-02-15 13:17:30</span></span>
-<span><span class="co">#&gt; 35                 21_style 2024-02-15 14:57:11</span></span>
-<span><span class="co">#&gt; 36                 22_golem 2024-01-17 21:49:00</span></span>
-<span><span class="co">#&gt; 37            23_leprechaun 2024-01-18 17:59:53</span></span>
-<span><span class="co">#&gt; 38                 24_rhino 2024-02-13 07:04:59</span></span>
-<span><span class="co">#&gt; 39         25.0_debug-error 2024-02-13 11:29:39</span></span>
-<span><span class="co">#&gt; 40 25.1_debug-selected_vars 2024-01-15 17:29:25</span></span>
-<span><span class="co">#&gt; 41    25.2_debug-var_inputs 2024-01-15 17:25:12</span></span>
-<span><span class="co">#&gt; 42  25.3_debug-scatter_plot 2024-01-15 17:21:58</span></span>
-<span><span class="co">#&gt; 43         25.4_debug-print 2024-01-15 17:04:21</span></span>
-<span><span class="co">#&gt; 44   26.1.0_reactive-values 2024-02-13 17:22:35</span></span>
-<span><span class="co">#&gt; 45           26.1.1_step_01 2024-02-13 17:14:41</span></span>
-<span><span class="co">#&gt; 46           26.1.2_step_02 2024-02-13 16:23:49</span></span>
-<span><span class="co">#&gt; 47           26.1.3_step_03 2024-02-13 16:38:31</span></span>
-<span><span class="co">#&gt; 48           26.1.4_step_04 2024-02-13 19:21:19</span></span>
-<span><span class="co">#&gt; 49         26.2.0_user-data 2024-02-13 19:04:32</span></span>
-<span><span class="co">#&gt; 50           26.2.1_step_01 2024-02-13 19:03:00</span></span>
-<span><span class="co">#&gt; 51           26.2.2_step_02 2024-02-13 19:01:57</span></span>
-<span><span class="co">#&gt; 52          27_stack-traces 2024-02-21 19:34:35</span></span>
-<span><span class="co">#&gt; 53       28_dependency-hell 2024-02-21 19:36:47</span></span>
-<span><span class="co">#&gt; 54      A.E_mocks-snapshots 2024-02-13 19:48:31</span></span></code></pre></div>
+<span><span class="co">#&gt; 2         01_whole-app-game 2024-07-25 19:14:02</span></span>
+<span><span class="co">#&gt; 1            02.1_shiny-app 2024-07-25 19:20:46</span></span>
+<span><span class="co">#&gt; 4           02.2_movies-app 2024-07-25 19:25:24</span></span>
+<span><span class="co">#&gt; 5             02.3_proj-app 2024-07-25 19:28:08</span></span>
+<span><span class="co">#&gt; 6          03.1_description 2024-07-25 19:40:09</span></span>
+<span><span class="co">#&gt; 7                03.2_rproj 2024-07-25 19:54:08</span></span>
+<span><span class="co">#&gt; 8       03.3_create-package 2024-07-25 19:59:58</span></span>
+<span><span class="co">#&gt; 9               04_devtools 2024-07-25 20:16:35</span></span>
+<span><span class="co">#&gt; 10              05_roxygen2 2024-07-26 05:02:57</span></span>
+<span><span class="co">#&gt; 11         06.1_pkg-exports 2024-07-26 05:27:53</span></span>
+<span><span class="co">#&gt; 12         06.2_pkg-imports 2024-07-26 05:38:56</span></span>
+<span><span class="co">#&gt; 13                  07_data 2024-07-26 13:57:00</span></span>
+<span><span class="co">#&gt; 14            08_launch-app 2024-07-26 15:02:25</span></span>
+<span><span class="co">#&gt; 15            09.1_inst-www 2024-07-26 15:01:04</span></span>
+<span><span class="co">#&gt; 16          09.2_inst-bslib 2024-07-26 15:12:26</span></span>
+<span><span class="co">#&gt; 17            09.3_inst-dev 2024-07-26 15:18:47</span></span>
+<span><span class="co">#&gt; 18           09.4_inst-prod 2024-07-26 18:45:51</span></span>
+<span><span class="co">#&gt; 19           11_tests-specs 2024-07-26 19:07:11</span></span>
+<span><span class="co">#&gt; 20      12.1_tests-fixtures 2024-07-26 19:18:13</span></span>
+<span><span class="co">#&gt; 21       12.2_tests-helpers 2024-07-26 19:34:52</span></span>
+<span><span class="co">#&gt; 22     12.3_tests-snapshots 2024-07-26 19:45:10</span></span>
+<span><span class="co">#&gt; 23         13_tests-modules 2024-07-26 20:09:02</span></span>
+<span><span class="co">#&gt; 24          14_tests-system 2024-07-26 20:23:38</span></span>
+<span><span class="co">#&gt; 25                15_docker 2024-07-18 14:57:42</span></span>
+<span><span class="co">#&gt; 26           16.1_gha-style 2024-07-18 15:01:55</span></span>
+<span><span class="co">#&gt; 27           16.2_gha-shiny 2024-07-18 15:14:24</span></span>
+<span><span class="co">#&gt; 28          16.3_gha-docker 2024-07-18 15:11:18</span></span>
+<span><span class="co">#&gt; 29               17_pkgdown 2024-07-18 15:36:39</span></span>
+<span><span class="co">#&gt; 31                  18_html 2024-07-18 16:11:37</span></span>
+<span><span class="co">#&gt; 30            18.3_css-file 2024-03-18 21:20:11</span></span>
+<span><span class="co">#&gt; 32          19.1_css-inline 2024-07-18 15:54:38</span></span>
+<span><span class="co">#&gt; 33        19.2_css-internal 2024-03-18 18:54:15</span></span>
+<span><span class="co">#&gt; 34            19.3_css-file 2024-03-18 21:20:11</span></span>
+<span><span class="co">#&gt; 35        20.1_js-htmltools 2024-05-21 04:09:58</span></span>
+<span><span class="co">#&gt; 36            20.2_js-react 2024-05-09 13:56:26</span></span>
+<span><span class="co">#&gt; 37                 21_style 2024-02-15 14:57:11</span></span>
+<span><span class="co">#&gt; 38                 22_golem 2024-01-17 21:49:00</span></span>
+<span><span class="co">#&gt; 39            23_leprechaun 2024-01-18 17:59:53</span></span>
+<span><span class="co">#&gt; 40                 24_rhino 2024-04-11 19:10:16</span></span>
+<span><span class="co">#&gt; 41         25.0_debug-error 2024-02-13 11:29:39</span></span>
+<span><span class="co">#&gt; 42 25.1_debug-selected_vars 2024-01-15 17:29:25</span></span>
+<span><span class="co">#&gt; 43    25.2_debug-var_inputs 2024-01-15 17:25:12</span></span>
+<span><span class="co">#&gt; 44  25.3_debug-scatter_plot 2024-01-15 17:21:58</span></span>
+<span><span class="co">#&gt; 45         25.4_debug-print 2024-01-15 17:04:21</span></span>
+<span><span class="co">#&gt; 46   26.1.0_reactive-values 2024-02-13 17:22:35</span></span>
+<span><span class="co">#&gt; 47           26.1.1_step_01 2024-02-13 17:14:41</span></span>
+<span><span class="co">#&gt; 48           26.1.2_step_02 2024-02-13 16:23:49</span></span>
+<span><span class="co">#&gt; 49           26.1.3_step_03 2024-02-13 16:38:31</span></span>
+<span><span class="co">#&gt; 50           26.1.4_step_04 2024-02-13 19:21:19</span></span>
+<span><span class="co">#&gt; 51         26.2.0_user-data 2024-02-13 19:04:32</span></span>
+<span><span class="co">#&gt; 52           26.2.1_step_01 2024-02-13 19:03:00</span></span>
+<span><span class="co">#&gt; 53           26.2.2_step_02 2024-02-13 19:01:57</span></span>
+<span><span class="co">#&gt; 54          27_stack-traces 2024-02-21 19:34:35</span></span>
+<span><span class="co">#&gt; 55       28_dependency-hell 2024-02-21 19:36:47</span></span>
+<span><span class="co">#&gt; 56      A.E_mocks-snapshots 2024-02-13 19:48:31</span></span></code></pre></div>
 <p>You can also specify a <code>regex</code> to return a table of
 branches matching a particular chapter or topic:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"12"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                  branch        last_updated</span></span>
-<span><span class="co">#&gt; 20  12.1_tests-fixtures 2024-02-21 17:11:15</span></span>
-<span><span class="co">#&gt; 21   12.2_tests-helpers 2024-02-21 17:12:29</span></span>
-<span><span class="co">#&gt; 22 12.3_tests-snapshots 2024-02-21 17:31:28</span></span></code></pre></div>
+<span><span class="co">#&gt; 20  12.1_tests-fixtures 2024-07-26 19:18:13</span></span>
+<span><span class="co">#&gt; 21   12.2_tests-helpers 2024-07-26 19:34:52</span></span>
+<span><span class="co">#&gt; 22 12.3_tests-snapshots 2024-07-26 19:45:10</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"tests"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                  branch        last_updated</span></span>
-<span><span class="co">#&gt; 19       11_tests-specs 2024-02-21 17:09:11</span></span>
-<span><span class="co">#&gt; 20  12.1_tests-fixtures 2024-02-21 17:11:15</span></span>
-<span><span class="co">#&gt; 21   12.2_tests-helpers 2024-02-21 17:12:29</span></span>
-<span><span class="co">#&gt; 22 12.3_tests-snapshots 2024-02-21 17:31:28</span></span>
-<span><span class="co">#&gt; 23     13_tests-modules 2024-02-21 17:33:30</span></span>
-<span><span class="co">#&gt; 24      14_tests-system 2024-02-21 19:02:02</span></span></code></pre></div>
+<span><span class="co">#&gt; 19       11_tests-specs 2024-07-26 19:07:11</span></span>
+<span><span class="co">#&gt; 20  12.1_tests-fixtures 2024-07-26 19:18:13</span></span>
+<span><span class="co">#&gt; 21   12.2_tests-helpers 2024-07-26 19:34:52</span></span>
+<span><span class="co">#&gt; 22 12.3_tests-snapshots 2024-07-26 19:45:10</span></span>
+<span><span class="co">#&gt; 23     13_tests-modules 2024-07-26 20:09:02</span></span>
+<span><span class="co">#&gt; 24      14_tests-system 2024-07-26 20:23:38</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="launch">Launch<a class="anchor" aria-label="anchor" href="#launch"></a>
@@ -526,28 +513,26 @@ latest commit to the branch.</p>
 </table>
 </div>
 </div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by Martin Frigaard.</p>
+  <p>Developed by Martin Frigaard.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>
