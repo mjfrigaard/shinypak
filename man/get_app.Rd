@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_app.R
 \name{get_app}
 \alias{get_app}
-\title{Clone a Specific Branch of the moviesApp Repository and Optionally Open it}
+\title{Clone a Specific Branch of the shinyAppPkgs Repository and Optionally Open it}
 \usage{
 get_app(app = "main", open = FALSE)
 }
@@ -18,7 +18,7 @@ to open the new R project in a new RStudio session using
 Invisible \code{NULL}. The function is called for its side effects.
 }
 \description{
-Clones a specified branch of the \code{moviesApp} GitHub repository into the
+Clones a specified branch of the \code{shinyAppPkgs} GitHub repository into the
 current working directory. It cleans the cloned directory by removing \code{.git}
 files, \code{.DS_Store}, and \code{.Rbuildignore} files, renames the R project file,
 and optionally opens it in a new RStudio session.

@@ -25,7 +25,7 @@ library(shinypak)
 
 ## List all apps 
 
-The apps are stored in branches on the `moviesApp` repo:
+The apps are stored in branches on the `shinyAppPkgs` repo:
 
 ```{r}
 list_apps()

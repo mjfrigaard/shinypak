@@ -1,7 +1,7 @@
-#' Clone a Specific Branch of the moviesApp Repository and Optionally Open it
+#' Clone a Specific Branch of the shinyAppPkgs Repository and Optionally Open it
 #'
 #' @description
-#' Clones a specified branch of the `moviesApp` GitHub repository into the
+#' Clones a specified branch of the `shinyAppPkgs` GitHub repository into the
 #' current working directory. It cleans the cloned directory by removing `.git`
 #' files, `.DS_Store`, and `.Rbuildignore` files, renames the R project file,
 #' and optionally opens it in a new RStudio session.
@@ -50,7 +50,7 @@ get_app <- function(app = "main", open = FALSE) {
     cli::cli_progress_step("'{app}' not in local working directory")
     cli::cli_progress_step("downloading '{app}'")
     gert::git_clone(path = app_dir,
-      url = "https://github.com/mjfrigaard/moviesApp",
+      url = "https://github.com/mjfrigaard/shinyAppPkgs",
         branch = app,
         verbose = FALSE)
 
@@ -59,7 +59,7 @@ get_app <- function(app = "main", open = FALSE) {
     unlink(app_dir, force = TRUE, recursive = TRUE)
     cli::cli_progress_step("updating '{app}'")
     gert::git_clone(path = app_dir,
-      url = "https://github.com/mjfrigaard/moviesApp",
+      url = "https://github.com/mjfrigaard/shinyAppPkgs",
         branch = app,
         verbose = FALSE)
   }
@@ -80,7 +80,7 @@ get_app <- function(app = "main", open = FALSE) {
                           all.files = TRUE, full.names = TRUE)
   lapply(X = rbuild_ignore, unlink, recursive = TRUE, force = TRUE)
   # # find rproj and rename it
-  rproj <- list.files(app_dir, pattern = "moviesApp.Rproj",
+  rproj <- list.files(app_dir, pattern = "shinyAppPkgs.Rproj",
                           all.files = TRUE, full.names = TRUE)
   new_rproj <- paste0(app_dir, "/", app, ".Rproj")
   file.rename(from = rproj, to = new_rproj)

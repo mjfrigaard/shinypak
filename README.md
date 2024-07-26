@@ -8,7 +8,7 @@
 
 The primary goal of `shinypak` is to provide easy access all the
 application examples in
-[`moviesApp`](https://github.com/mjfrigaard/moviesApp).[^1]
+[`shinyAppPkgs`](https://github.com/mjfrigaard/shinyAppPkgs).[^1]
 
 `shinypak` also has helper functions for checking the files and folders
 in a Shiny app-package.
@@ -89,8 +89,8 @@ launch(app = "02.3_proj-app")
 
 [^1]: Each of the apps in `shinypak` have a corresponding chapter in
     [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/)
-    and branch in the [moviesApp
-    repo](https://github.com/mjfrigaard/moviesApp/branches/all).
+    and branch in the [shinyAppPkgs
+    repo](https://github.com/mjfrigaard/shinyAppPkgs/branches/all).
 
 [^2]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)

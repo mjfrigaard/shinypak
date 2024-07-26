@@ -20,9 +20,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of `shinypak` is to provide easy access all the application examples in [`moviesApp`](https://github.com/mjfrigaard/moviesApp).[^all-apps]
+The primary goal of `shinypak` is to provide easy access all the application examples in [`shinyAppPkgs`](https://github.com/mjfrigaard/shinyAppPkgs).[^all-apps]
 
-[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [moviesApp repo](https://github.com/mjfrigaard/moviesApp/branches/all).
+[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [shinyAppPkgs repo](https://github.com/mjfrigaard/shinyAppPkgs/branches/all).
 
 `shinypak` also has helper functions for checking the files and folders in a Shiny app-package. 
 
