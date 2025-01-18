@@ -12,10 +12,10 @@
 launch <- function(app) {
 
   if (!dir.exists(app)) {
-    cli::cli_progress_message("cloning {app} from 'shinyAppPkgs'")
+    cli::cli_progress_message("cloning {app} from 'sap'")
     get_app(app = app, open = FALSE)
     if (!dir.exists(app)) {
-      cli::cli_alert_success("{app} cloned from 'shinyAppPkgs'")
+      cli::cli_alert_success("{app} cloned from 'sap'")
     }
   }
   app_dot_r <- list.files(path = app,

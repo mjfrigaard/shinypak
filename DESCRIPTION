@@ -9,7 +9,7 @@ License: MIT + file LICENSE
 URL: https://mjfrigaard.github.io/shinypak/,
     https://github.com/mjfrigaard/shinypak
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5)
 Imports: 
     cli,
     gert,

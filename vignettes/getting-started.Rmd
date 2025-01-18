@@ -25,16 +25,16 @@ library(shinypak)
 
 ## List all apps 
 
-The apps are stored in branches on the `shinyAppPkgs` repo:
+The apps are stored in branches on the `sap` repo. 
 
 ```{r}
-list_apps()
+list_apps() |> head()
 ```
 
 You can also specify a `regex` to return a table of branches matching a particular chapter or topic: 
 
 ```{r}
-list_apps("12")
+list_apps("^16")
 ```
 
 
@@ -65,18 +65,10 @@ launch(app = "02.3_proj-app")
 ✔ Launching app with: shiny::shinyAppDir('02.3_proj-app/app.R') 
 ```
 
-```{r launch, echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics("../man/figures/launch_readme.gif")
-```
-
 If the branch is storing an app-package, `launch()` loads the package and then launches the application:
 
-```{r , eval=FALSE}
-launch(app = "09.2_inst-bslib")
-```
-
-```{r launch_app_pkg, echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics("../man/figures/launch_app_pkg.gif")
+```{r launch, echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics("../man/figures/launch_readme.gif")
 ```
 
 
@@ -84,28 +76,16 @@ knitr::include_graphics("../man/figures/launch_app_pkg.gif")
 
 The `is_r_package()` function is useful for determining if a directory contains an R package. If `path` contains a folder that isn't an R package, it will return `FALSE`.
 
-```{r , eval=FALSE}
-is_r_package(path = "02.2_proj-app")
-```
-
-```{verbatim}
-#> [1] FALSE
+```{r , eval=TRUE}
+is_r_package(path = system.file("pkg", package = "shinypak"))
 ```
 
 If the `verbose` argument is set to `TRUE`, the details are printed on what is being checked: 
 
-```{r , eval=FALSE}
-is_r_package("09.2_inst-bslib", verbose = TRUE)
+```{r , eval=TRUE}
+is_r_package(path = system.file("pkg", package = "shinypak"), verbose = TRUE)
 ```
 
-```{verbatim}
-#> ℹ Checking DESCRIPTION for package fields
-#> ✔ Package, Version, License, Description, Title, Author, and Maintainer found!
-#> ℹ Checking .Rroj for project build fields
-#> ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!
-#> ✔ '09b_inst-bslib/' is an R package
-#> [1] TRUE
-```
 
 ## Get
 

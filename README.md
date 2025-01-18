@@ -4,11 +4,11 @@
 # `shinypak`
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 The primary goal of `shinypak` is to provide easy access all the
-application examples in
-[`shinyAppPkgs`](https://github.com/mjfrigaard/shinyAppPkgs).[^1]
+application examples in [`sap`](https://github.com/mjfrigaard/sap).[^1]
 
 `shinypak` also has helper functions for checking the files and folders
 in a Shiny app-package.
@@ -20,7 +20,7 @@ You can install the development version of `shinypak` from
 
 ``` r
 install.packages('remotes')
-remotes::install_github("mjfrigaard/shinypak")
+remotes::install_github("mjfrigaard/shinypak", force = TRUE)
 ```
 
 ``` r
@@ -56,7 +56,7 @@ knitr::kable(
 | 03.3_create-package | Intro        | Packages       |
 | 04_devtools         | Intro        | Development    |
 | 05_roxygen2         | App-packages | Documentation  |
-| 06.1_pkg-exports    | App-packages | Dependencies   |
+| 06.1_exports        | App-packages | Dependencies   |
 
 ``` r
 knitr::kable(
@@ -64,18 +64,18 @@ knitr::kable(
 )
 ```
 
-|     | branch              | part           | chapter                          |
-|:----|:--------------------|:---------------|:---------------------------------|
-| 44  | 26.1.1_step_01      | Special Topics | App Data                         |
-| 45  | 26.1.2_step_02      | Special Topics | App Data                         |
-| 46  | 26.1.3_step_03      | Special Topics | App Data                         |
-| 47  | 26.1.4_step_04      | Special Topics | App Data                         |
-| 48  | 26.2.0_user-data    | Special Topics | App Data                         |
-| 49  | 26.2.1_step_01      | Special Topics | App Data                         |
-| 50  | 26.2.2_step_02      | Special Topics | App Data                         |
-| 51  | 27_stack-traces     | Special Topics | Stack traces                     |
-| 52  | 28_dependency-hell  | Special Topics | Dependency hell                  |
-| 53  | A.E_mocks-snapshots | Appendix       | Appendix E — Mocks and snapshots |
+|     | branch          | part       | chapter        |
+|:----|:----------------|:-----------|:---------------|
+| 24  | 18_tests-system | Tests      | System tests   |
+| 25  | 20_docker       | Deploy     | Docker         |
+| 26  | 21.1_gha-style  | Deploy     | GitHub Actions |
+| 27  | 21.2_gha-shiny  | Deploy     | GitHub Actions |
+| 28  | 21.3_gha-docker | Deploy     | GitHub Actions |
+| 29  | 22_pkgdown      | Deploy     | pkgdown        |
+| 30  | 23_golem        | Frameworks | golem          |
+| 31  | 24_leprechaun   | Frameworks | leprechaun     |
+| 32  | 25_charpente    | Frameworks | charpente      |
+| 33  | 26_rhino        | Frameworks | rhino          |
 
 ## Launching apps and app-packages
 
@@ -89,8 +89,8 @@ launch(app = "02.3_proj-app")
 
 [^1]: Each of the apps in `shinypak` have a corresponding chapter in
     [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/)
-    and branch in the [shinyAppPkgs
-    repo](https://github.com/mjfrigaard/shinyAppPkgs/branches/all).
+    and branch in the [sap
+    repo](https://github.com/mjfrigaard/sap/branches/all).
 
 [^2]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)

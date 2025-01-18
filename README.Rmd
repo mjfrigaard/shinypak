@@ -20,9 +20,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of `shinypak` is to provide easy access all the application examples in [`shinyAppPkgs`](https://github.com/mjfrigaard/shinyAppPkgs).[^all-apps]
+The primary goal of `shinypak` is to provide easy access all the application examples in [`sap`](https://github.com/mjfrigaard/sap).[^all-apps]
 
-[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [shinyAppPkgs repo](https://github.com/mjfrigaard/shinyAppPkgs/branches/all).
+[^all-apps]: Each of the apps in `shinypak` have a corresponding chapter in [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) and branch in the [sap repo](https://github.com/mjfrigaard/sap/branches/all).
 
 `shinypak` also has helper functions for checking the files and folders in a Shiny app-package. 
 
@@ -32,7 +32,7 @@ You can install the development version of `shinypak` from [GitHub](https://gith
 
 ```{r remotes, message=FALSE, warning=FALSE, results='hide', eval=FALSE}
 install.packages('remotes')
-remotes::install_github("mjfrigaard/shinypak")
+remotes::install_github("mjfrigaard/shinypak", force = TRUE)
 ```
 
 ```{r pkg, message=FALSE, warning=FALSE, results='hide'}

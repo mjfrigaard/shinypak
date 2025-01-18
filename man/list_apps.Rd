@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_apps.R
 \name{list_apps}
 \alias{list_apps}
-\title{List Branches of the shinyAppPkgs Repository}
+\title{List Branches of the sap Repository}
 \usage{
 list_apps(regex = NULL)
 }
@@ -16,7 +16,7 @@ listing the source of the branch, the branch name, and the last updated
 date.
 }
 \description{
-This function clones the 'shinyAppPkgs' GitHub repository, extracts the list
+This function clones the 'sap' GitHub repository, extracts the list
 of branches along with their last update time, and then returns this information
 as a tibble. The repository is cloned to a temporary directory, which is removed
 after the function executes.
@@ -26,7 +26,7 @@ after the function executes.
 The function operates in several steps:
 \enumerate{
 \item It saves the current working directory to revert back to it later
-\item It clones the \href{https://github.com/mjfrigaard/shinyAppPkgs}{'shinyAppPkgs'}
+\item It clones the \href{https://github.com/mjfrigaard/sap}{'sap'}
 repository from GitHub into a temporary directory
 \item It lists all branches of the cloned repository
 \item It separates the branch \code{name}s into \code{source} and \code{branch_name}

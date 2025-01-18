@@ -1,7 +1,7 @@
-#' List Branches of the shinyAppPkgs Repository
+#' List Branches of the sap Repository
 #'
 #' @description
-#' This function clones the 'shinyAppPkgs' GitHub repository, extracts the list
+#' This function clones the 'sap' GitHub repository, extracts the list
 #' of branches along with their last update time, and then returns this information
 #' as a tibble. The repository is cloned to a temporary directory, which is removed
 #' after the function executes.
@@ -17,7 +17,7 @@
 #' @section How it works:
 #' The function operates in several steps:
 #' 1. It saves the current working directory to revert back to it later
-#' 2. It clones the ['shinyAppPkgs'](https://github.com/mjfrigaard/shinyAppPkgs)
+#' 2. It clones the ['sap'](https://github.com/mjfrigaard/sap)
 #'    repository from GitHub into a temporary directory
 #' 3. It lists all branches of the cloned repository
 #' 4. It separates the branch `name`s into `source` and `branch_name`
@@ -39,14 +39,14 @@ list_apps <- function(regex = NULL) {
   original_dir <- getwd()
 
   # clone repo to temp dir
-  tmp_git_dir <- file.path(tempdir(), 'shinyAppPkgs')
+  tmp_git_dir <- file.path(tempdir(), 'sap')
 
-  gert::git_clone(url = "https://github.com/mjfrigaard/shinyAppPkgs",
+  gert::git_clone(url = "https://github.com/mjfrigaard/sap",
     path =  tmp_git_dir, verbose = FALSE)
   # switch to git folder
   setwd(tmp_git_dir)
 
-  # get tibble of branch names and last update in shinyAppPkgs
+  # get tibble of branch names and last update in sap
   all_branches <- gert::git_branch_list(local = NULL, repo = ".")
 
   branch_vars <- sep_cols(all_branches,
