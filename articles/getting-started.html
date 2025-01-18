@@ -11,8 +11,8 @@
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Ubuntu-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/Ubuntu_Mono-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/Fira_Sans_Condensed-0.4.9/font.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Getting started">
 </head>
 <body>
@@ -84,83 +84,33 @@ your OS keychain.</em>”</p>
 <div class="section level3">
 <h3 id="list-all-apps">List all apps<a class="anchor" aria-label="anchor" href="#list-all-apps"></a>
 </h3>
-<p>The apps are stored in branches on the <code>shinyAppPkgs</code>
-repo:</p>
+<p>The apps are stored in branches on the <code>sap</code> repo.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;                      branch        last_updated</span></span>
-<span><span class="co">#&gt; 2         01_whole-app-game 2024-07-25 19:14:02</span></span>
-<span><span class="co">#&gt; 1            02.1_shiny-app 2024-07-25 19:20:46</span></span>
-<span><span class="co">#&gt; 4           02.2_movies-app 2024-07-25 19:25:24</span></span>
-<span><span class="co">#&gt; 5             02.3_proj-app 2024-07-25 19:28:08</span></span>
-<span><span class="co">#&gt; 6          03.1_description 2024-07-25 19:40:09</span></span>
-<span><span class="co">#&gt; 7                03.2_rproj 2024-07-25 19:54:08</span></span>
-<span><span class="co">#&gt; 8       03.3_create-package 2024-07-25 19:59:58</span></span>
-<span><span class="co">#&gt; 9               04_devtools 2024-07-25 20:16:35</span></span>
-<span><span class="co">#&gt; 10              05_roxygen2 2024-07-26 05:02:57</span></span>
-<span><span class="co">#&gt; 11         06.1_pkg-exports 2024-07-26 05:27:53</span></span>
-<span><span class="co">#&gt; 12         06.2_pkg-imports 2024-07-26 05:38:56</span></span>
-<span><span class="co">#&gt; 13                  07_data 2024-07-26 13:57:00</span></span>
-<span><span class="co">#&gt; 14            08_launch-app 2024-07-26 15:02:25</span></span>
-<span><span class="co">#&gt; 15            09.1_inst-www 2024-07-26 15:01:04</span></span>
-<span><span class="co">#&gt; 16          09.2_inst-bslib 2024-07-26 15:12:26</span></span>
-<span><span class="co">#&gt; 17            09.3_inst-dev 2024-07-26 15:18:47</span></span>
-<span><span class="co">#&gt; 18           09.4_inst-prod 2024-07-26 18:45:51</span></span>
-<span><span class="co">#&gt; 19           11_tests-specs 2024-07-26 19:07:11</span></span>
-<span><span class="co">#&gt; 20      12.1_tests-fixtures 2024-07-26 19:18:13</span></span>
-<span><span class="co">#&gt; 21       12.2_tests-helpers 2024-07-26 19:34:52</span></span>
-<span><span class="co">#&gt; 22     12.3_tests-snapshots 2024-07-26 19:45:10</span></span>
-<span><span class="co">#&gt; 23         13_tests-modules 2024-07-26 20:09:02</span></span>
-<span><span class="co">#&gt; 24          14_tests-system 2024-07-26 20:23:38</span></span>
-<span><span class="co">#&gt; 25                15_docker 2024-07-18 14:57:42</span></span>
-<span><span class="co">#&gt; 26           16.1_gha-style 2024-07-18 15:01:55</span></span>
-<span><span class="co">#&gt; 27           16.2_gha-shiny 2024-07-18 15:14:24</span></span>
-<span><span class="co">#&gt; 28          16.3_gha-docker 2024-07-18 15:11:18</span></span>
-<span><span class="co">#&gt; 29               17_pkgdown 2024-07-18 15:36:39</span></span>
-<span><span class="co">#&gt; 31                  18_html 2024-07-18 16:11:37</span></span>
-<span><span class="co">#&gt; 30            18.3_css-file 2024-03-18 21:20:11</span></span>
-<span><span class="co">#&gt; 32          19.1_css-inline 2024-07-18 15:54:38</span></span>
-<span><span class="co">#&gt; 33        19.2_css-internal 2024-03-18 18:54:15</span></span>
-<span><span class="co">#&gt; 34            19.3_css-file 2024-03-18 21:20:11</span></span>
-<span><span class="co">#&gt; 35        20.1_js-htmltools 2024-05-21 04:09:58</span></span>
-<span><span class="co">#&gt; 36            20.2_js-react 2024-05-09 13:56:26</span></span>
-<span><span class="co">#&gt; 37                 21_style 2024-02-15 14:57:11</span></span>
-<span><span class="co">#&gt; 38                 22_golem 2024-01-17 21:49:00</span></span>
-<span><span class="co">#&gt; 39            23_leprechaun 2024-01-18 17:59:53</span></span>
-<span><span class="co">#&gt; 40                 24_rhino 2024-04-11 19:10:16</span></span>
-<span><span class="co">#&gt; 41         25.0_debug-error 2024-02-13 11:29:39</span></span>
-<span><span class="co">#&gt; 42 25.1_debug-selected_vars 2024-01-15 17:29:25</span></span>
-<span><span class="co">#&gt; 43    25.2_debug-var_inputs 2024-01-15 17:25:12</span></span>
-<span><span class="co">#&gt; 44  25.3_debug-scatter_plot 2024-01-15 17:21:58</span></span>
-<span><span class="co">#&gt; 45         25.4_debug-print 2024-01-15 17:04:21</span></span>
-<span><span class="co">#&gt; 46   26.1.0_reactive-values 2024-02-13 17:22:35</span></span>
-<span><span class="co">#&gt; 47           26.1.1_step_01 2024-02-13 17:14:41</span></span>
-<span><span class="co">#&gt; 48           26.1.2_step_02 2024-02-13 16:23:49</span></span>
-<span><span class="co">#&gt; 49           26.1.3_step_03 2024-02-13 16:38:31</span></span>
-<span><span class="co">#&gt; 50           26.1.4_step_04 2024-02-13 19:21:19</span></span>
-<span><span class="co">#&gt; 51         26.2.0_user-data 2024-02-13 19:04:32</span></span>
-<span><span class="co">#&gt; 52           26.2.1_step_01 2024-02-13 19:03:00</span></span>
-<span><span class="co">#&gt; 53           26.2.2_step_02 2024-02-13 19:01:57</span></span>
-<span><span class="co">#&gt; 54          27_stack-traces 2024-02-21 19:34:35</span></span>
-<span><span class="co">#&gt; 55       28_dependency-hell 2024-02-21 19:36:47</span></span>
-<span><span class="co">#&gt; 56      A.E_mocks-snapshots 2024-02-13 19:48:31</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;              branch        last_updated</span></span>
+<span><span class="co">#&gt; 2 01_whole-app-game 2024-07-30 14:59:35</span></span>
+<span><span class="co">#&gt; 1    02.1_shiny-app 2024-09-03 21:27:18</span></span>
+<span><span class="co">#&gt; 4   02.2_movies-app 2024-12-15 11:14:20</span></span>
+<span><span class="co">#&gt; 5     02.3_proj-app 2024-12-16 05:00:36</span></span>
+<span><span class="co">#&gt; 6  03.1_description 2024-12-16 19:57:01</span></span>
+<span><span class="co">#&gt; 7        03.2_rproj 2024-12-16 19:58:34</span></span></code></pre></div>
 <p>You can also specify a <code>regex</code> to return a table of
 branches matching a particular chapter or topic:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"12"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"^16"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                  branch        last_updated</span></span>
-<span><span class="co">#&gt; 20  12.1_tests-fixtures 2024-07-26 19:18:13</span></span>
-<span><span class="co">#&gt; 21   12.2_tests-helpers 2024-07-26 19:34:52</span></span>
-<span><span class="co">#&gt; 22 12.3_tests-snapshots 2024-07-26 19:45:10</span></span></code></pre></div>
+<span><span class="co">#&gt; 21  16.1_tests-fixtures 2024-09-14 14:13:41</span></span>
+<span><span class="co">#&gt; 22   16.2_tests-helpers 2024-09-04 05:39:27</span></span>
+<span><span class="co">#&gt; 23 16.3_tests-snapshots 2024-11-06 15:09:57</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span><span class="st">"tests"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                  branch        last_updated</span></span>
-<span><span class="co">#&gt; 19       11_tests-specs 2024-07-26 19:07:11</span></span>
-<span><span class="co">#&gt; 20  12.1_tests-fixtures 2024-07-26 19:18:13</span></span>
-<span><span class="co">#&gt; 21   12.2_tests-helpers 2024-07-26 19:34:52</span></span>
-<span><span class="co">#&gt; 22 12.3_tests-snapshots 2024-07-26 19:45:10</span></span>
-<span><span class="co">#&gt; 23     13_tests-modules 2024-07-26 20:09:02</span></span>
-<span><span class="co">#&gt; 24      14_tests-system 2024-07-26 20:23:38</span></span></code></pre></div>
+<span><span class="co">#&gt; 20       15_tests-specs 2024-09-04 05:33:22</span></span>
+<span><span class="co">#&gt; 21  16.1_tests-fixtures 2024-09-14 14:13:41</span></span>
+<span><span class="co">#&gt; 22   16.2_tests-helpers 2024-09-04 05:39:27</span></span>
+<span><span class="co">#&gt; 23 16.3_tests-snapshots 2024-11-06 15:09:57</span></span>
+<span><span class="co">#&gt; 24     17_tests-modules 2024-09-04 06:11:59</span></span>
+<span><span class="co">#&gt; 25      18_tests-system 2025-01-17 21:55:03</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="launch">Launch<a class="anchor" aria-label="anchor" href="#launch"></a>
@@ -182,31 +132,28 @@ working directory, then launch the app:</p>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">✔</span> downloading <span class="st">'02.3_proj-app'</span> <span class="pp">[</span><span class="ss">10.7s</span><span class="pp">]</span> </span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">✔</span> got <span class="st">'02.3_proj-app'</span> <span class="pp">[</span><span class="ss">163ms</span><span class="pp">]</span>         </span>
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="ex">✔</span> Launching app with: shiny::shinyAppDir<span class="er">(</span><span class="st">'02.3_proj-app/app.R'</span><span class="kw">)</span> </span></code></pre></div>
-<p><img src="../reference/figures/launch_readme.gif" width="100%" style="display: block; margin: auto;"></p>
 <p>If the branch is storing an app-package, <code><a href="../reference/launch.html">launch()</a></code> loads
 the package and then launches the application:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"09.2_inst-bslib"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="../reference/figures/launch_app_pkg.gif" width="100%" style="display: block; margin: auto;"></p>
+<p><img src="../reference/figures/launch_readme.gif" width="100%" style="display: block; margin: auto;"></p>
 <div class="section level3">
 <h3 id="helper">Helper<a class="anchor" aria-label="anchor" href="#helper"></a>
 </h3>
 <p>The <code><a href="../reference/is_r_package.html">is_r_package()</a></code> function is useful for determining if
 a directory contains an R package. If <code>path</code> contains a
 folder that isn’t an R package, it will return <code>FALSE</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"02.2_proj-app"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>#&gt; [1] FALSE</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span>path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"pkg"</span>, package <span class="op">=</span> <span class="st">"shinypak"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 <p>If the <code>verbose</code> argument is set to <code>TRUE</code>, the
 details are printed on what is being checked:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span><span class="st">"09.2_inst-bslib"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>#&gt; ℹ Checking DESCRIPTION for package fields</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>#&gt; ✔ Package, Version, License, Description, Title, Author, and Maintainer found!</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>#&gt; ℹ Checking .Rroj for project build fields</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>#&gt; ✔ BuildType, PackageUseDevtools, and PackageInstallArgs in .Rproj!</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>#&gt; ✔ '09b_inst-bslib/' is an R package</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>#&gt; [1] TRUE</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span>path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"pkg"</span>, package <span class="op">=</span> <span class="st">"shinypak"</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Checking DESCRIPTION for package fields</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Package, Version, License, Description, Title, Author, and Maintainer found!</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Checking .Rroj for project build fields</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> BuildType, PackageUseDevtools, and PackageInstallArgs not in .Rproj!</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> '' is not configured as an R package</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get">Get<a class="anchor" aria-label="anchor" href="#get"></a>
@@ -214,12 +161,12 @@ details are printed on what is being checked:</p>
 <p><code><a href="../reference/launch.html">launch()</a></code> calls the <code><a href="../reference/get_app.html">get_app()</a></code> function. If
 you call <code><a href="../reference/get_app.html">get_app()</a></code>, the specified branch and application
 will be downloaded into the current working directory:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"14_tests-system"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app.gif" width="100%" style="display: block; margin: auto;"></p>
 <p>You can open the new app project by supplying the
 <code>open = TRUE</code> argument:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"14_tests-system"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app_open.gif" width="100%" style="display: block; margin: auto;"></p>
 <p>If the app is already downloaded, the files are updated with the
@@ -230,14 +177,9 @@ latest commit to the branch.</p>
 </h3>
 <p><code>topic_lookup</code> connects <code>branch</code>,
 <code>part</code>, and <code>chapter</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">topic_lookup</span></span></code></pre></div>
 <table class="table">
-<colgroup>
-<col width="34%">
-<col width="20%">
-<col width="45%">
-</colgroup>
 <thead><tr class="header">
 <th align="left">branch</th>
 <th align="left">part</th>
@@ -290,12 +232,12 @@ latest commit to the branch.</p>
 <td align="left">Documentation</td>
 </tr>
 <tr class="even">
-<td align="left">06.1_pkg-exports</td>
+<td align="left">06.1_exports</td>
 <td align="left">App-packages</td>
 <td align="left">Dependencies</td>
 </tr>
 <tr class="odd">
-<td align="left">06.2_pkg-imports</td>
+<td align="left">06.2_imports</td>
 <td align="left">App-packages</td>
 <td align="left">Dependencies</td>
 </tr>
@@ -305,209 +247,109 @@ latest commit to the branch.</p>
 <td align="left">Data</td>
 </tr>
 <tr class="odd">
-<td align="left">08_launch-app</td>
+<td align="left">08_launch</td>
 <td align="left">App-packages</td>
 <td align="left">Launch</td>
 </tr>
 <tr class="even">
-<td align="left">09.1_inst-www</td>
+<td align="left">09_inst</td>
 <td align="left">App-packages</td>
-<td align="left">External files</td>
+<td align="left">Resources</td>
 </tr>
 <tr class="odd">
-<td align="left">09.2_inst-bslib</td>
-<td align="left">App-packages</td>
-<td align="left">External files</td>
+<td align="left">10_debugger</td>
+<td align="left">Debug</td>
+<td align="left">Debuggers</td>
 </tr>
 <tr class="even">
-<td align="left">09.3_inst-dev</td>
-<td align="left">App-packages</td>
-<td align="left">External files</td>
+<td align="left">11_debug-print</td>
+<td align="left">Debug</td>
+<td align="left">Print debugging</td>
 </tr>
 <tr class="odd">
-<td align="left">09.4_inst-prod</td>
-<td align="left">App-packages</td>
-<td align="left">External files</td>
+<td align="left">12_debug-apps</td>
+<td align="left">Debug</td>
+<td align="left">Debugging apps</td>
 </tr>
 <tr class="even">
-<td align="left">11_tests-specs</td>
+<td align="left">14_test-suite</td>
+<td align="left">Tests</td>
+<td align="left">Test suite</td>
+</tr>
+<tr class="odd">
+<td align="left">15_tests-specs</td>
 <td align="left">Tests</td>
 <td align="left">Specifications</td>
 </tr>
-<tr class="odd">
-<td align="left">12.1_tests-fixtures</td>
-<td align="left">Tests</td>
-<td align="left">Test tools</td>
-</tr>
 <tr class="even">
-<td align="left">12.2_tests-helpers</td>
+<td align="left">16.1_tests-fixtures</td>
 <td align="left">Tests</td>
 <td align="left">Test tools</td>
 </tr>
 <tr class="odd">
-<td align="left">12.3_tests-snapshots</td>
+<td align="left">16.2_tests-helpers</td>
 <td align="left">Tests</td>
 <td align="left">Test tools</td>
 </tr>
 <tr class="even">
-<td align="left">13_tests-modules</td>
+<td align="left">16.3_tests-snapshots</td>
+<td align="left">Tests</td>
+<td align="left">Test tools</td>
+</tr>
+<tr class="odd">
+<td align="left">17_tests-modules</td>
 <td align="left">Tests</td>
 <td align="left">Testing modules</td>
 </tr>
-<tr class="odd">
-<td align="left">14_tests-system</td>
-<td align="left">Deploy</td>
+<tr class="even">
+<td align="left">18_tests-system</td>
+<td align="left">Tests</td>
 <td align="left">System tests</td>
 </tr>
-<tr class="even">
-<td align="left">15_docker</td>
+<tr class="odd">
+<td align="left">20_docker</td>
 <td align="left">Deploy</td>
 <td align="left">Docker</td>
 </tr>
-<tr class="odd">
-<td align="left">16.1_gha-style</td>
-<td align="left">Deploy</td>
-<td align="left">GitHub Actions</td>
-</tr>
 <tr class="even">
-<td align="left">16.2_gha-shiny</td>
+<td align="left">21.1_gha-style</td>
 <td align="left">Deploy</td>
 <td align="left">GitHub Actions</td>
 </tr>
 <tr class="odd">
-<td align="left">16.3_gha-docker</td>
+<td align="left">21.2_gha-shiny</td>
 <td align="left">Deploy</td>
 <td align="left">GitHub Actions</td>
 </tr>
 <tr class="even">
-<td align="left">17_pkgdown</td>
+<td align="left">21.3_gha-docker</td>
+<td align="left">Deploy</td>
+<td align="left">GitHub Actions</td>
+</tr>
+<tr class="odd">
+<td align="left">22_pkgdown</td>
 <td align="left">Deploy</td>
 <td align="left">pkgdown</td>
 </tr>
-<tr class="odd">
-<td align="left">18.1_css-inline</td>
-<td align="left">Non-R Code</td>
-<td align="left">CSS</td>
-</tr>
 <tr class="even">
-<td align="left">18.2_css-internal</td>
-<td align="left">Non-R Code</td>
-<td align="left">CSS</td>
-</tr>
-<tr class="odd">
-<td align="left">18.3_css-file</td>
-<td align="left">Non-R Code</td>
-<td align="left">CSS</td>
-</tr>
-<tr class="even">
-<td align="left">19_js</td>
-<td align="left">Non-R Code</td>
-<td align="left">JavaScript</td>
-</tr>
-<tr class="odd">
-<td align="left">20_python</td>
-<td align="left">Non-R Code</td>
-<td align="left">Python</td>
-</tr>
-<tr class="even">
-<td align="left">21_style</td>
-<td align="left">Non-R Code</td>
-<td align="left">Linting and styling</td>
-</tr>
-<tr class="odd">
-<td align="left">22_golem</td>
+<td align="left">23_golem</td>
 <td align="left">Frameworks</td>
 <td align="left">golem</td>
 </tr>
-<tr class="even">
-<td align="left">23_leprechaun</td>
+<tr class="odd">
+<td align="left">24_leprechaun</td>
 <td align="left">Frameworks</td>
 <td align="left">leprechaun</td>
 </tr>
+<tr class="even">
+<td align="left">25_charpente</td>
+<td align="left">Frameworks</td>
+<td align="left">charpente</td>
+</tr>
 <tr class="odd">
-<td align="left">24_rhino</td>
+<td align="left">26_rhino</td>
 <td align="left">Frameworks</td>
 <td align="left">rhino</td>
-</tr>
-<tr class="even">
-<td align="left">25.0_debug-error</td>
-<td align="left">Special Topics</td>
-<td align="left">Debugging</td>
-</tr>
-<tr class="odd">
-<td align="left">25.1_debug-selected_vars</td>
-<td align="left">Special Topics</td>
-<td align="left">Debugging</td>
-</tr>
-<tr class="even">
-<td align="left">25.2_debug-var_inputs</td>
-<td align="left">Special Topics</td>
-<td align="left">Debugging</td>
-</tr>
-<tr class="odd">
-<td align="left">25.3_debug-scatter_plot</td>
-<td align="left">Special Topics</td>
-<td align="left">Debugging</td>
-</tr>
-<tr class="even">
-<td align="left">25.4_debug-print</td>
-<td align="left">Special Topics</td>
-<td align="left">Debugging</td>
-</tr>
-<tr class="odd">
-<td align="left">26.1.0_reactive-values</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="even">
-<td align="left">26.1.1_step_01</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="odd">
-<td align="left">26.1.2_step_02</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="even">
-<td align="left">26.1.3_step_03</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="odd">
-<td align="left">26.1.4_step_04</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="even">
-<td align="left">26.2.0_user-data</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="odd">
-<td align="left">26.2.1_step_01</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="even">
-<td align="left">26.2.2_step_02</td>
-<td align="left">Special Topics</td>
-<td align="left">App Data</td>
-</tr>
-<tr class="odd">
-<td align="left">27_stack-traces</td>
-<td align="left">Special Topics</td>
-<td align="left">Stack traces</td>
-</tr>
-<tr class="even">
-<td align="left">28_dependency-hell</td>
-<td align="left">Special Topics</td>
-<td align="left">Dependency hell</td>
-</tr>
-<tr class="odd">
-<td align="left">A.E_mocks-snapshots</td>
-<td align="left">Appendix</td>
-<td align="left">Appendix E — Mocks and snapshots</td>
 </tr>
 </tbody>
 </table>
@@ -524,7 +366,7 @@ latest commit to the branch.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>
