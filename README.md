@@ -19,8 +19,8 @@ You can install the development version of `shinypak` from
 [GitHub](https://github.com/) after installing `remotes`:
 
 ``` r
-install.packages('remotes')
-remotes::install_github("mjfrigaard/shinypak", force = TRUE)
+install.packages('pak')
+pak::pak("mjfrigaard/shinypak", force = TRUE)
 ```
 
 ``` r
