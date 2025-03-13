@@ -2,8 +2,8 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
-  getting-started: getting-started.html
-last_built: 2025-01-18T05:29Z
+  shinypak: shinypak.html
+last_built: 2025-03-13T04:41Z
 urls:
   reference: https://mjfrigaard.github.io/shinypak/reference
   article: https://mjfrigaard.github.io/shinypak/articles
