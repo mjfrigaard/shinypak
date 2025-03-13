@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `shinypak`
+# shinypak
 
 <!-- badges: start -->
 
@@ -56,7 +56,7 @@ knitr::kable(
 | 03.3_create-package | Intro        | Packages       |
 | 04_devtools         | Intro        | Development    |
 | 05_roxygen2         | App-packages | Documentation  |
-| 06.1_exports        | App-packages | Dependencies   |
+| 06.1_pkg-exports    | App-packages | Dependencies   |
 
 ``` r
 knitr::kable(
@@ -64,18 +64,18 @@ knitr::kable(
 )
 ```
 
-|     | branch          | part       | chapter        |
-|:----|:----------------|:-----------|:---------------|
-| 24  | 18_tests-system | Tests      | System tests   |
-| 25  | 20_docker       | Deploy     | Docker         |
-| 26  | 21.1_gha-style  | Deploy     | GitHub Actions |
-| 27  | 21.2_gha-shiny  | Deploy     | GitHub Actions |
-| 28  | 21.3_gha-docker | Deploy     | GitHub Actions |
-| 29  | 22_pkgdown      | Deploy     | pkgdown        |
-| 30  | 23_golem        | Frameworks | golem          |
-| 31  | 24_leprechaun   | Frameworks | leprechaun     |
-| 32  | 25_charpente    | Frameworks | charpente      |
-| 33  | 26_rhino        | Frameworks | rhino          |
+|     | branch              | part         | chapter                     |
+|:----|:--------------------|:-------------|:----------------------------|
+| 34  | 23_llm-shiny-assist | Shiny & LLMs | LLMs with Shiny Assistant   |
+| 35  | 24_llm-ellmer       | Shiny & LLMs | LLMs with ellmer package    |
+| 36  | 25_llm-shinychat    | Shiny & LLMs | LLMs with shinychat         |
+| 37  | 26_llm-chores       | Shiny & LLMs | LLMs with chores package    |
+| 38  | 27_golem            | Frameworks   | golem framework             |
+| 39  | 28_leprechaun       | Frameworks   | leprechaun framework        |
+| 40  | 29_rhino            | Frameworks   | rhino framework             |
+| 41  | DEV                 | NA           | Development branch          |
+| 42  | gh-pages            | NA           | gh-pages branch for pkgdown |
+| 43  | main                | NA           | main (initial) branch       |
 
 ## Launching apps and app-packages
 

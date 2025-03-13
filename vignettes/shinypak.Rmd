@@ -18,12 +18,12 @@ knitr::opts_chunk$set(
 library(shinypak)
 ```
 
-**`shinypak` assumes you have GitHub and Posit workbench synced. Read more about setting this up on the [`gert` package website](https://docs.ropensci.org/gert/#automatic-authentication)**
+`shinypak` assumes you have GitHub and Posit workbench synced. Read more about setting this up on the [`gert` package website](https://docs.ropensci.org/gert/#automatic-authentication)
 
 > "*In `gert`, authentication is done automatically using the [`credentials` package](https://docs.ropensci.org/credentials/articles/intro.html). This package calls out to the local OS credential store which is also used by the git command line. Therefore gert will automatically pick up on https credentials that are safely stored in your OS keychain.*"
 
 
-## List all apps 
+## Listing all apps 
 
 The apps are stored in branches on the `sap` repo. 
 
@@ -39,7 +39,7 @@ list_apps("^16")
 
 
 ```{r}
-list_apps("tests")
+list_apps("test")
 ```
 
 # Launch
@@ -92,7 +92,7 @@ is_r_package(path = system.file("pkg", package = "shinypak"), verbose = TRUE)
 `launch()` calls the `get_app()` function. If you call `get_app()`, the specified branch and application will be downloaded into the current working directory:
 
 ```{r , eval=FALSE}
-get_app(app = "14_tests-system")
+get_app(app = "05_roxygen2")
 ```
 
 ```{r get_app, echo=FALSE, out.width='100%', fig.align='center'}
@@ -102,7 +102,7 @@ knitr::include_graphics("../man/figures/get_app.gif")
 You can open the new app project by supplying the `open = TRUE` argument:
 
 ```{r , eval=FALSE}
-get_app(app = "14_tests-system", open = TRUE)
+get_app(app = "05_roxygen2", open = TRUE)
 ```
 
 ```{r get_app_open, echo=FALSE, out.width='100%', fig.align='center'}

@@ -1,6 +1,6 @@
 Package: shinypak
 Title: Getting your app into an R package
-Version: 0.1.0
+Version: 0.1.1
 Author: Martin Frigaard <mjfrigaard@pm.me> [aut, cre]
 Maintainer: Martin Frigaard <mjfrigaard@pm.me>
 Description: Shiny application examples from Shiny App-Packages book:
