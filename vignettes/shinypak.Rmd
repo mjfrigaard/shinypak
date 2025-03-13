@@ -74,7 +74,26 @@ knitr::include_graphics("../man/figures/launch_readme.gif")
 
 ## Helper
 
-The `is_r_package()` function is useful for determining if a directory contains an R package. If `path` contains a folder that isn't an R package, it will return `FALSE`.
+The `is_r_package()` function is useful for determining if a directory contains an R package. Consider the three folders below: 
+
+```{verbatim}
+path/to/pkg
+├── DESCRIPTION
+└── pkg.Rproj
+```
+
+```{verbatim}
+path/to/app
+├── DESCRIPTION
+└── app.Rproj
+```
+
+```{verabtim}
+path/to/project
+└── project.Rproj
+```
+
+If the folder contains an R package, `is_r_package()` returns `TRUE`.
 
 ```{r , eval=TRUE}
 is_r_package(path = system.file("pkg", package = "shinypak"))
@@ -83,9 +102,20 @@ is_r_package(path = system.file("pkg", package = "shinypak"))
 If the `verbose` argument is set to `TRUE`, the details are printed on what is being checked: 
 
 ```{r , eval=TRUE}
-is_r_package(path = system.file("pkg", package = "shinypak"), verbose = TRUE)
+is_r_package(
+  path = system.file("pkg", package = "shinypak"), 
+  verbose = TRUE)
 ```
 
+This can be used to quickly determine if a folder contains an R package or Shiny app (and what is missing). Consider the `app` folder (with a `DESCRIPTION` and `.Rproj` file).
+
+```{r}
+is_r_package(
+    path = system.file("app", package = "shinypak"), 
+    verbose = TRUE)
+```
+
+This tells is `app` has fields missing from the `DESCRIPTION` and the `.Rproj` isn't configured with RStudio's build tools.
 
 ## Get
 

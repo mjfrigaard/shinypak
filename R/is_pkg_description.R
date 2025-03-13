@@ -23,31 +23,31 @@
 #'      system.file("pkg", "DESCRIPTION",
 #'                  package = "shinypak"), verbose = TRUE)
 is_pkg_description <- function(file, verbose = FALSE) {
+  if (!file.exists(file)) {
+    cli::cli_abort("The DESCRIPTION file '{file}' does not exist. Please provide a valid file path.")
+  }
+
   fields <- c(
     "Package", "Version", "License",
     "Description", "Title", "Author",
     "Maintainer"
   )
-  result <- mapply(check_text_field, file,
-    MoreArgs = list(field = paste0(fields, ":")),
-    SIMPLIFY = TRUE,
-    USE.NAMES = FALSE
-  )
 
-  if (verbose) {
-    cli::cli_alert_info("Checking DESCRIPTION for package fields")
-    if (isTRUE(result)) {
-      cli::cli_alert_success("{fields} found!")
-      return(TRUE)
-    } else {
-      cli::cli_alert_danger("{fields} not in DESCRIPTION!")
-      return(FALSE)
+  result <- sapply(fields, function(field) {
+    field_found <- check_text_field(file, field = paste0(field, ":"))
+
+    if (verbose) {
+      if (field_found) {
+        cli::cli_alert_success("{field} found!")
+      } else {
+        cli::cli_alert_danger("{field} not in DESCRIPTION!")
+      }
     }
-  } else {
-    if (isTRUE(result)) {
-      return(TRUE)
-    } else {
-      return(FALSE)
-    }
-  }
+
+    field_found
+  })
+
+  all(result) # Returns TRUE if all fields are found, FALSE otherwise
 }
+
+

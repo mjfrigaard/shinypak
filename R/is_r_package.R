@@ -27,49 +27,40 @@
 #'      system.file("app", package = "shinypak"),
 #'      verbose = TRUE)
 is_r_package <- function(path, verbose = FALSE) {
+  desc <- list.files(path = path, pattern = "DESCRIPTION$", full.names = TRUE)
+  rproj <- list.files(path = path, pattern = "\\.Rproj$", full.names = TRUE)
 
-  desc <- list.files(
-    path = path, "DESCRIPTION$",
-    full.names = TRUE
-  )
-
-  rproj <- list.files(
-    path = path, ".Rproj$",
-    full.names = TRUE
-  )
+  # Handle cases where DESCRIPTION or .Rproj files are missing
+  if (length(desc) == 0) {
+    cli::cli_alert_danger("'{path}' is not an R package (no DESCRIPTION file found)")
+    return(FALSE)
+  }
 
   is_pkg_desc <- is_pkg_description(file = desc, verbose = verbose)
+
+  if (length(rproj) == 0) {
+    if (!is_pkg_desc) {
+      cli::cli_alert_danger("'{path}' is not an R package (no .Rproj file found!)")
+      return(FALSE)
+    } else {
+      cli::cli_alert_success("'{path}' is an R package (no .Rproj file found!)")
+      return(TRUE)
+    }
+  }
 
   is_pkg_rproj <- is_pkg_rproj(file = rproj, verbose = verbose)
 
   if (verbose) {
-    if (isTRUE(is_pkg_desc) & isTRUE(is_pkg_rproj)) {
-      cli::cli_alert_success("'{path}' is an R package")
-      return(TRUE)
-    } else if (isFALSE(is_pkg_desc) & isTRUE(is_pkg_rproj)) {
-      desc_msg <- paste0(path, "DESCRIPTION", collapse = "/")
-      cli::cli_alert_danger("{desc_msg} is not configured as an R package")
-      return(FALSE)
-    } else if (isTRUE(is_pkg_desc) & isFALSE(is_pkg_rproj)) {
-      cli::cli_alert_danger("'{rproj}' is not configured as an R package")
-      return(FALSE)
+    if (is_pkg_desc && is_pkg_rproj) {
+      cli::cli_alert_success("'{path}' is an R package (RS build tools configured)")
+    } else if (is_pkg_desc && !is_pkg_rproj) {
+      cli::cli_alert_success("'{path}' is an R package (no RS build tools configured)")
+    } else if (!is_pkg_desc && is_pkg_rproj) {
+      cli::cli_alert_danger("'{path}' is not an R package (RS build tools configured)")
     } else {
-      desc_msg <- paste0(path, "DESCRIPTION", collapse = "/")
-      cli::cli_alert_danger("'{path}' is not an R package")
-      return(FALSE)
-    }
-  } else {
-    if (isTRUE(is_pkg_desc) & isTRUE(is_pkg_rproj)) {
-      return(TRUE)
-    } else if (isFALSE(is_pkg_desc) & isTRUE(is_pkg_rproj)) {
-      return(FALSE)
-    } else if (isTRUE(is_pkg_desc) & isFALSE(is_pkg_rproj)) {
-      return(FALSE)
-    } else {
-      return(FALSE)
+      cli::cli_alert_danger("'{path}' is not an R package (no RS build tools configured)")
     }
   }
+
+  return(is_pkg_desc)  # Returns TRUE if it's an R package, otherwise FALSE
 }
-
-
-
