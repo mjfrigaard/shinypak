@@ -37,11 +37,10 @@
 #' @examples
 #' # get_app("02_movies-app")
 get_app <- function(app = "main", open = FALSE) {
-
   # keep track
   original_dir <- getwd()
 
-  # clone repo
+  # clone repo ----
   app_dir <- file.path(original_dir, app)
 
   cli::cli_progress_message("getting '{app}'")
@@ -49,52 +48,65 @@ get_app <- function(app = "main", open = FALSE) {
   if (!dir.exists(app_dir)) {
     cli::cli_progress_step("'{app}' not in local working directory")
     cli::cli_progress_step("downloading '{app}'")
-    gert::git_clone(path = app_dir,
+    gert::git_clone(
+      path = app_dir,
       url = "https://github.com/mjfrigaard/sap",
-        branch = app,
-        verbose = FALSE)
-
+      branch = app,
+      verbose = FALSE
+    )
   } else {
     cli::cli_progress_step("'{app}' in local working directory")
     unlink(app_dir, force = TRUE, recursive = TRUE)
     cli::cli_progress_step("updating '{app}'")
-    gert::git_clone(path = app_dir,
+    gert::git_clone(
+      path = app_dir,
       url = "https://github.com/mjfrigaard/sap",
-        branch = app,
-        verbose = FALSE)
+      branch = app,
+      verbose = FALSE
+    )
   }
 
   # switch to app folder
   setwd(app_dir)
 
-  # remove .git files
-  git_files <- list.files(app_dir, pattern = "^.git",
-                          all.files = TRUE, full.names = TRUE)
+  # remove .git files ----
+  git_files <- list.files(app_dir,
+    pattern = "^.git",
+    all.files = TRUE, full.names = TRUE
+  )
   lapply(X = git_files, unlink, recursive = TRUE, force = TRUE)
-  # remove .DS_Store files from inst/
-  ds_store <- list.files(app_dir, pattern = ".DS_Store",
-                          all.files = TRUE, full.names = TRUE)
+
+  # remove .DS_Store files from inst/ ----
+  ds_store <- list.files(app_dir,
+    pattern = ".DS_Store",
+    all.files = TRUE, full.names = TRUE
+  )
   lapply(X = ds_store, unlink, recursive = TRUE, force = TRUE)
-  # remove .Rbuildignore files from inst/
-  rbuild_ignore <- list.files(app_dir, pattern = ".Rbuildignore",
-                          all.files = TRUE, full.names = TRUE)
+
+  # remove .Rbuildignore files from inst/ ----
+  rbuild_ignore <- list.files(app_dir,
+    pattern = ".Rbuildignore",
+    all.files = TRUE, full.names = TRUE
+  )
   lapply(X = rbuild_ignore, unlink, recursive = TRUE, force = TRUE)
-  # # find rproj and rename it
-  rproj <- list.files(app_dir, pattern = "sap.Rproj",
-                          all.files = TRUE, full.names = TRUE)
+
+  # find rproj and rename it ----
+  rproj <- list.files(app_dir,
+    pattern = "sap.Rproj",
+    all.files = TRUE, full.names = TRUE
+  )
   new_rproj <- paste0(app_dir, "/", app, ".Rproj")
   file.rename(from = rproj, to = new_rproj)
 
-  # fs::dir_tree(all = TRUE)
-
-  # open new .Rproj
+  # open new .Rproj ----
   if (open) {
     cli::cli_progress_step("opening '{app}' in new session")
     rstudioapi::openProject(new_rproj, newSession = TRUE)
     # reset wd
     setwd(original_dir)
   }
-  # reset wd
+
+  # reset wd ----
   setwd(original_dir)
   cli::cli_progress_step("got '{app}'")
 }

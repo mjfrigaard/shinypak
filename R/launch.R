@@ -10,7 +10,6 @@
 #' # launch("02.1_movies-app")
 #' # launch("05_roxygen2")
 launch <- function(app) {
-
   if (!dir.exists(app)) {
     cli::cli_progress_message("cloning {app} from 'sap'")
     get_app(app = app, open = FALSE)
@@ -18,26 +17,30 @@ launch <- function(app) {
       cli::cli_alert_success("{app} cloned from 'sap'")
     }
   }
-  app_dot_r <- list.files(path = app,
-                          pattern = "app.R$",
-                          full.names = TRUE,
-                          all.files = FALSE,
-                          include.dirs = FALSE)
-  has_app_dot_r <- any(grepl(pattern = "app.R$",
-                             x = app_dot_r))
+  app_dot_r <- list.files(
+    path = app,
+    pattern = "app.R$",
+    full.names = TRUE,
+    all.files = FALSE,
+    include.dirs = FALSE
+  )
+  has_app_dot_r <- any(grepl(
+    pattern = "app.R$",
+    x = app_dot_r
+  ))
 
   # launch app-package (load first)
   if (isTRUE(is_r_package(app)) & isTRUE(has_app_dot_r)) {
-      pkgload::load_all(path = app,
-        helpers = FALSE,
-        attach_testthat = FALSE)
-      withr::local_options(list(shiny.autoload.r = FALSE))
-      cli::cli_alert_success("Launching app with shiny::runApp('{app}')")
-      shiny::runApp(appDir = app)
+    pkgload::load_all(
+      path = app,
+      helpers = FALSE,
+      attach_testthat = FALSE
+    )
+    withr::local_options(list(shiny.autoload.r = FALSE))
+    cli::cli_alert_success("Launching app with shiny::runApp('{app}')")
+    shiny::runApp(appDir = app)
   } else if (isFALSE(is_r_package(app)) & isTRUE(has_app_dot_r)) {
-      cli::cli_alert_success("Launching app with: shiny::shinyAppDir('{app_dot_r}')")
-      shiny::shinyAppDir(appDir = app)
+    cli::cli_alert_success("Launching app with: shiny::shinyAppDir('{app_dot_r}')")
+    shiny::shinyAppDir(appDir = app)
   }
 }
-
-

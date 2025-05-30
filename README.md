@@ -7,11 +7,11 @@
 
 <!-- badges: end -->
 
-The primary goal of `shinypak` is to provide easy access all the
-application examples in [`sap`](https://github.com/mjfrigaard/sap).[^1]
-
-`shinypak` also has helper functions for checking the files and folders
-in a Shiny app-package.
+`shinypak` provides easy access all the Shiny app examples in the [Shiny
+App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/) (which
+are stored in the [`sap`](https://github.com/mjfrigaard/sap) R
+package).[^1] `shinypak` also has a few helper functions for checking
+the files and folders in a Shiny app-package.
 
 ## Installation
 
@@ -27,7 +27,7 @@ pak::pak("mjfrigaard/shinypak", force = TRUE)
 library(shinypak)
 ```
 
-## Git/GitHub configuration
+## GitHub authentication
 
 `shinypak` uses the [`gert` package](https://docs.ropensci.org/gert/)
 for Git/GitHub management (and assumes authentication was done
@@ -35,14 +35,12 @@ automatically using the `credentials` package).[^2]
 
 ## Available app-packages
 
-The applications in `shinypak` are from the chapters of the [Shiny
-App-Packages book](https://bit.ly/ShinyAppPkgs). A full list of the
-available apps and topics are available in `topic_lookup`:
+All applications in `shinypak` come from chapters in [Shiny App-Packages
+book](https://bit.ly/ShinyAppPkgs). A full list of the available apps
+and topics are available in `topic_lookup`:
 
 ``` r
-knitr::kable(
-  head(topic_lookup, 10)
-)
+head(topic_lookup, 10)
 ```
 
 | branch              | part         | chapter        |
@@ -59,9 +57,7 @@ knitr::kable(
 | 06.1_pkg-exports    | App-packages | Dependencies   |
 
 ``` r
-knitr::kable(
-  tail(topic_lookup, 10)
-)
+tail(topic_lookup, 10)
 ```
 
 |     | branch              | part         | chapter                     |
@@ -87,9 +83,8 @@ launch(app = "02.3_proj-app")
 
 <img src="man/figures/launch_readme.gif" width="100%" style="display: block; margin: auto;" />
 
-[^1]: Each of the apps in `shinypak` have a corresponding chapter in
-    [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/)
-    and branch in the [sap
+[^1]: Each of the apps in `shinypak` have a corresponding chapter and
+    branch in the [sap
     repo](https://github.com/mjfrigaard/sap/branches/all).
 
 [^2]: Check out the documentation for the [`credentials`
