@@ -8,9 +8,9 @@
 <title>Getting your app into an R package • shinypak</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Ubuntu-0.4.9/font.css" rel="stylesheet">
-<link href="deps/Ubuntu_Mono-0.4.9/font.css" rel="stylesheet">
-<link href="deps/Fira_Sans_Condensed-0.4.9/font.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Ubuntu-0.4.10/font.css" rel="stylesheet">
+<link href="deps/Ubuntu_Mono-0.4.10/font.css" rel="stylesheet">
+<link href="deps/Fira_Sans_Condensed-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Getting your app into an R package">
@@ -55,8 +55,7 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The primary goal of <code>shinypak</code> is to provide easy access all the application examples in <a href="https://github.com/mjfrigaard/sap" class="external-link"><code>sap</code></a>.<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Each of the apps in &lt;code&gt;shinypak&lt;/code&gt; have a corresponding chapter in &lt;a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link"&gt;Shiny App-Packages&lt;/a&gt; and branch in the &lt;a href="https://github.com/mjfrigaard/sap/branches/all" class="external-link"&gt;sap repo&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a></p>
-<p><code>shinypak</code> also has helper functions for checking the files and folders in a Shiny app-package.</p>
+<p><code>shinypak</code> provides easy access all the Shiny app examples in the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny App-Packages book</a> (which are stored in the <a href="https://github.com/mjfrigaard/sap" class="external-link"><code>sap</code></a> R package).<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Each of the apps in &lt;code&gt;shinypak&lt;/code&gt; have a corresponding chapter and branch in the &lt;a href="https://github.com/mjfrigaard/sap/branches/all" class="external-link"&gt;sap repo&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a> <code>shinypak</code> also has a few helper functions for checking the files and folders in a Shiny app-package.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -68,18 +67,16 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mjfrigaard.github.io/shinypak/">shinypak</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="gitgithub-configuration">Git/GitHub configuration<a class="anchor" aria-label="anchor" href="#gitgithub-configuration"></a>
+<h2 id="github-authentication">GitHub authentication<a class="anchor" aria-label="anchor" href="#github-authentication"></a>
 </h2>
 <p><code>shinypak</code> uses the <a href="https://docs.ropensci.org/gert/" class="external-link"><code>gert</code> package</a> for Git/GitHub management (and assumes authentication was done automatically using the <code>credentials</code> package).<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Check out the documentation for the &lt;a href="https://docs.ropensci.org/credentials/articles/intro.html" class="external-link"&gt;&lt;code&gt;credentials&lt;/code&gt; package&lt;/a&gt;&lt;/p&gt;'><sup>2</sup></a></p>
 </div>
 <div class="section level2">
 <h2 id="available-app-packages">Available app-packages<a class="anchor" aria-label="anchor" href="#available-app-packages"></a>
 </h2>
-<p>The applications in <code>shinypak</code> are from the chapters of the <a href="https://bit.ly/ShinyAppPkgs" class="external-link">Shiny App-Packages book</a>. A full list of the available apps and topics are available in <code>topic_lookup</code>:</p>
+<p>All applications in <code>shinypak</code> come from chapters in <a href="https://bit.ly/ShinyAppPkgs" class="external-link">Shiny App-Packages book</a>. A full list of the available apps and topics are available in <code>topic_lookup</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">topic_lookup</span>, <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">topic_lookup</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">branch</th>
@@ -140,9 +137,7 @@
 </tbody>
 </table>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">topic_lookup</span>, <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">topic_lookup</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="7%">
@@ -258,7 +253,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Martin Frigaard <br><small class="roles"> Maintainer </small>  </li>
+<li>Martin Frigaard <br><small class="roles"> Maintainer </small>   </li>
 </ul>
 </div>
 
@@ -273,7 +268,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
