@@ -36,35 +36,35 @@ and topics are available in `topic_lookup`:
 head(topic_lookup, 10)
 ```
 
-| branch              | part         | chapter        |
-|:--------------------|:-------------|:---------------|
-| 01_whole-app-game   | Intro        | Whole app game |
-| 02.1_shiny-app      | Intro        | Shiny          |
-| 02.2_movies-app     | Intro        | Shiny          |
-| 02.3_proj-app       | Intro        | Shiny          |
-| 03.1_description    | Intro        | Packages       |
-| 03.2_rproj          | Intro        | Packages       |
-| 03.3_create-package | Intro        | Packages       |
-| 04_devtools         | Intro        | Development    |
-| 05_roxygen2         | App-packages | Documentation  |
-| 06.1_pkg-exports    | App-packages | Dependencies   |
+| branch              | part         | chapter       |
+|:--------------------|:-------------|:--------------|
+| 02.1_shiny-app      | Intro        | Shiny         |
+| 02.2_movies-app     | Intro        | Shiny         |
+| 02.3_proj-app       | Intro        | Shiny         |
+| 03.1_description    | Intro        | Packages      |
+| 03.2_rproj          | Intro        | Packages      |
+| 03.3_create-package | Intro        | Packages      |
+| 04_devtools         | Intro        | Development   |
+| 05_roxygen2         | App-packages | Documentation |
+| 06.1_exports        | App-packages | Dependencies  |
+| 06.2_imports        | App-packages | Dependencies  |
 
 ``` r
 tail(topic_lookup, 10)
 ```
 
-|     | branch              | part         | chapter                     |
-|:----|:--------------------|:-------------|:----------------------------|
-| 34  | 23_llm-shiny-assist | Shiny & LLMs | LLMs with Shiny Assistant   |
-| 35  | 24_llm-ellmer       | Shiny & LLMs | LLMs with ellmer package    |
-| 36  | 25_llm-shinychat    | Shiny & LLMs | LLMs with shinychat         |
-| 37  | 26_llm-chores       | Shiny & LLMs | LLMs with chores package    |
-| 38  | 27_golem            | Frameworks   | golem framework             |
-| 39  | 28_leprechaun       | Frameworks   | leprechaun framework        |
-| 40  | 29_rhino            | Frameworks   | rhino framework             |
-| 41  | DEV                 | NA           | Development branch          |
-| 42  | gh-pages            | NA           | gh-pages branch for pkgdown |
-| 43  | main                | NA           | main (initial) branch       |
+|     | branch                | part         | chapter                                            |
+|:----|:----------------------|:-------------|:---------------------------------------------------|
+| 31  | 21.3_gha-shiny-docker | Deploy       | Deploying shiny app with Docker and GitHub Actions |
+| 32  | 22_pkgdown            | Deploy       | Deploying a package website                        |
+| 33  | 23_golem              | Frameworks   | golem framework                                    |
+| 34  | 24_leprechaun         | Frameworks   | leprechaun framework                               |
+| 35  | 25_rhino              | Frameworks   | rhino framework                                    |
+| 36  | 26_llm-shiny-assist   | Shiny & LLMs | LLMs with Shiny Assistant                          |
+| 37  | 27_llm-ellmer         | Shiny & LLMs | LLMs with ellmer package                           |
+| 38  | 28_llm-chores         | Shiny & LLMs | LLMs with chores package                           |
+| 39  | 29_llm-gander         | Shiny & LLMs | LLMs with gander package                           |
+| 40  | 30_llm-btw            | Shiny & LLMs | LLMs with btw package                              |
 
 ## Launching apps and app-packages
 
@@ -74,7 +74,7 @@ Launch an application from any section in the book using:
 launch(app = "02.3_proj-app")
 ```
 
-![](reference/figures/launch_readme.gif)
+![](reference/figures/launch_02.3_app.gif)
 
 ------------------------------------------------------------------------
 

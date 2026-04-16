@@ -88,7 +88,7 @@ launch(app = "02.3_proj-app")
   [`launch()`](https://mjfrigaard.github.io/shinypak/reference/launch.md)
   loads the package and then launches the application:
 
-![](../reference/figures/launch_readme.gif)
+![](../reference/figures/launch_02.3_app.gif)
 
 5.  If you’d prefer to download the application without launching it,
     you can call the
