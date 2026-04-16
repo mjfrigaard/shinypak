@@ -2,18 +2,24 @@
 % Please edit documentation in R/launch.R
 \name{launch}
 \alias{launch}
-\title{Launch shiny app}
+\title{Launch a Shiny App from the sap Repository}
 \usage{
 launch(app)
 }
 \arguments{
-\item{app}{application branch}
+\item{app}{A character string giving the branch name of the application to
+launch (e.g., \code{"02.3_proj-app"} or \code{"05_roxygen2"}).}
 }
 \value{
-shiny app
+Called for its side effects (launches the Shiny app). Returns
+\code{invisible(NULL)}.
 }
 \description{
-Launch shiny app
+Downloads (if needed) and launches a Shiny application from the
+\href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub repository. If the
+application directory is an R package, the package is loaded with
+\code{pkgload::load_all()} before launching via \code{shiny::runApp()}. Plain Shiny
+apps (no \code{DESCRIPTION}) are launched directly with \code{shiny::shinyAppDir()}.
 }
 \examples{
 # launch("02.1_movies-app")

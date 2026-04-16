@@ -11,7 +11,7 @@ get_app(app = "main", open = FALSE)
 not specified, defaults to "main".}
 
 \item{open}{A logical parameter, when set to \code{TRUE}, the function will attempt
-to open the new R project in a new RStudio session using
+to open the project directory in a new session using
 \code{rstudioapi::openProject}. Defaults to \code{FALSE}.}
 }
 \value{
@@ -20,8 +20,8 @@ Invisible \code{NULL}. The function is called for its side effects.
 \description{
 Clones a specified branch of the \code{sap} GitHub repository into the
 current working directory. It cleans the cloned directory by removing \code{.git}
-files, \code{.DS_Store}, and \code{.Rbuildignore} files, renames the R project file,
-and optionally opens it in a new RStudio session.
+files, \code{.DS_Store}, and \code{.Rbuildignore} files, optionally renames the R
+project file, and optionally opens it in a new IDE session.
 }
 \section{Details}{
 
@@ -40,8 +40,8 @@ and, if specified, opens the project in RStudio.
 \section{Note}{
 
 \itemize{
-\item The \code{rstudioapi::openProject} function requires RStudio to be installed
-and will only work if R is running inside RStudio.
+\item The \code{rstudioapi::openProject} function works in RStudio and Positron.
+The project directory is passed directly, so no \code{.Rproj} file is required.
 \item The working directory is temporarily changed during the function's
 execution but is reset at the end.
 }

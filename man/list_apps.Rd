@@ -11,9 +11,10 @@ list_apps(regex = NULL)
 (regex) to filter branch names}
 }
 \value{
-A tibble with three columns: 'source', 'branch_name', and 'updated',
-listing the source of the branch, the branch name, and the last updated
-date.
+A data frame with two columns: \code{branch} (the branch name) and
+\code{last_updated} (the date the branch was last updated), ordered
+alphabetically by branch name. Branches named \code{HEAD}, \code{main}, and
+\code{gh-pages} are excluded.
 }
 \description{
 This function clones the 'sap' GitHub repository, extracts the list
@@ -30,13 +31,10 @@ The function operates in several steps:
 repository from GitHub into a temporary directory
 \item It lists all branches of the cloned repository
 \item It separates the branch \code{name}s into \code{source} and \code{branch_name}
+\item If \code{regex} is supplied, it filters branches to those matching the pattern
 \item It cleans up by deleting the temporary directory and restoring the original
 working directory
 }
-
-Note that the function currently does not use the \code{regex} parameter to filter
-branches. This parameter can be implemented in future versions to allow branch
-filtering based on regular expressions.
 }
 
 \examples{

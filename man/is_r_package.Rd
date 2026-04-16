@@ -14,8 +14,9 @@ checked.}
 be displayed during the check.}
 }
 \value{
-A logical value; \code{TRUE} if both \code{.Rproj} and \code{DESCRIPTION} files
-are configured correctly, \code{FALSE} otherwise.
+A logical value; \code{TRUE} if the directory contains a valid
+\code{DESCRIPTION} file (and an optional \code{.Rproj} configured for package
+development), \code{FALSE} otherwise.
 }
 \description{
 This function checks a directory to ascertain if it has the required files

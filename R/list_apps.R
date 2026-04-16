@@ -9,10 +9,10 @@
 #' @param regex An optional character string containing a regular expression
 #'    (regex) to filter branch names
 #'
-#' @return A tibble with three columns: 'source', 'branch_name', and 'updated',
-#'    listing the source of the branch, the branch name, and the last updated
-#'    date.
-#'
+#' @return A data frame with two columns: `branch` (the branch name) and
+#'    `last_updated` (the date the branch was last updated), ordered
+#'    alphabetically by branch name. Branches named `HEAD`, `main`, and
+#'    `gh-pages` are excluded.
 #'
 #' @section How it works:
 #' The function operates in several steps:
@@ -21,12 +21,9 @@
 #'    repository from GitHub into a temporary directory
 #' 3. It lists all branches of the cloned repository
 #' 4. It separates the branch `name`s into `source` and `branch_name`
-#' 5. It cleans up by deleting the temporary directory and restoring the original
+#' 5. If `regex` is supplied, it filters branches to those matching the pattern
+#' 6. It cleans up by deleting the temporary directory and restoring the original
 #'    working directory
-#'
-#' Note that the function currently does not use the `regex` parameter to filter
-#' branches. This parameter can be implemented in future versions to allow branch
-#' filtering based on regular expressions.
 #'
 #' @export list_apps
 #'

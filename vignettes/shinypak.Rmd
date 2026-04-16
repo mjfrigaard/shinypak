@@ -116,7 +116,7 @@ path/to/app
 └── app.Rproj
 ```
 
-```{verabtim}
+```{verbatim}
 path/to/project
 └── project.Rproj
 ```

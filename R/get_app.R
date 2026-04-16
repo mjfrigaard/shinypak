@@ -3,13 +3,13 @@
 #' @description
 #' Clones a specified branch of the `sap` GitHub repository into the
 #' current working directory. It cleans the cloned directory by removing `.git`
-#' files, `.DS_Store`, and `.Rbuildignore` files, renames the R project file,
-#' and optionally opens it in a new RStudio session.
+#' files, `.DS_Store`, and `.Rbuildignore` files, optionally renames the R
+#' project file, and optionally opens it in a new IDE session.
 #'
 #' @param app The name of the branch to be cloned as a character string. If
 #' not specified, defaults to "main".
 #' @param open A logical parameter, when set to `TRUE`, the function will attempt
-#' to open the new R project in a new RStudio session using
+#' to open the project directory in a new session using
 #' `rstudioapi::openProject`. Defaults to `FALSE`.
 #'
 #' @return Invisible `NULL`. The function is called for its side effects.
@@ -27,8 +27,8 @@
 #' and, if specified, opens the project in RStudio.
 #'
 #' @section Note:
-#' - The `rstudioapi::openProject` function requires RStudio to be installed
-#'   and will only work if R is running inside RStudio.
+#' - The `rstudioapi::openProject` function works in RStudio and Positron.
+#'   The project directory is passed directly, so no `.Rproj` file is required.
 #' - The working directory is temporarily changed during the function's
 #'   execution but is reset at the end.
 #'
@@ -95,13 +95,15 @@ get_app <- function(app = "main", open = FALSE) {
     pattern = "sap.Rproj",
     all.files = TRUE, full.names = TRUE
   )
-  new_rproj <- paste0(app_dir, "/", app, ".Rproj")
-  file.rename(from = rproj, to = new_rproj)
+  if (length(rproj) > 0) {
+    new_rproj <- paste0(app_dir, "/", app, ".Rproj")
+    file.rename(from = rproj, to = new_rproj)
+  }
 
-  # open new .Rproj ----
+  # open project directory ----
   if (open) {
     cli::cli_progress_step("opening '{app}' in new session")
-    rstudioapi::openProject(new_rproj, newSession = TRUE)
+    rstudioapi::openProject(app_dir, newSession = TRUE)
     # reset wd
     setwd(original_dir)
   }

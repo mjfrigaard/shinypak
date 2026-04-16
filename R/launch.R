@@ -1,8 +1,17 @@
-#' Launch shiny app
+#' Launch a Shiny App from the sap Repository
 #'
-#' @param app application branch
+#' @description
+#' Downloads (if needed) and launches a Shiny application from the
+#' [`sap`](https://github.com/mjfrigaard/sap) GitHub repository. If the
+#' application directory is an R package, the package is loaded with
+#' `pkgload::load_all()` before launching via `shiny::runApp()`. Plain Shiny
+#' apps (no `DESCRIPTION`) are launched directly with `shiny::shinyAppDir()`.
 #'
-#' @return shiny app
+#' @param app A character string giving the branch name of the application to
+#'   launch (e.g., `"02.3_proj-app"` or `"05_roxygen2"`).
+#'
+#' @return Called for its side effects (launches the Shiny app). Returns
+#'   `invisible(NULL)`.
 #'
 #' @export
 #'

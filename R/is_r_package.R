@@ -8,8 +8,9 @@
 #'     checked.
 #' @param verbose A logical parameter; if set to TRUE, detailed messages will
 #'     be displayed during the check.
-#' @return A logical value; `TRUE` if both `.Rproj` and `DESCRIPTION` files
-#'     are configured correctly, `FALSE` otherwise.
+#' @return A logical value; `TRUE` if the directory contains a valid
+#'     `DESCRIPTION` file (and an optional `.Rproj` configured for package
+#'     development), `FALSE` otherwise.
 #'
 #' @export
 #'
@@ -40,10 +41,10 @@ is_r_package <- function(path, verbose = FALSE) {
 
   if (length(rproj) == 0) {
     if (!is_pkg_desc) {
-      cli::cli_alert_danger("'{path}' is not an R package (no .Rproj file found!)")
+      cli::cli_alert_danger("'{path}' is not an R package (invalid DESCRIPTION, no .Rproj)")
       return(FALSE)
     } else {
-      cli::cli_alert_success("'{path}' is an R package (no .Rproj file found!)")
+      cli::cli_alert_success("'{path}' is an R package (DESCRIPTION found, no .Rproj)")
       return(TRUE)
     }
   }

@@ -1,7 +1,6 @@
 ## code to prepare `branches` dataset goes here
 branches <- data.frame(
   branch = c(
-    "01_whole-app-game",
     "02.1_shiny-app",
     "02.2_movies-app",
     "02.3_proj-app",
@@ -10,10 +9,10 @@ branches <- data.frame(
     "03.3_create-package",
     "04_devtools",
     "05_roxygen2",
-    "06.1_pkg-exports",
-    "06.2_pkg-imports",
+    "06.1_exports",
+    "06.2_imports",
     "07_data",
-    "08_launch-app",
+    "08_launch",
     "09_inst",
     "10_debugger",
     "11_debug-print",
@@ -34,15 +33,13 @@ branches <- data.frame(
     "21.2_gha-shiny-deploy",
     "21.3_gha-shiny-docker",
     "22_pkgdown",
-    "23_llm-shiny-assist",
-    "24_llm-ellmer",
-    "25_llm-shinychat",
-    "26_llm-chores",
-    "27_golem",
-    "28_leprechaun",
-    "29_rhino",
-    "DEV",
-    "gh-pages",
-    "main"
+    "23_golem",
+    "24_leprechaun",
+    "25_rhino",
+    "26_llm-shiny-assist",
+    "27_llm-ellmer",
+    "28_llm-chores",
+    "29_llm-gander",
+    "30_llm-btw"
   ))
 usethis::use_data(branches, overwrite = TRUE)
