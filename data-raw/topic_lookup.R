@@ -127,4 +127,7 @@ topic_lookup <- data.frame(
     "LLMs with btw package"                                   # 30_llm-btw
   )
 )
+
+vroom::vroom_write(x = topic_lookup, file = "inst/extdata/topic_lookup.csv")
+
 usethis::use_data(topic_lookup, overwrite = TRUE)

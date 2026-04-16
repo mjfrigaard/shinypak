@@ -42,4 +42,5 @@ branches <- data.frame(
     "29_llm-gander",
     "30_llm-btw"
   ))
+vroom::vroom_write(x = branches, file = "inst/extdata/branches.csv")
 usethis::use_data(branches, overwrite = TRUE)
