@@ -7,3 +7,5 @@
 ^\.github$
 ^data-raw$
 ^dev$
+^\.positai$
+^\.claude$
