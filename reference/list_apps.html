@@ -63,9 +63,10 @@ after the function executes.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with three columns: 'source', 'branch_name', and 'updated',
-listing the source of the branch, the branch name, and the last updated
-date.</p>
+    <p>A data frame with two columns: <code>branch</code> (the branch name) and
+<code>last_updated</code> (the date the branch was last updated), ordered
+alphabetically by branch name. Branches named <code>HEAD</code>, <code>main</code>, and
+<code>gh-pages</code> are excluded.</p>
     </div>
     <div class="section level2">
     <h2 id="how-it-works">How it works<a class="anchor" aria-label="anchor" href="#how-it-works"></a></h2>
@@ -76,12 +77,10 @@ date.</p>
 repository from GitHub into a temporary directory</p></li>
 <li><p>It lists all branches of the cloned repository</p></li>
 <li><p>It separates the branch <code>name</code>s into <code>source</code> and <code>branch_name</code></p></li>
+<li><p>If <code>regex</code> is supplied, it filters branches to those matching the pattern</p></li>
 <li><p>It cleans up by deleting the temporary directory and restoring the original
 working directory</p></li>
-</ol><p>Note that the function currently does not use the <code>regex</code> parameter to filter
-branches. This parameter can be implemented in future versions to allow branch
-filtering based on regular expressions.</p>
-    </div>
+</ol></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
@@ -116,7 +115,7 @@ filtering based on regular expressions.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>
