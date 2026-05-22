@@ -1,0 +1,32 @@
+// Palette overrides for inline + block code.
+//
+// Bootstrap 5 dropped $code-bg, and pkgdown's `theme:` setting paints its
+// own background on <pre>, so we set both explicitly here. Loaded after
+// the syntax-highlighting theme, so these rules win without !important
+// in most cases — kept !important on the <pre>/<code> chain because
+// arrow-light's selectors are equally specific.
+
+$brand-cream:  #F2E6C2;
+$brand-cocoa:  #3E2A1E;
+
+// Inline <code> (BS5 no longer styles this with a background)
+:not(pre) > code,
+code {
+  background-color: $brand-cream;
+  color: $brand-cocoa;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+// Code blocks: cream container, brown default text. Syntax-highlighted
+// tokens inside still come from `theme: arrow-light`.
+pre {
+  background-color: $brand-cream !important;
+  color: $brand-cocoa;
+}
+
+pre code {
+  background-color: transparent !important;
+  color: inherit;
+  padding: 0;
+}

@@ -1,13 +1,21 @@
 url: https://mjfrigaard.github.io/shinypak/
+
+navbar:
+  bg: primary       # paint the bar with $primary (Teal)
+  type: dark        # use light text for contrast on the Teal bar
+
 template:
   bootstrap: 5
-  bootswatch: united
-  theme: github-light
+  theme: arrow-light
   bslib:
-    primary: "#00a2e8"
-    secondary: "#e5e5e5"
-    code-color: "#4d4d4d"
-    code-bg: "#e5e5e5"
+    primary:   "#2A6F77"   # Teal            — links, buttons, navbar accent
+    secondary: "#1B2A41"   # Midnight Navy   — neutral text emphasis
+    success:   "#5B8C5A"   # Avocado Green
+    info:      "#E8A33D"   # Harvest Gold
+    warning:   "#D2562B"   # Burnt Orange
+    danger:    "#B83A4B"   # Brick Red
+    code-color: "#3E2A1E"  # Chocolate Brown — inline & block code text
+    code-bg:    "#F2E6C2"  # Cream           — inline & block code background
     base_font:
       google: Ubuntu
     heading_font:
