@@ -1,9 +1,9 @@
-pandoc: 3.1.11
+pandoc: 3.8.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   shinypak: shinypak.html
-last_built: 2026-04-16T21:21Z
+last_built: 2026-05-22T17:37Z
 urls:
   reference: https://mjfrigaard.github.io/shinypak/reference
   article: https://mjfrigaard.github.io/shinypak/articles

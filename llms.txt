@@ -3,8 +3,8 @@
 `shinypak` provides easy access all the Shiny app examples in the [Shiny
 App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/) (which
 are stored in the [`sap`](https://github.com/mjfrigaard/sap) R
-package).[¹](#fn1) `shinypak` also has a few helper functions for
-checking the files and folders in a Shiny app-package.
+package).[^1] `shinypak` also has a few helper functions for checking
+the files and folders in a Shiny app-package.
 
 ## Installation
 
@@ -12,11 +12,13 @@ You can install the development version of `shinypak` from
 [GitHub](https://github.com/) after installing `remotes`:
 
 ``` r
+
 install.packages('pak')
 pak::pak("mjfrigaard/shinypak", force = TRUE)
 ```
 
 ``` r
+
 library(shinypak)
 ```
 
@@ -24,7 +26,7 @@ library(shinypak)
 
 `shinypak` uses the [`gert` package](https://docs.ropensci.org/gert/)
 for Git/GitHub management (and assumes authentication was done
-automatically using the `credentials` package).[²](#fn2)
+automatically using the `credentials` package).[^2]
 
 ## Available app-packages
 
@@ -33,6 +35,7 @@ book](https://bit.ly/ShinyAppPkgs). A full list of the available apps
 and topics are available in `topic_lookup`:
 
 ``` r
+
 head(topic_lookup, 10)
 ```
 
@@ -50,39 +53,39 @@ head(topic_lookup, 10)
 | 06.2_imports        | App-packages | Dependencies  |
 
 ``` r
+
 tail(topic_lookup, 10)
 ```
 
-|     | branch                | part         | chapter                                            |
-|:----|:----------------------|:-------------|:---------------------------------------------------|
-| 31  | 21.3_gha-shiny-docker | Deploy       | Deploying shiny app with Docker and GitHub Actions |
-| 32  | 22_pkgdown            | Deploy       | Deploying a package website                        |
-| 33  | 23_golem              | Frameworks   | golem framework                                    |
-| 34  | 24_leprechaun         | Frameworks   | leprechaun framework                               |
-| 35  | 25_rhino              | Frameworks   | rhino framework                                    |
-| 36  | 26_llm-shiny-assist   | Shiny & LLMs | LLMs with Shiny Assistant                          |
-| 37  | 27_llm-ellmer         | Shiny & LLMs | LLMs with ellmer package                           |
-| 38  | 28_llm-chores         | Shiny & LLMs | LLMs with chores package                           |
-| 39  | 29_llm-gander         | Shiny & LLMs | LLMs with gander package                           |
-| 40  | 30_llm-btw            | Shiny & LLMs | LLMs with btw package                              |
+|  | branch | part | chapter |
+|:---|:---|:---|:---|
+| 31 | 21.3_gha-shiny-docker | Deploy | Deploying shiny app with Docker and GitHub Actions |
+| 32 | 22_pkgdown | Deploy | Deploying a package website |
+| 33 | 23_golem | Frameworks | golem framework |
+| 34 | 24_leprechaun | Frameworks | leprechaun framework |
+| 35 | 25_rhino | Frameworks | rhino framework |
+| 36 | 26_llm-shiny-assist | Shiny & LLMs | LLMs with Shiny Assistant |
+| 37 | 27_llm-ellmer | Shiny & LLMs | LLMs with ellmer package |
+| 38 | 28_llm-chores | Shiny & LLMs | LLMs with chores package |
+| 39 | 29_llm-gander | Shiny & LLMs | LLMs with gander package |
+| 40 | 30_llm-btw | Shiny & LLMs | LLMs with btw package |
 
 ## Launching apps and app-packages
 
 Launch an application from any section in the book using:
 
 ``` r
+
 launch(app = "02.3_proj-app")
 ```
 
 ![](reference/figures/launch_02.3_app.gif)
 
-------------------------------------------------------------------------
-
-1.  Each of the apps in `shinypak` have a corresponding chapter and
+[^1]: Each of the apps in `shinypak` have a corresponding chapter and
     branch in the [sap
     repo](https://github.com/mjfrigaard/sap/branches/all).
 
-2.  Check out the documentation for the [`credentials`
+[^2]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)
 
 # Package index
