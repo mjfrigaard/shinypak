@@ -1,4 +1,4 @@
-// Palette overrides for inline + block code.
+// Mid-century / atomic-age palette overrides.
 //
 // Bootstrap 5 dropped $code-bg, and pkgdown's `theme:` setting paints its
 // own background on <pre>, so we set both explicitly here. Loaded after
@@ -6,27 +6,35 @@
 // in most cases — kept !important on the <pre>/<code> chain because
 // arrow-light's selectors are equally specific.
 
-$brand-cream:  #F2E6C2;
-$brand-cocoa:  #3E2A1E;
+$brand-peach:     #FDEFE0;  // pale tangerine, code background
+$brand-deepblue:  #16486D;  // deep atomic blue, code text
+$brand-tangerine: #E87B2D;  // atomic tangerine, link hover accent
 
 // Inline <code> (BS5 no longer styles this with a background)
 :not(pre) > code,
 code {
-  background-color: $brand-cream;
-  color: $brand-cocoa;
+  background-color: $brand-peach;
+  color: $brand-deepblue;
   padding: 0.15em 0.35em;
   border-radius: 3px;
 }
 
-// Code blocks: cream container, brown default text. Syntax-highlighted
-// tokens inside still come from `theme: arrow-light`.
+// Code blocks: pale tangerine container, deep-blue default text.
+// Syntax-highlighted tokens inside still come from `theme: arrow-light`.
 pre {
-  background-color: $brand-cream !important;
-  color: $brand-cocoa;
+  background-color: $brand-peach !important;
+  color: $brand-deepblue;
 }
 
 pre code {
   background-color: transparent !important;
   color: inherit;
   padding: 0;
+}
+
+// Atomic-tangerine accent on link hover — small mid-century flourish
+// against the deep Atomic Blue primary.
+a:hover {
+  color: $brand-tangerine;
+  text-decoration-color: $brand-tangerine;
 }
