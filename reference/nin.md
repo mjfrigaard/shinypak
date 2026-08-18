@@ -1,6 +1,6 @@
-# Inverted versions of `%in%`
+# Inverted version of `%in%`
 
-Inverted versions of `%in%`
+Returns `TRUE` for elements of `x` that are *not* in `table`.
 
 ## Usage
 

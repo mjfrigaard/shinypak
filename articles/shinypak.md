@@ -1,15 +1,20 @@
 # shinypak
 
-`shinypak` is a supplemental package for the [Shiny App-Packages
-book](https://mjfrigaard.github.io/shiny-app-pkgs/). It’s functions are
-designed to give readers of the book quick and easy access to the
-app-packages so they can follow along.
+Each chapter in the [Shiny App-Packages
+book](https://mjfrigaard.github.io/shiny-app-pkgs/) has a matching Shiny
+application, and each of those applications lives on its own branch of
+the [`sap`](https://github.com/mjfrigaard/sap) repository. Cloning
+branches by hand gets tedious after the second or third chapter, so
+`shinypak` handles it for you. This vignette covers authenticating with
+GitHub, finding an app, launching or downloading it, and using
+[`is_r_package()`](https://mjfrigaard.github.io/shinypak/reference/is_r_package.md)
+to check what a folder actually contains.
 
 ## Authentication
 
-`shinypak` assumes you have GitHub and RStudio (or Positron) synced.
-Read more about setting this up on the [`gert` package
-website](https://docs.ropensci.org/gert/#automatic-authentication)
+`shinypak` assumes you have GitHub and RStudio (or Positron) synced. You
+can read more about setting this up on the [`gert` package
+website](https://docs.ropensci.org/gert/#automatic-authentication):
 
 > “*In `gert`, authentication is done automatically using the
 > [`credentials`
@@ -39,10 +44,10 @@ library(shinypak)
 2.  Find an example application in a chapter to follow along with (we’ll
     use `02.3_proj-app`).
 
-3.  Find the application in the look-up table with
+3.  Confirm the branch name with
     [`list_apps()`](https://mjfrigaard.github.io/shinypak/reference/list_apps.md).
-    You can specify a `regex` to return a table of branches matching a
-    particular chapter or topic:
+    Supplying a `regex` returns only the branches matching a particular
+    chapter or topic:
 
 ``` r
 
@@ -68,10 +73,10 @@ list_apps(regex = "proj-app")
 launch(app = "<branch>")
 ```
 
-- For example, The `02.3_proj-app` branch is from the [early chapters of
-  Shiny
-  App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders)
-  (i.e., the app is not quite an app-package yet):
+- For example, the `02.3_proj-app` branch comes from the [early chapters
+  of Shiny
+  App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders),
+  so the app isn’t quite an app-package yet:
 
 ``` r
 
@@ -97,10 +102,9 @@ launch(app = "02.3_proj-app")
 ![](../reference/figures/launch_02.3_app.gif)
 
 5.  If you’d prefer to download the application without launching it,
-    you can call the
-    [`get_app()`](https://mjfrigaard.github.io/shinypak/reference/get_app.md)
-    function and the specified branch and application will be downloaded
-    into the current working directory:
+    call
+    [`get_app()`](https://mjfrigaard.github.io/shinypak/reference/get_app.md).
+    The branch is downloaded into your current working directory:
 
 ``` r
 
@@ -109,8 +113,7 @@ get_app(app = "05_roxygen2")
 
 ![](../reference/figures/get_app.gif)
 
-- You can open the new app project by supplying the `open = TRUE`
-  argument:
+- Supply `open = TRUE` to open the new project in a fresh IDE session:
 
 ``` r
 
@@ -122,12 +125,12 @@ get_app(app = "05_roxygen2", open = TRUE)
 - If the app is already downloaded, the files are updated with the
   latest commit to the branch.
 
-## Helper
+## Helper functions
 
-The
+Not every folder with a `DESCRIPTION` file is an R package, and not
+every `.Rproj` file is configured for package development.
 [`is_r_package()`](https://mjfrigaard.github.io/shinypak/reference/is_r_package.md)
-function is useful for determining if a directory contains an R package.
-Consider the three folders below:
+checks both. Consider the three folders below:
 
 ``` default
 path/to/pkg
@@ -157,8 +160,7 @@ is_r_package(path = system.file("pkg", package = "shinypak"))
 #> [1] TRUE
 ```
 
-If the `verbose` argument is set to `TRUE`, the details are printed on
-what is being checked:
+Setting `verbose = TRUE` prints the details of each check:
 
 ``` r
 
@@ -176,9 +178,9 @@ is_r_package(
 #> [1] TRUE
 ```
 
-This can be used to quickly determine if a folder contains an R package
-or Shiny app (and what is missing). Consider the `app` folder (with a
-`DESCRIPTION` and `.Rproj` file).
+The verbose output tells you what’s missing, not just whether the check
+failed. Consider the `app` folder, which has both a `DESCRIPTION` and an
+`.Rproj` file:
 
 ``` r
 
@@ -196,12 +198,13 @@ is_r_package(
 #> [1] FALSE
 ```
 
-This tells is `app` has fields missing from the `DESCRIPTION` and the
-`.Rproj` isn’t configured with RStudio’s build tools.
+This tells us `app` is missing fields from its `DESCRIPTION`, and its
+`.Rproj` file isn’t configured with RStudio’s build tools.
 
-## Lookup Table
+## Lookup table
 
-`topic_lookup` connects `branch`, `part`, and `chapter`:
+`topic_lookup` connects each `branch` to its `part` and `chapter` in the
+book:
 
 ``` r
 
@@ -250,3 +253,21 @@ topic_lookup
 | 28_llm-chores | Shiny & LLMs | LLMs with chores package |
 | 29_llm-gander | Shiny & LLMs | LLMs with gander package |
 | 30_llm-btw | Shiny & LLMs | LLMs with btw package |
+
+## Recap
+
+The workflow is three functions:
+[`list_apps()`](https://mjfrigaard.github.io/shinypak/reference/list_apps.md)
+to find the branch you want,
+[`launch()`](https://mjfrigaard.github.io/shinypak/reference/launch.md)
+to run it, and
+[`get_app()`](https://mjfrigaard.github.io/shinypak/reference/get_app.md)
+to download it without running it.
+[`is_r_package()`](https://mjfrigaard.github.io/shinypak/reference/is_r_package.md)
+is there for when you want to confirm whether a folder is a package, an
+app, or just a project.
+
+The source for every application is on a branch of the [`sap`
+repository](https://github.com/mjfrigaard/sap/branches/all), and each
+branch maps back to a chapter in [Shiny
+App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/).

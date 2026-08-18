@@ -1,8 +1,10 @@
 # Check `DESCRIPTION` File for Package Fields
 
-This function ensures that a `DESCRIPTION` file contains all of the
-necessary fields for an R package in [Writing R
-Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file).
+Checks a `DESCRIPTION` file for the fields an R package requires:
+`Package`, `Version`, `License`, `Description`, `Title`, `Author`, and
+`Maintainer`. These are described in the [Writing R
+Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file)
+manual.
 
 ## Usage
 

@@ -1,6 +1,8 @@
 # Check `.Rproj` File for Package Fields
 
-Check `.Rproj` File for Package Fields
+Checks an `.Rproj` file for the fields RStudio writes when a project is
+configured with build tools: `BuildType`, `PackageUseDevtools`, and
+`PackageInstallArgs`.
 
 ## Usage
 

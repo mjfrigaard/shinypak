@@ -2,20 +2,21 @@
 
 ## shinypak 0.1.1
 
-- Update `branches` and `topic_lookup` tables
+- Updated the `branches` and `topic_lookup` datasets to cover the
+  current set of branches in `sap`
 
-- Update .gifs in vignettes and `README.md`
+- Updated the .gifs in the vignette and `README.md`
 
-- Update colors in `_pkgdown.yml`
+- Updated the colors in `_pkgdown.yml`
 
 ## shinypak 0.1.0
 
-- Initial `pkgdown` build
+- Initial `pkgdown` site
 
-- Updates to
+- Updates to the
   [`launch()`](https://mjfrigaard.github.io/shinypak/reference/launch.md)
   function
 
-- New .gifs for README and vignettes
+- New .gifs for the README and vignette
 
-- New git repos
+- New git repositories for the example applications

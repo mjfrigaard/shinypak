@@ -63,15 +63,20 @@
 
     
     
-<p><code>shinypak</code> is a supplemental package for the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny App-Packages
-book</a>. It’s functions are designed to give readers of the book quick
-and easy access to the app-packages so they can follow along.</p>
+<p>Each chapter in the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny App-Packages
+book</a> has a matching Shiny application, and each of those
+applications lives on its own branch of the <a href="https://github.com/mjfrigaard/sap" class="external-link"><code>sap</code></a>
+repository. Cloning branches by hand gets tedious after the second or
+third chapter, so <code>shinypak</code> handles it for you. This
+vignette covers authenticating with GitHub, finding an app, launching or
+downloading it, and using <code><a href="../reference/is_r_package.html">is_r_package()</a></code> to check what a
+folder actually contains.</p>
 <div class="section level2">
 <h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a>
 </h2>
 <p><code>shinypak</code> assumes you have GitHub and RStudio (or
-Positron) synced. Read more about setting this up on the <a href="https://docs.ropensci.org/gert/#automatic-authentication" class="external-link"><code>gert</code>
-package website</a></p>
+Positron) synced. You can read more about setting this up on the <a href="https://docs.ropensci.org/gert/#automatic-authentication" class="external-link"><code>gert</code>
+package website</a>:</p>
 <blockquote>
 <p>“<em>In <code>gert</code>, authentication is done automatically using
 the <a href="https://docs.ropensci.org/credentials/articles/intro.html" class="external-link"><code>credentials</code>
@@ -97,9 +102,9 @@ in your OS keychain.</em>”</p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Find an example application in a chapter to follow along with
 (we’ll use <code>02.3_proj-app</code>).</p></li>
-<li><p>Find the application in the look-up table with
-<code><a href="../reference/list_apps.html">list_apps()</a></code>. You can specify a <code>regex</code> to return
-a table of branches matching a particular chapter or topic:</p></li>
+<li><p>Confirm the branch name with <code><a href="../reference/list_apps.html">list_apps()</a></code>. Supplying
+a <code>regex</code> returns only the branches matching a particular
+chapter or topic:</p></li>
 </ol>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_apps.html">list_apps</a></span><span class="op">(</span>regex <span class="op">=</span> <span class="st">"^02.3"</span><span class="op">)</span> </span>
@@ -117,9 +122,9 @@ book</a>, you can supply the name of the branch to
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"&lt;branch&gt;"</span><span class="op">)</span></span></code></pre></div>
 <ul>
-<li>For example, The <code>02.3_proj-app</code> branch is from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders" class="external-link">early
-chapters of Shiny App-Packages</a> (i.e., the app is not quite an
-app-package yet):</li>
+<li>For example, the <code>02.3_proj-app</code> branch comes from the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders" class="external-link">early
+chapters of Shiny App-Packages</a>, so the app isn’t quite an
+app-package yet:</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"02.3_proj-app"</span><span class="op">)</span></span></code></pre></div>
@@ -139,16 +144,15 @@ loads the package and then launches the application:</p></li>
 <p><img src="../reference/figures/launch_02.3_app.gif" class="r-plt" alt="" width="100%" style="display: block; margin: auto;"></p>
 <ol start="5" style="list-style-type: decimal">
 <li>If you’d prefer to download the application without launching it,
-you can call the <code><a href="../reference/get_app.html">get_app()</a></code> function and the specified
-branch and application will be downloaded into the current working
-directory:</li>
+call <code><a href="../reference/get_app.html">get_app()</a></code>. The branch is downloaded into your current
+working directory:</li>
 </ol>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"05_roxygen2"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="../reference/figures/get_app.gif" class="r-plt" alt="" width="100%" style="display: block; margin: auto;"></p>
 <ul>
-<li>You can open the new app project by supplying the
-<code>open = TRUE</code> argument:</li>
+<li>Supply <code>open = TRUE</code> to open the new project in a fresh
+IDE session:</li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_app.html">get_app</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"05_roxygen2"</span>, open <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -159,10 +163,12 @@ latest commit to the branch.</li>
 </ul>
 </div>
 <div class="section level2">
-<h2 id="helper">Helper<a class="anchor" aria-label="anchor" href="#helper"></a>
+<h2 id="helper-functions">Helper functions<a class="anchor" aria-label="anchor" href="#helper-functions"></a>
 </h2>
-<p>The <code><a href="../reference/is_r_package.html">is_r_package()</a></code> function is useful for determining if
-a directory contains an R package. Consider the three folders below:</p>
+<p>Not every folder with a <code>DESCRIPTION</code> file is an R
+package, and not every <code>.Rproj</code> file is configured for
+package development. <code><a href="../reference/is_r_package.html">is_r_package()</a></code> checks both. Consider
+the three folders below:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>path/to/pkg</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>├── DESCRIPTION</span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>└── pkg.Rproj</span></code></pre></div>
@@ -177,8 +183,8 @@ returns <code>TRUE</code>.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span>path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"pkg"</span>, package <span class="op">=</span> <span class="st">"shinypak"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (DESCRIPTION found, no .Rproj)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
-<p>If the <code>verbose</code> argument is set to <code>TRUE</code>, the
-details are printed on what is being checked:</p>
+<p>Setting <code>verbose = TRUE</code> prints the details of each
+check:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span></span>
 <span>  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"pkg"</span>, package <span class="op">=</span> <span class="st">"shinypak"</span><span class="op">)</span>, </span>
@@ -192,10 +198,9 @@ details are printed on what is being checked:</p>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Maintainer found!</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (DESCRIPTION found, no .Rproj)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
-<p>This can be used to quickly determine if a folder contains an R
-package or Shiny app (and what is missing). Consider the
-<code>app</code> folder (with a <code>DESCRIPTION</code> and
-<code>.Rproj</code> file).</p>
+<p>The verbose output tells you what’s missing, not just whether the
+check failed. Consider the <code>app</code> folder, which has both a
+<code>DESCRIPTION</code> and an <code>.Rproj</code> file:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span></span>
 <span>    path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"app"</span>, package <span class="op">=</span> <span class="st">"shinypak"</span><span class="op">)</span>, </span>
@@ -209,15 +214,15 @@ package or Shiny app (and what is missing). Consider the
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> Maintainer not in DESCRIPTION!</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> '/home/runner/work/_temp/Library/shinypak/app' is not an R package (invalid DESCRIPTION, no .Rproj)</span></span>
 <span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
-<p>This tells is <code>app</code> has fields missing from the
-<code>DESCRIPTION</code> and the <code>.Rproj</code> isn’t configured
-with RStudio’s build tools.</p>
+<p>This tells us <code>app</code> is missing fields from its
+<code>DESCRIPTION</code>, and its <code>.Rproj</code> file isn’t
+configured with RStudio’s build tools.</p>
 </div>
 <div class="section level2">
-<h2 id="lookup-table">Lookup Table<a class="anchor" aria-label="anchor" href="#lookup-table"></a>
+<h2 id="lookup-table">Lookup table<a class="anchor" aria-label="anchor" href="#lookup-table"></a>
 </h2>
-<p><code>topic_lookup</code> connects <code>branch</code>,
-<code>part</code>, and <code>chapter</code>:</p>
+<p><code>topic_lookup</code> connects each <code>branch</code> to its
+<code>part</code> and <code>chapter</code> in the book:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">topic_lookup</span></span></code></pre></div>
 <table class="table">
@@ -435,6 +440,18 @@ with RStudio’s build tools.</p>
 </tbody>
 </table>
 </div>
+<div class="section level2">
+<h2 id="recap">Recap<a class="anchor" aria-label="anchor" href="#recap"></a>
+</h2>
+<p>The workflow is three functions: <code><a href="../reference/list_apps.html">list_apps()</a></code> to find the
+branch you want, <code><a href="../reference/launch.html">launch()</a></code> to run it, and
+<code><a href="../reference/get_app.html">get_app()</a></code> to download it without running it.
+<code><a href="../reference/is_r_package.html">is_r_package()</a></code> is there for when you want to confirm
+whether a folder is a package, an app, or just a project.</p>
+<p>The source for every application is on a branch of the <a href="https://github.com/mjfrigaard/sap/branches/all" class="external-link"><code>sap</code>
+repository</a>, and each branch maps back to a chapter in <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny
+App-Packages</a>.</p>
+</div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
@@ -446,7 +463,7 @@ with RStudio’s build tools.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

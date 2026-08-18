@@ -1,9 +1,9 @@
 # List Branches of the sap Repository
 
-This function clones the 'sap' GitHub repository, extracts the list of
-branches along with their last update time, and then returns this
-information as a tibble. The repository is cloned to a temporary
-directory, which is removed after the function executes.
+Clones the [`sap`](https://github.com/mjfrigaard/sap) GitHub repository
+to a temporary directory, then returns its branches and their last
+update times as a data frame. The temporary directory is removed before
+the function returns, so nothing is left in your working directory.
 
 ## Usage
 
@@ -27,22 +27,19 @@ alphabetically by branch name. Branches named `HEAD`, `main`, and
 
 ## How it works
 
-The function operates in several steps:
+1.  Saves the current working directory so it can be restored later
 
-1.  It saves the current working directory to revert back to it later
-
-2.  It clones the ['sap'](https://github.com/mjfrigaard/sap) repository
+2.  Clones the [`sap`](https://github.com/mjfrigaard/sap) repository
     from GitHub into a temporary directory
 
-3.  It lists all branches of the cloned repository
+3.  Lists all branches of the cloned repository
 
-4.  It separates the branch `name`s into `source` and `branch_name`
+4.  Separates each branch `name` into `source` and `branch`
 
-5.  If `regex` is supplied, it filters branches to those matching the
-    pattern
+5.  Filters the branches to those matching `regex`, if one is supplied
 
-6.  It cleans up by deleting the temporary directory and restoring the
-    original working directory
+6.  Deletes the temporary directory and restores the original working
+    directory
 
 ## Examples
 
@@ -59,12 +56,12 @@ list_apps()
 #>  6 03.2_rproj          2025-03-11 13:44:55
 #>  7 03.3_create-package 2025-03-11 13:45:29
 #>  8 04_devtools         2025-03-11 13:46:59
-#>  9 05_roxygen2         2025-03-11 13:48:24
-#> 10 06.1_exports        2025-03-11 13:49:18
+#>  9 05_roxygen2         2026-06-19 19:02:42
+#> 10 06.1_exports        2026-06-19 18:45:37
 #> # ℹ 32 more rows
 list_apps(regex = "tests")
 #> # A tibble: 1 × 2
 #>   branch         last_updated       
 #>   <chr>          <dttm>             
-#> 1 14_tests_suite 2025-03-11 14:14:32
+#> 1 14_tests_suite 2026-06-19 18:45:45
 ```

@@ -1,9 +1,10 @@
 # Clone a Specific Branch of the sap Repository and Optionally Open it
 
-Clones a specified branch of the `sap` GitHub repository into the
-current working directory. It cleans the cloned directory by removing
-`.git` files, `.DS_Store`, and `.Rbuildignore` files, optionally renames
-the R project file, and optionally opens it in a new IDE session.
+Clones a branch of the [`sap`](https://github.com/mjfrigaard/sap) GitHub
+repository into the current working directory, then cleans it up: `.git`
+files, `.DS_Store` files, and `.Rbuildignore` files are removed, and the
+`.Rproj` file is renamed to match the branch. Set `open = TRUE` to open
+the result in a new IDE session.
 
 ## Usage
 
@@ -31,17 +32,18 @@ Invisible `NULL`. The function is called for its side effects.
 
 ## Details
 
-If the directory for the branch already exists, it is deleted and
-re-cloned to ensure the latest version is present. After cloning, the
-function performs cleanup operations:
+If the directory for the branch already exists, it's deleted and
+re-cloned so you always get the latest commit. After cloning,
+`get_app()` removes:
 
-- Deletes `.git` directory and files.
+- The `.git` directory and files
 
-- Removes `.DS_Store` files.
+- Any `.DS_Store` files
 
-- Deletes any `.Rbuildignore` files present. It then renames the R
-  project file to match the name of the cloned branch and, if specified,
-  opens the project in RStudio.
+- Any `.Rbuildignore` files
+
+It then renames the `.Rproj` file to match the cloned branch and, if
+`open = TRUE`, opens the project.
 
 ## Note
 

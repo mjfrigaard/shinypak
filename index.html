@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Getting your app into an R package • shinypak</title>
+<title>Clone and Launch Shiny App Examples • shinypak</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/Ubuntu-0.4.10/font.css" rel="stylesheet">
@@ -13,9 +13,9 @@
 <link href="deps/Fira_Sans_Condensed-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Getting your app into an R package">
-<meta name="description" content="Shiny application examples from Shiny App-Packages book: &lt;https://mjfrigaard.github.io/shiny-app-pkgs/&gt;">
-<meta property="og:description" content="Shiny application examples from Shiny App-Packages book: &lt;https://mjfrigaard.github.io/shiny-app-pkgs/&gt;">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Clone and Launch Shiny App Examples">
+<meta name="description" content="Clones branches of the sap example repository into a local project, stripping development artifacts and renaming the .Rproj file to match the branch. Provides functions to list available app branches, launch installed examples, and verify a directory has a valid R package structure. Companion package to the Shiny App-Packages book &lt;https://mjfrigaard.github.io/shiny-app-pkgs/&gt;.">
+<meta property="og:description" content="Clones branches of the sap example repository into a local project, stripping development artifacts and renaming the .Rproj file to match the branch. Provides functions to list available app branches, launch installed examples, and verify a directory has a valid R package structure. Companion package to the Shiny App-Packages book &lt;https://mjfrigaard.github.io/shiny-app-pkgs/&gt;.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -55,11 +55,11 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p><code>shinypak</code> provides easy access all the Shiny app examples in the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny App-Packages book</a> (which are stored in the <a href="https://github.com/mjfrigaard/sap" class="external-link"><code>sap</code></a> R package).<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Each of the apps in &lt;code&gt;shinypak&lt;/code&gt; have a corresponding chapter and branch in the &lt;a href="https://github.com/mjfrigaard/sap/branches/all" class="external-link"&gt;sap repo&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a> <code>shinypak</code> also has a few helper functions for checking the files and folders in a Shiny app-package.</p>
+<p>Following along with a book is easier when you can run the code. Every Shiny app example in the <a href="https://mjfrigaard.github.io/shiny-app-pkgs/" class="external-link">Shiny App-Packages book</a> lives on a branch of the <a href="https://github.com/mjfrigaard/sap" class="external-link"><code>sap</code></a> repository, and <code>shinypak</code> gives you a single function call to download or launch any of them.<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Each app in &lt;code&gt;shinypak&lt;/code&gt; has a corresponding chapter and branch in the &lt;a href="https://github.com/mjfrigaard/sap/branches/all" class="external-link"&gt;&lt;code&gt;sap&lt;/code&gt; repo&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a> It also includes a few helper functions for checking the files and folders in a Shiny app-package.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of <code>shinypak</code> from <a href="https://github.com/" class="external-link">GitHub</a> after installing <code>remotes</code>:</p>
+<p>You can install the development version of <code>shinypak</code> from <a href="https://github.com/mjfrigaard/shinypak" class="external-link">GitHub</a> with <code>pak</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'pak'</span><span class="op">)</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"mjfrigaard/shinypak"</span>, force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -69,12 +69,12 @@
 <div class="section level2">
 <h2 id="github-authentication">GitHub authentication<a class="anchor" aria-label="anchor" href="#github-authentication"></a>
 </h2>
-<p><code>shinypak</code> uses the <a href="https://docs.ropensci.org/gert/" class="external-link"><code>gert</code> package</a> for Git/GitHub management (and assumes authentication was done automatically using the <code>credentials</code> package).<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Check out the documentation for the &lt;a href="https://docs.ropensci.org/credentials/articles/intro.html" class="external-link"&gt;&lt;code&gt;credentials&lt;/code&gt; package&lt;/a&gt;&lt;/p&gt;'><sup>2</sup></a></p>
+<p><code>shinypak</code> uses the <a href="https://docs.ropensci.org/gert/" class="external-link"><code>gert</code> package</a> for Git/GitHub management, and assumes your credentials are already stored in your OS keychain (which <code>gert</code> handles automatically with the <code>credentials</code> package).<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;Check out the documentation for the &lt;a href="https://docs.ropensci.org/credentials/articles/intro.html" class="external-link"&gt;&lt;code&gt;credentials&lt;/code&gt; package&lt;/a&gt;&lt;/p&gt;'><sup>2</sup></a></p>
 </div>
 <div class="section level2">
 <h2 id="available-app-packages">Available app-packages<a class="anchor" aria-label="anchor" href="#available-app-packages"></a>
 </h2>
-<p>All applications in <code>shinypak</code> come from chapters in <a href="https://bit.ly/ShinyAppPkgs" class="external-link">Shiny App-Packages book</a>. A full list of the available apps and topics are available in <code>topic_lookup</code>:</p>
+<p>Every application in <code>shinypak</code> comes from a chapter in the <a href="https://bit.ly/ShinyAppPkgs" class="external-link">Shiny App-Packages book</a>. The <code>topic_lookup</code> table connects each branch to its book part and chapter:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">topic_lookup</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
@@ -218,10 +218,16 @@
 <div class="section level2">
 <h2 id="launching-apps-and-app-packages">Launching apps and app-packages<a class="anchor" aria-label="anchor" href="#launching-apps-and-app-packages"></a>
 </h2>
-<p>Launch an application from any section in the book using:</p>
+<p>Pass a branch name to <code><a href="reference/launch.html">launch()</a></code> to run the application from any section in the book. <code><a href="reference/launch.html">launch()</a></code> downloads the branch if it isn’t already in your working directory, loads it with <code><a href="https://pkgload.r-lib.org/reference/load_all.html" class="external-link">pkgload::load_all()</a></code> if it’s an app-package, then runs the app:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/launch.html">launch</a></span><span class="op">(</span>app <span class="op">=</span> <span class="st">"02.3_proj-app"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/launch_02.3_app.gif" alt="" width="100%" style="display: block; margin: auto;"></p>
+<p>If you’d rather read the code than run it, <code><a href="reference/get_app.html">get_app()</a></code> downloads the branch without launching it, and <code>get_app(open = TRUE)</code> opens it in a new IDE session.</p>
+</div>
+<div class="section level2">
+<h2 id="recap">Recap<a class="anchor" aria-label="anchor" href="#recap"></a>
+</h2>
+<p><code>shinypak</code> has three functions you’ll use most: <code><a href="reference/list_apps.html">list_apps()</a></code> to find a branch, <code><a href="reference/get_app.html">get_app()</a></code> to download it, and <code><a href="reference/launch.html">launch()</a></code> to run it. The <a href="https://mjfrigaard.github.io/shinypak/articles/shinypak.html">package vignette</a> walks through a full workflow, and the source for every app lives in the <a href="https://github.com/mjfrigaard/sap/branches/all" class="external-link"><code>sap</code> repository</a>.</p>
 </div>
 </div>
 
@@ -268,7 +274,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
