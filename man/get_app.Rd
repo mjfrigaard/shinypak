@@ -10,33 +10,32 @@ get_app(app = "main", open = FALSE)
 \item{app}{The name of the branch to be cloned as a character string. If
 not specified, defaults to "main".}
 
-\item{open}{A logical parameter, when set to \code{TRUE}, the function will attempt
-to open the project directory in a new session using
+\item{open}{A logical parameter, when set to \code{TRUE}, the function will
+attempt to open the project directory in a new session using
 \code{rstudioapi::openProject}. Defaults to \code{FALSE}.}
 }
 \value{
 Invisible \code{NULL}. The function is called for its side effects.
 }
 \description{
-Clones a specified branch of the \code{sap} GitHub repository into the
-current working directory. It cleans the cloned directory by removing \code{.git}
-files, \code{.DS_Store}, and \code{.Rbuildignore} files, optionally renames the R
-project file, and optionally opens it in a new IDE session.
+Clones a branch of the \href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub
+repository into the current working directory, then cleans it up: \code{.git}
+files, \code{.DS_Store} files, and \code{.Rbuildignore} files are removed, and the
+\code{.Rproj} file is renamed to match the branch. Set \code{open = TRUE} to open the
+result in a new IDE session.
 }
-\section{Details}{
-
-If the directory for the branch already exists, it is deleted and re-cloned
-to ensure the latest version is present.
-After cloning, the function performs cleanup operations:
+\details{
+If the directory for the branch already exists, it's deleted and re-cloned so
+you always get the latest commit. After cloning, \code{get_app()} removes:
 \itemize{
-\item Deletes \code{.git} directory and files.
-\item Removes \code{.DS_Store} files.
-\item Deletes any \code{.Rbuildignore} files present.
-It then renames the R project file to match the name of the cloned branch
-and, if specified, opens the project in RStudio.
-}
+\item The \code{.git} directory and files
+\item Any \code{.DS_Store} files
+\item Any \code{.Rbuildignore} files
 }
 
+It then renames the \code{.Rproj} file to match the cloned branch and, if
+\code{open = TRUE}, opens the project.
+}
 \section{Note}{
 
 \itemize{

@@ -17,23 +17,22 @@ alphabetically by branch name. Branches named \code{HEAD}, \code{main}, and
 \code{gh-pages} are excluded.
 }
 \description{
-This function clones the 'sap' GitHub repository, extracts the list
-of branches along with their last update time, and then returns this information
-as a tibble. The repository is cloned to a temporary directory, which is removed
-after the function executes.
+Clones the \href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub repository to a
+temporary directory, then returns its branches and their last update times as
+a data frame. The temporary directory is removed before the function returns,
+so nothing is left in your working directory.
 }
 \section{How it works}{
 
-The function operates in several steps:
 \enumerate{
-\item It saves the current working directory to revert back to it later
-\item It clones the \href{https://github.com/mjfrigaard/sap}{'sap'}
-repository from GitHub into a temporary directory
-\item It lists all branches of the cloned repository
-\item It separates the branch \code{name}s into \code{source} and \code{branch_name}
-\item If \code{regex} is supplied, it filters branches to those matching the pattern
-\item It cleans up by deleting the temporary directory and restoring the original
-working directory
+\item Saves the current working directory so it can be restored later
+\item Clones the \href{https://github.com/mjfrigaard/sap}{\code{sap}} repository from
+GitHub into a temporary directory
+\item Lists all branches of the cloned repository
+\item Separates each branch \code{name} into \code{source} and \code{branch}
+\item Filters the branches to those matching \code{regex}, if one is supplied
+\item Deletes the temporary directory and restores the original working
+directory
 }
 }
 

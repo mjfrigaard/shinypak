@@ -2,15 +2,16 @@
 #'
 #' @param file path to plain text file
 #' @param field field in file
+#' @param verbose logical; if `TRUE`, reports the check and its result via
+#'   `cli` messages. Defaults to `FALSE`.
 #'
 #' @return logical
 #'
 #' @keywords internal
 #'
 #' @examples
-#' check_text_field("Package: shinypak \n Title: Getting your app into an R package",
-#' "Package")
-#' check_text_field("Package: shinypak \n Title: Getting your app into an R package",
+#' check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
+#' check_text_field("Package: shinypak \n Title: Shiny App Examples",
 #' "Package", verbose = TRUE)
 check_text_field <- function(file, field, verbose = FALSE) {
   file_lines <- readr::read_lines(file)

@@ -19,18 +19,16 @@ A logical value; \code{TRUE} if the directory contains a valid
 development), \code{FALSE} otherwise.
 }
 \description{
-This function checks a directory to ascertain if it has the required files
-(\code{.Rproj} and \code{DESCRIPTION}) configured correctly for an R package. It
-provides verbose output detailing which checks have passed or failed.
+Checks whether a directory has the files an R package needs (a valid
+\code{DESCRIPTION}, and optionally an \code{.Rproj} configured for package
+development). Set \code{verbose = TRUE} to see which checks passed and which
+failed.
 }
-\section{Details}{
-
-This function wraps around \code{is_pkg_description} and \code{is_pkg_rproj}
-functions to check both the \code{DESCRIPTION} and \code{.Rproj} files. If \code{verbose}
-is \code{TRUE}, it will use \code{cli} package functions to alert the user about the
-checks being performed and their results.
+\details{
+This is a wrapper around \code{is_pkg_description()} and \code{is_pkg_rproj()}, which
+check the \code{DESCRIPTION} and \code{.Rproj} files respectively. When \code{verbose} is
+\code{TRUE}, \code{cli} messages report each check and its result.
 }
-
 \examples{
 is_r_package(
      system.file("pkg", package = "shinypak"),

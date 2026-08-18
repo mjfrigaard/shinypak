@@ -2,12 +2,12 @@
 % Please edit documentation in R/nin.R
 \name{\%nin\%}
 \alias{\%nin\%}
-\title{Inverted versions of \code{\%in\%}}
+\title{Inverted version of \code{\%in\%}}
 \usage{
 x \%nin\% table
 }
 \description{
-Inverted versions of \code{\%in\%}
+Returns \code{TRUE} for elements of \code{x} that are \emph{not} in \code{table}.
 }
 \examples{
 1 \%nin\% 1:10

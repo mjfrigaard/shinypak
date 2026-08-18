@@ -9,13 +9,15 @@ is_pkg_rproj(file, verbose = FALSE)
 \arguments{
 \item{file}{character string specifying the path to the \code{.Rproj} file.}
 
-\item{verbose}{logical; if  \code{TRUE}, detailed messages will be displayed}
+\item{verbose}{logical; if \code{TRUE}, detailed messages will be displayed}
 }
 \value{
 A logical value; \code{TRUE} if all fields are found, \code{FALSE} otherwise.
 }
 \description{
-Check \code{.Rproj} File for Package Fields
+Checks an \code{.Rproj} file for the fields RStudio writes when a project is
+configured with build tools: \code{BuildType}, \code{PackageUseDevtools}, and
+\code{PackageInstallArgs}.
 }
 \examples{
 is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"),

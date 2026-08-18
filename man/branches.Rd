@@ -17,9 +17,8 @@ A data frame with 40 rows and 1 column:
 branches
 }
 \description{
-A character vector of branch names from the
-\href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub repository. Each branch
-corresponds to a Shiny application example from the
+The branch names from the \href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub
+repository. Each branch holds a Shiny application example from the
 \href{https://mjfrigaard.github.io/shiny-app-pkgs/}{Shiny App-Packages book}.
 }
 \keyword{datasets}

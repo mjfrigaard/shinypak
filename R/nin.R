@@ -1,4 +1,7 @@
-#' Inverted versions of `%in%`
+#' Inverted version of `%in%`
+#'
+#' @description
+#' Returns `TRUE` for elements of `x` that are *not* in `table`.
 #'
 #' @export
 #'

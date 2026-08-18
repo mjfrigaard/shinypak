@@ -1,8 +1,9 @@
 #' Check Directory for R Package Structure
 #'
-#' This function checks a directory to ascertain if it has the required files
-#' (`.Rproj` and `DESCRIPTION`) configured correctly for an R package. It
-#' provides verbose output detailing which checks have passed or failed.
+#' Checks whether a directory has the files an R package needs (a valid
+#' `DESCRIPTION`, and optionally an `.Rproj` configured for package
+#' development). Set `verbose = TRUE` to see which checks passed and which
+#' failed.
 #'
 #' @param path A character string specifying the path to the directory to be
 #'     checked.
@@ -14,11 +15,10 @@
 #'
 #' @export
 #'
-#' @section Details:
-#' This function wraps around `is_pkg_description` and `is_pkg_rproj`
-#' functions to check both the `DESCRIPTION` and `.Rproj` files. If `verbose`
-#' is `TRUE`, it will use `cli` package functions to alert the user about the
-#' checks being performed and their results.
+#' @details
+#' This is a wrapper around `is_pkg_description()` and `is_pkg_rproj()`, which
+#' check the `DESCRIPTION` and `.Rproj` files respectively. When `verbose` is
+#' `TRUE`, `cli` messages report each check and its result.
 #'
 #' @examples
 #' is_r_package(

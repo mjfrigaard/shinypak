@@ -19,7 +19,7 @@ sep_cols(data, col, into, sep)
 data with new columns
 }
 \description{
-This is a utility function used to create the list of applications in the Git
-branches.
+A base R utility for splitting a column into two, used internally to separate
+branch names into their \code{source} and \code{branch} parts.
 }
 \keyword{internal}

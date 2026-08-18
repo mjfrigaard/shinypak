@@ -10,6 +10,9 @@ check_text_field(file, field, verbose = FALSE)
 \item{file}{path to plain text file}
 
 \item{field}{field in file}
+
+\item{verbose}{logical; if \code{TRUE}, reports the check and its result via
+\code{cli} messages. Defaults to \code{FALSE}.}
 }
 \value{
 logical
@@ -18,9 +21,8 @@ logical
 Check for fields in text file
 }
 \examples{
-check_text_field("Package: shinypak \n Title: Getting your app into an R package",
-"Package")
-check_text_field("Package: shinypak \n Title: Getting your app into an R package",
+check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
+check_text_field("Package: shinypak \n Title: Shiny App Examples",
 "Package", verbose = TRUE)
 }
 \keyword{internal}

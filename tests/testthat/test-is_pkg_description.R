@@ -30,10 +30,7 @@ describe("package DESCRIPTION", {
   })
 
   test_that("aborts when file does not exist", {
-    expect_error(
-      is_pkg_description("nonexistent_DESCRIPTION"),
-      regexp = "does not exist"
-    )
+    expect_snapshot(error = TRUE, is_pkg_description("nonexistent_DESCRIPTION"))
   })
 
   test_that("inst/pkg DESCRIPTION passes", {

@@ -1,7 +1,12 @@
 #' Check `.Rproj` File for Package Fields
 #'
+#' @description
+#' Checks an `.Rproj` file for the fields RStudio writes when a project is
+#' configured with build tools: `BuildType`, `PackageUseDevtools`, and
+#' `PackageInstallArgs`.
+#'
 #' @param file character string specifying the path to the `.Rproj` file.
-#' @param verbose logical; if  `TRUE`, detailed messages will be displayed
+#' @param verbose logical; if `TRUE`, detailed messages will be displayed
 #'
 #' @return A logical value; `TRUE` if all fields are found, `FALSE` otherwise.
 #'

@@ -7,16 +7,18 @@
 
 <!-- badges: end -->
 
-`shinypak` provides easy access all the Shiny app examples in the [Shiny
-App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/) (which
-are stored in the [`sap`](https://github.com/mjfrigaard/sap) R
-package).[^1] `shinypak` also has a few helper functions for checking
-the files and folders in a Shiny app-package.
+Following along with a book is easier when you can run the code. Every
+Shiny app example in the [Shiny App-Packages
+book](https://mjfrigaard.github.io/shiny-app-pkgs/) lives on a branch of
+the [`sap`](https://github.com/mjfrigaard/sap) repository, and
+`shinypak` gives you a single function call to download or launch any of
+them.[^1] It also includes a few helper functions for checking the files
+and folders in a Shiny app-package.
 
 ## Installation
 
 You can install the development version of `shinypak` from
-[GitHub](https://github.com/) after installing `remotes`:
+[GitHub](https://github.com/mjfrigaard/shinypak) with `pak`:
 
 ``` r
 install.packages('pak')
@@ -30,14 +32,15 @@ library(shinypak)
 ## GitHub authentication
 
 `shinypak` uses the [`gert` package](https://docs.ropensci.org/gert/)
-for Git/GitHub management (and assumes authentication was done
-automatically using the `credentials` package).[^2]
+for Git/GitHub management, and assumes your credentials are already
+stored in your OS keychain (which `gert` handles automatically with the
+`credentials` package).[^2]
 
 ## Available app-packages
 
-All applications in `shinypak` come from chapters in [Shiny App-Packages
-book](https://bit.ly/ShinyAppPkgs). A full list of the available apps
-and topics are available in `topic_lookup`:
+Every application in `shinypak` comes from a chapter in the [Shiny
+App-Packages book](https://bit.ly/ShinyAppPkgs). The `topic_lookup`
+table connects each branch to its book part and chapter:
 
 ``` r
 head(topic_lookup, 10)
@@ -75,7 +78,10 @@ tail(topic_lookup, 10)
 
 ## Launching apps and app-packages
 
-Launch an application from any section in the book using:
+Pass a branch name to `launch()` to run the application from any section
+in the book. `launch()` downloads the branch if it isn’t already in your
+working directory, loads it with `pkgload::load_all()` if it’s an
+app-package, then runs the app:
 
 ``` r
 launch(app = "02.3_proj-app")
@@ -83,9 +89,21 @@ launch(app = "02.3_proj-app")
 
 <img src="man/figures/launch_02.3_app.gif" alt="" width="100%" style="display: block; margin: auto;" />
 
-[^1]: Each of the apps in `shinypak` have a corresponding chapter and
-    branch in the [sap
-    repo](https://github.com/mjfrigaard/sap/branches/all).
+If you’d rather read the code than run it, `get_app()` downloads the
+branch without launching it, and `get_app(open = TRUE)` opens it in a
+new IDE session.
+
+## Recap
+
+`shinypak` has three functions you’ll use most: `list_apps()` to find a
+branch, `get_app()` to download it, and `launch()` to run it. The
+[package
+vignette](https://mjfrigaard.github.io/shinypak/articles/shinypak.html)
+walks through a full workflow, and the source for every app lives in the
+[`sap` repository](https://github.com/mjfrigaard/sap/branches/all).
+
+[^1]: Each app in `shinypak` has a corresponding chapter and branch in
+    the [`sap` repo](https://github.com/mjfrigaard/sap/branches/all).
 
 [^2]: Check out the documentation for the [`credentials`
     package](https://docs.ropensci.org/credentials/articles/intro.html)

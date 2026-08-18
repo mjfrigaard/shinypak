@@ -1,10 +1,14 @@
 Package: shinypak
-Title: Getting your app into an R package
+Title: Clone and Launch 'Shiny' App Examples
 Version: 0.1.1
 Author: Martin Frigaard <mjfrigaard@pm.me> [aut, cre]
 Maintainer: Martin Frigaard <mjfrigaard@pm.me>
-Description: Shiny application examples from Shiny App-Packages book:
-    <https://mjfrigaard.github.io/shiny-app-pkgs/>
+Description: Clones branches of the 'sap' example repository into a local
+    project, stripping development artifacts and renaming the '.Rproj' file
+    to match the branch. Provides functions to list available app branches,
+    launch installed examples, and verify a directory has a valid R package
+    structure. Companion package to the Shiny App-Packages book
+    <https://mjfrigaard.github.io/shiny-app-pkgs/>.
 License: MIT + file LICENSE
 URL: https://mjfrigaard.github.io/shinypak/,
     https://github.com/mjfrigaard/shinypak
@@ -28,4 +32,4 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.0

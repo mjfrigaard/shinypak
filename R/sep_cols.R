@@ -1,9 +1,8 @@
 #' Separate columns (base)
 #'
 #' @description
-#' This is a utility function used to create the list of applications in the Git
-#' branches.
-#'
+#' A base R utility for splitting a column into two, used internally to separate
+#' branch names into their `source` and `branch` parts.
 #'
 #' @param data data.frame or tibble
 #' @param col column to split

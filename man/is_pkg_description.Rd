@@ -17,8 +17,11 @@ A logical value; \code{TRUE} if all required fields are present, \code{FALSE}
 otherwise.
 }
 \description{
-This function ensures that a \code{DESCRIPTION} file contains all of the necessary
-fields for an R package in \href{https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}{Writing R Extensions}.
+Checks a \code{DESCRIPTION} file for the fields an R package requires: \code{Package},
+\code{Version}, \code{License}, \code{Description}, \code{Title}, \code{Author}, and \code{Maintainer}.
+These are described in the
+\href{https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}{Writing R Extensions}
+manual.
 }
 \examples{
 is_pkg_description(

@@ -16,10 +16,11 @@ Called for its side effects (launches the Shiny app). Returns
 }
 \description{
 Downloads (if needed) and launches a Shiny application from the
-\href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub repository. If the
-application directory is an R package, the package is loaded with
-\code{pkgload::load_all()} before launching via \code{shiny::runApp()}. Plain Shiny
-apps (no \code{DESCRIPTION}) are launched directly with \code{shiny::shinyAppDir()}.
+\href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub repository. How the app is
+launched depends on what the branch contains: if the directory is an R
+package, it's loaded with \code{pkgload::load_all()} and run with
+\code{shiny::runApp()}. Plain Shiny apps (those without a \code{DESCRIPTION}) are run
+directly with \code{shiny::shinyAppDir()}.
 }
 \examples{
 # launch("02.1_movies-app")
