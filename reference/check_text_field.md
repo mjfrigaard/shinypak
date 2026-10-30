@@ -30,23 +30,13 @@ logical
 ## Examples
 
 ``` r
-shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
-#> Warning: The `file` argument of `vroom()` must use `I()` for literal data as of vroom
-#> 1.5.0.
-#>   
-#>   # Bad:
-#>   vroom("X,Y\n1.5,2.3\n")
-#>   
-#>   # Good:
-#>   vroom(I("X,Y\n1.5,2.3\n"))
-#> ℹ The deprecated feature was likely used in the readr package.
-#>   Please report the issue at <https://github.com/tidyverse/readr/issues>.
+pkg_rproj <- system.file("pkg", "pkg.Rproj", package = "shinypak")
+shinypak:::check_text_field(pkg_rproj, "BuildType")
 #> [1] TRUE
-shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples",
-"Package", verbose = TRUE)
-#> checking 'Package' field
-#> ℹ 'Package' field found
-#> ✔ 'Package' field found [7ms]
+shinypak:::check_text_field(pkg_rproj, "BuildType", verbose = TRUE)
+#> checking 'BuildType' field
+#> ℹ 'BuildType' field found
+#> ✔ 'BuildType' field found [8ms]
 #> 
 #> [1] TRUE
 ```
