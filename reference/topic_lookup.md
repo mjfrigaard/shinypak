@@ -12,7 +12,7 @@ topic_lookup
 
 ## Format
 
-A data frame with 40 rows and 3 columns:
+A data frame with 42 rows and 3 columns:
 
 - branch:
 

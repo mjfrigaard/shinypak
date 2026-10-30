@@ -13,7 +13,7 @@ branches
 
 ## Format
 
-A data frame with 40 rows and 1 column:
+A data frame with 42 rows and 1 column:
 
 - branch:
 

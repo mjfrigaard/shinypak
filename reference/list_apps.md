@@ -45,7 +45,7 @@ alphabetically by branch name. Branches named `HEAD`, `main`, and
 
 ``` r
 list_apps()
-#> # A tibble: 42 × 2
+#> # A tibble: 44 × 2
 #>    branch              last_updated       
 #>    <chr>               <dttm>             
 #>  1 01_whole-app-game   2025-03-11 13:28:36
@@ -56,12 +56,12 @@ list_apps()
 #>  6 03.2_rproj          2025-03-11 13:44:55
 #>  7 03.3_create-package 2025-03-11 13:45:29
 #>  8 04_devtools         2025-03-11 13:46:59
-#>  9 05_roxygen2         2026-06-19 19:02:42
-#> 10 06.1_exports        2026-06-19 18:45:37
-#> # ℹ 32 more rows
+#>  9 05_roxygen2         2026-09-09 19:36:31
+#> 10 06.1_exports        2026-10-13 17:59:17
+#> # ℹ 34 more rows
 list_apps(regex = "tests")
 #> # A tibble: 1 × 2
 #>   branch         last_updated       
 #>   <chr>          <dttm>             
-#> 1 14_tests_suite 2026-06-19 18:45:45
+#> 1 14_tests_suite 2026-10-13 17:58:51
 ```
