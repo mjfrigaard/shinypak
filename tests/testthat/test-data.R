@@ -1,7 +1,7 @@
 describe("branches dataset", {
 
-  test_that("contains 40 app branches", {
-    expect_equal(nrow(branches), 40L)
+  test_that("contains 42 app branches", {
+    expect_equal(nrow(branches), 42L)
   })
 
   test_that("does not contain removed branches", {
@@ -9,7 +9,7 @@ describe("branches dataset", {
       "01_whole-app-game",
       "06.1_pkg-exports", "06.2_pkg-imports",
       "08_launch-app",
-      "25_llm-shinychat",
+      "27_llm-shinychat",
       "DEV", "gh-pages", "main"
     )
     expect_false(any(removed %in% branches$branch))
@@ -22,13 +22,13 @@ describe("branches dataset", {
   })
 
   test_that("contains new LLM branches", {
-    expect_true("29_llm-gander" %in% branches$branch)
-    expect_true("30_llm-btw" %in% branches$branch)
+    expect_true("31_llm-gander" %in% branches$branch)
+    expect_true("32_llm-btw" %in% branches$branch)
   })
 
   test_that("frameworks precede LLM chapters", {
-    fw_idx  <- which(branches$branch == "23_golem")
-    llm_idx <- which(branches$branch == "26_llm-shiny-assist")
+    fw_idx  <- which(branches$branch == "25_golem")
+    llm_idx <- which(branches$branch == "28_llm-shiny-assist")
     expect_lt(fw_idx, llm_idx)
   })
 
@@ -36,8 +36,8 @@ describe("branches dataset", {
 
 describe("topic_lookup dataset", {
 
-  test_that("has 40 rows and 3 columns", {
-    expect_equal(nrow(topic_lookup), 40L)
+  test_that("has 42 rows and 3 columns", {
+    expect_equal(nrow(topic_lookup), 42L)
     expect_equal(ncol(topic_lookup), 3L)
   })
 
@@ -47,22 +47,22 @@ describe("topic_lookup dataset", {
 
   test_that("framework branches have correct part", {
     fw <- subset(topic_lookup,
-                 branch %in% c("23_golem", "24_leprechaun", "25_rhino"))
+                 branch %in% c("25_golem", "26_leprechaun", "27_rhino"))
     expect_true(all(fw$part == "Frameworks"))
   })
 
-  test_that("LLM branches 26-30 have correct part", {
+  test_that("LLM branches 28-32 have correct part", {
     llm_branches <- c(
-      "26_llm-shiny-assist", "27_llm-ellmer",
-      "28_llm-chores", "29_llm-gander", "30_llm-btw"
+      "28_llm-shiny-assist", "29_llm-ellmer",
+      "30_llm-chores", "31_llm-gander", "32_llm-btw"
     )
     llm <- subset(topic_lookup, branch %in% llm_branches)
     expect_true(all(llm$part == "Shiny & LLMs"))
   })
 
   test_that("new branches have correct chapter values", {
-    gander_row <- subset(topic_lookup, branch == "29_llm-gander")
-    btw_row    <- subset(topic_lookup, branch == "30_llm-btw")
+    gander_row <- subset(topic_lookup, branch == "31_llm-gander")
+    btw_row    <- subset(topic_lookup, branch == "32_llm-btw")
     expect_equal(gander_row$chapter, "LLMs with gander package")
     expect_equal(btw_row$chapter,    "LLMs with btw package")
   })

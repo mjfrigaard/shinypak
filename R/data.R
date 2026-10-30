@@ -5,7 +5,7 @@
 #' repository. Each branch holds a Shiny application example from the
 #' [Shiny App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/).
 #'
-#' @format A data frame with 40 rows and 1 column:
+#' @format A data frame with 42 rows and 1 column:
 #' \describe{
 #'   \item{branch}{Character. The branch name (e.g., `"05_roxygen2"`).}
 #' }
@@ -21,7 +21,7 @@
 #' repository to its book part and chapter in the
 #' [Shiny App-Packages book](https://mjfrigaard.github.io/shiny-app-pkgs/).
 #'
-#' @format A data frame with 40 rows and 3 columns:
+#' @format A data frame with 42 rows and 3 columns:
 #' \describe{
 #'   \item{branch}{Character. The branch name (e.g., `"05_roxygen2"`).}
 #'   \item{part}{Character. The book part the branch belongs to (e.g.,

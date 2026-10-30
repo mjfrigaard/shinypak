@@ -32,15 +32,17 @@ topic_lookup <- data.frame(
     "21.1_gha-style",
     "21.2_gha-shiny-deploy",
     "21.3_gha-shiny-docker",
-    "22_pkgdown",
-    "23_golem",
-    "24_leprechaun",
-    "25_rhino",
-    "26_llm-shiny-assist",
-    "27_llm-ellmer",
-    "28_llm-chores",
-    "29_llm-gander",
-    "30_llm-btw"
+    "22_webr",
+    "23_shinyelectron",
+    "24_pkgdown",
+    "25_golem",
+    "26_leprechaun",
+    "27_rhino",
+    "28_llm-shiny-assist",
+    "29_llm-ellmer",
+    "30_llm-chores",
+    "31_llm-gander",
+    "32_llm-btw"
   ),
   part = c(
     "Intro",           # 02.1_shiny-app
@@ -74,15 +76,17 @@ topic_lookup <- data.frame(
     "Deploy",          # 21.1_gha-style
     "Deploy",          # 21.2_gha-shiny-deploy
     "Deploy",          # 21.3_gha-shiny-docker
-    "Deploy",          # 22_pkgdown
-    "Frameworks",      # 23_golem
-    "Frameworks",      # 24_leprechaun
-    "Frameworks",      # 25_rhino
-    "Shiny & LLMs",    # 26_llm-shiny-assist
-    "Shiny & LLMs",    # 27_llm-ellmer
-    "Shiny & LLMs",    # 28_llm-chores
-    "Shiny & LLMs",    # 29_llm-gander
-    "Shiny & LLMs"     # 30_llm-btw
+    "Deploy",          # 22_webr
+    "Deploy",          # 23_shinyelectron
+    "Deploy",          # 24_pkgdown
+    "Frameworks",      # 25_golem
+    "Frameworks",      # 26_leprechaun
+    "Frameworks",      # 27_rhino
+    "Shiny & LLMs",    # 28_llm-shiny-assist
+    "Shiny & LLMs",    # 29_llm-ellmer
+    "Shiny & LLMs",    # 30_llm-chores
+    "Shiny & LLMs",    # 31_llm-gander
+    "Shiny & LLMs"     # 32_llm-btw
   ),
   chapter = c(
     "Shiny",                                                  # 02.1_shiny-app
@@ -116,15 +120,17 @@ topic_lookup <- data.frame(
     "Deploying with GitHub Actions (styling code)",           # 21.1_gha-style
     "Deploying shiny app with GitHub Actions",                # 21.2_gha-shiny-deploy
     "Deploying shiny app with Docker and GitHub Actions",     # 21.3_gha-shiny-docker
-    "Deploying a package website",                            # 22_pkgdown
-    "golem framework",                                        # 23_golem
-    "leprechaun framework",                                   # 24_leprechaun
-    "rhino framework",                                        # 25_rhino
-    "LLMs with Shiny Assistant",                              # 26_llm-shiny-assist
-    "LLMs with ellmer package",                               # 27_llm-ellmer
-    "LLMs with chores package",                               # 28_llm-chores
-    "LLMs with gander package",                               # 29_llm-gander
-    "LLMs with btw package"                                   # 30_llm-btw
+    "Deploying with webR and shinylive",                      # 22_webr
+    "Deploying desktop apps with shinyelectron",              # 23_shinyelectron
+    "Deploying a package website",                            # 24_pkgdown
+    "golem framework",                                        # 25_golem
+    "leprechaun framework",                                   # 26_leprechaun
+    "rhino framework",                                        # 27_rhino
+    "LLMs with Shiny Assistant",                              # 28_llm-shiny-assist
+    "LLMs with ellmer package",                               # 29_llm-ellmer
+    "LLMs with chores package",                               # 30_llm-chores
+    "LLMs with gander package",                               # 31_llm-gander
+    "LLMs with btw package"                                   # 32_llm-btw
   )
 )
 

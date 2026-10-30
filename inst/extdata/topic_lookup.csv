@@ -30,12 +30,14 @@ branch	part	chapter
 21.1_gha-style	Deploy	Deploying with GitHub Actions (styling code)
 21.2_gha-shiny-deploy	Deploy	Deploying shiny app with GitHub Actions
 21.3_gha-shiny-docker	Deploy	Deploying shiny app with Docker and GitHub Actions
-22_pkgdown	Deploy	Deploying a package website
-23_golem	Frameworks	golem framework
-24_leprechaun	Frameworks	leprechaun framework
-25_rhino	Frameworks	rhino framework
-26_llm-shiny-assist	Shiny & LLMs	LLMs with Shiny Assistant
-27_llm-ellmer	Shiny & LLMs	LLMs with ellmer package
-28_llm-chores	Shiny & LLMs	LLMs with chores package
-29_llm-gander	Shiny & LLMs	LLMs with gander package
-30_llm-btw	Shiny & LLMs	LLMs with btw package
+22_webr	Deploy	Deploying with webR and shinylive
+23_shinyelectron	Deploy	Deploying desktop apps with shinyelectron
+24_pkgdown	Deploy	Deploying a package website
+25_golem	Frameworks	golem framework
+26_leprechaun	Frameworks	leprechaun framework
+27_rhino	Frameworks	rhino framework
+28_llm-shiny-assist	Shiny & LLMs	LLMs with Shiny Assistant
+29_llm-ellmer	Shiny & LLMs	LLMs with ellmer package
+30_llm-chores	Shiny & LLMs	LLMs with chores package
+31_llm-gander	Shiny & LLMs	LLMs with gander package
+32_llm-btw	Shiny & LLMs	LLMs with btw package

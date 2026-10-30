@@ -32,15 +32,17 @@ branches <- data.frame(
     "21.1_gha-style",
     "21.2_gha-shiny-deploy",
     "21.3_gha-shiny-docker",
-    "22_pkgdown",
-    "23_golem",
-    "24_leprechaun",
-    "25_rhino",
-    "26_llm-shiny-assist",
-    "27_llm-ellmer",
-    "28_llm-chores",
-    "29_llm-gander",
-    "30_llm-btw"
+    "22_webr",
+    "23_shinyelectron",
+    "24_pkgdown",
+    "25_golem",
+    "26_leprechaun",
+    "27_rhino",
+    "28_llm-shiny-assist",
+    "29_llm-ellmer",
+    "30_llm-chores",
+    "31_llm-gander",
+    "32_llm-btw"
   ))
 vroom::vroom_write(x = branches, file = "inst/extdata/branches.csv")
 usethis::use_data(branches, overwrite = TRUE)

@@ -65,16 +65,16 @@ tail(topic_lookup, 10)
 
 |  | branch | part | chapter |
 |:---|:---|:---|:---|
-| 31 | 21.3_gha-shiny-docker | Deploy | Deploying shiny app with Docker and GitHub Actions |
-| 32 | 22_pkgdown | Deploy | Deploying a package website |
-| 33 | 23_golem | Frameworks | golem framework |
-| 34 | 24_leprechaun | Frameworks | leprechaun framework |
-| 35 | 25_rhino | Frameworks | rhino framework |
-| 36 | 26_llm-shiny-assist | Shiny & LLMs | LLMs with Shiny Assistant |
-| 37 | 27_llm-ellmer | Shiny & LLMs | LLMs with ellmer package |
-| 38 | 28_llm-chores | Shiny & LLMs | LLMs with chores package |
-| 39 | 29_llm-gander | Shiny & LLMs | LLMs with gander package |
-| 40 | 30_llm-btw | Shiny & LLMs | LLMs with btw package |
+| 33 | 23_shinyelectron | Deploy | Deploying desktop apps with shinyelectron |
+| 34 | 24_pkgdown | Deploy | Deploying a package website |
+| 35 | 25_golem | Frameworks | golem framework |
+| 36 | 26_leprechaun | Frameworks | leprechaun framework |
+| 37 | 27_rhino | Frameworks | rhino framework |
+| 38 | 28_llm-shiny-assist | Shiny & LLMs | LLMs with Shiny Assistant |
+| 39 | 29_llm-ellmer | Shiny & LLMs | LLMs with ellmer package |
+| 40 | 30_llm-chores | Shiny & LLMs | LLMs with chores package |
+| 41 | 31_llm-gander | Shiny & LLMs | LLMs with gander package |
+| 42 | 32_llm-btw | Shiny & LLMs | LLMs with btw package |
 
 ## Launching apps and app-packages
 
