@@ -21,8 +21,8 @@ logical
 Check for fields in text file
 }
 \examples{
-shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
-shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples",
-"Package", verbose = TRUE)
+pkg_rproj <- system.file("pkg", "pkg.Rproj", package = "shinypak")
+shinypak:::check_text_field(pkg_rproj, "BuildType")
+shinypak:::check_text_field(pkg_rproj, "BuildType", verbose = TRUE)
 }
 \keyword{internal}

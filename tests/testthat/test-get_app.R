@@ -100,3 +100,53 @@ describe("get_app() clone failure", {
   })
 
 })
+
+describe("get_app() cleanup", {
+
+  test_that("removes .git files, .DS_Store, and .Rbuildignore", {
+    tmp <- withr::local_tempdir()
+    local_mocked_bindings(
+      git_clone = function(path, url, branch, verbose) {
+        dir.create(file.path(path, ".git"), recursive = TRUE)
+        file.create(file.path(path, c(".gitignore", ".DS_Store",
+                                      ".Rbuildignore", "app.R")))
+        invisible(path)
+      },
+      .package = "gert"
+    )
+    withr::with_dir(tmp, get_app("test-app", open = FALSE))
+    files <- list.files(file.path(tmp, "test-app"), all.files = TRUE,
+                        no.. = TRUE)
+    expect_equal(files, "app.R")
+  })
+
+  test_that("replaces an existing copy after a successful clone", {
+    tmp <- withr::local_tempdir()
+    dir.create(file.path(tmp, "test-app"))
+    file.create(file.path(tmp, "test-app", "old.R"))
+    local_mocked_bindings(
+      git_clone = function(path, url, branch, verbose) {
+        dir.create(path, recursive = TRUE)
+        file.create(file.path(path, "new.R"))
+        invisible(path)
+      },
+      .package = "gert"
+    )
+    withr::with_dir(tmp, get_app("test-app", open = FALSE))
+    expect_true(file.exists(file.path(tmp, "test-app", "new.R")))
+    expect_false(file.exists(file.path(tmp, "test-app", "old.R")))
+  })
+
+  test_that("returns the app path invisibly", {
+    tmp <- withr::local_tempdir()
+    local_mocked_bindings(
+      git_clone = function(path, url, branch, verbose) dir.create(path),
+      .package = "gert"
+    )
+    withr::with_dir(tmp, {
+      expect_invisible(res <- get_app("test-app", open = FALSE))
+      expect_equal(basename(res), "test-app")
+    })
+  })
+
+})

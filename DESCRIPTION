@@ -13,19 +13,18 @@ License: MIT + file LICENSE
 URL: https://mjfrigaard.github.io/shinypak/,
     https://github.com/mjfrigaard/shinypak
 Depends: 
-    R (>= 3.5)
+    R (>= 3.6.0)
 Imports: 
     cli,
     gert,
     pkgload,
-    readr,
     rstudioapi,
     shiny,
     withr
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.1.7)
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3

@@ -10,11 +10,11 @@
 #' @keywords internal
 #'
 #' @examples
-#' shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
-#' shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples",
-#' "Package", verbose = TRUE)
+#' pkg_rproj <- system.file("pkg", "pkg.Rproj", package = "shinypak")
+#' shinypak:::check_text_field(pkg_rproj, "BuildType")
+#' shinypak:::check_text_field(pkg_rproj, "BuildType", verbose = TRUE)
 check_text_field <- function(file, field, verbose = FALSE) {
-  file_lines <- readr::read_lines(file)
+  file_lines <- readLines(file, warn = FALSE)
   result <- sum(grepl(paste0("^", field, collapse = "|"), file_lines))
   if (isTRUE(verbose)) {
     cli::cli_progress_message("checking '{field}' field")

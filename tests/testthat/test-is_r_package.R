@@ -17,8 +17,9 @@ describe("is_r_package() with .Rproj", {
   })
 
   test_that("returns FALSE for directory without DESCRIPTION", {
-    expect_false(is_r_package(path = "."))
-    expect_false(is_r_package(path = ".", verbose = TRUE))
+    empty_dir <- withr::local_tempdir()
+    expect_false(is_r_package(path = empty_dir))
+    expect_false(is_r_package(path = empty_dir, verbose = TRUE))
   })
 
 })

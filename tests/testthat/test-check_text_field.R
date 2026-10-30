@@ -1,18 +1,6 @@
 describe("project .Rproj file", code = {
-  proj_rproj <- "Version: 1.0
+  proj_rproj <- test_path("fixtures", "project_rproj.txt")
 
-  RestoreWorkspace: Default
-  SaveWorkspace: Default
-  AlwaysSaveHistory: Default
-
-  EnableCodeIndexing: Yes
-  UseSpacesForTab: Yes
-  NumSpacesForTab: 2
-  Encoding: UTF-8
-
-  RnwWeave: Sweave
-  LaTeX: XeLaTeX
-  "
   test_that("check_text_field() project TRUE verbose", {
     expect_true(check_text_field(
       file = proj_rproj,
@@ -32,27 +20,8 @@ describe("project .Rproj file", code = {
 })
 
 describe("package Rproj", code = {
-pkg_rpoj <- "Version: 1.0
+pkg_rpoj <- test_path("fixtures", "package_rproj.txt")
 
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
-
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
-
-RnwWeave: Sweave
-LaTeX: XeLaTeX
-
-AutoAppendNewline: Yes
-StripTrailingWhitespace: Yes
-
-BuildType: Package
-PackageUseDevtools: Yes
-PackageInstallArgs: --no-multiarch --with-keep.source
-"
 test_that("check_text_field() package TRUE", {
   expect_true(
     check_text_field(file = pkg_rpoj,
@@ -70,23 +39,15 @@ test_that("check_text_field() package TRUE verbose", {
 test_that("check_text_field() package FALSE", {
   expect_false(
     check_text_field(file = pkg_rpoj,
-      field = "PackageRoxygenize")
+      field = "PackageCheckArgs")
     )
 })
 
 test_that("check_text_field() package FALSE verbose", {
   expect_false(
     check_text_field(file = pkg_rpoj,
-      field = "PackageRoxygenize", verbose = TRUE)
+      field = "PackageCheckArgs", verbose = TRUE)
     )
 })
 
 })
-
-
-
-
-
-
-
-
