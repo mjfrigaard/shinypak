@@ -1,4 +1,4 @@
-^.*\.Rproj$
+^shinypak\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^_pkgdown\.yml$
@@ -9,3 +9,5 @@
 ^dev$
 ^\.positai$
 ^\.claude$
+^_stash\.R$
+^\.Rhistory$

@@ -28,7 +28,7 @@
 #'      system.file("app", package = "shinypak"),
 #'      verbose = TRUE)
 is_r_package <- function(path, verbose = FALSE) {
-  desc <- list.files(path = path, pattern = "DESCRIPTION$", full.names = TRUE)
+  desc <- list.files(path = path, pattern = "^DESCRIPTION$", full.names = TRUE)
   rproj <- list.files(path = path, pattern = "\\.Rproj$", full.names = TRUE)
 
   # Handle cases where DESCRIPTION or .Rproj files are missing

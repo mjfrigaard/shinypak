@@ -6,3 +6,5 @@ inst/doc
 docs
 .claude/
 .positai
+.DS_Store
+_stash.R

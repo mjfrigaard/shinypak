@@ -15,7 +15,8 @@ attempt to open the project directory in a new session using
 \code{rstudioapi::openProject}. Defaults to \code{FALSE}.}
 }
 \value{
-Invisible \code{NULL}. The function is called for its side effects.
+The path to the cloned app, invisibly. The function is called for
+its side effects.
 }
 \description{
 Clones a branch of the \href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub
@@ -25,8 +26,10 @@ files, \code{.DS_Store} files, and \code{.Rbuildignore} files are removed, and t
 result in a new IDE session.
 }
 \details{
-If the directory for the branch already exists, it's deleted and re-cloned so
-you always get the latest commit. After cloning, \code{get_app()} removes:
+The branch is cloned into a temporary folder first. If the clone succeeds and
+the directory for the branch already exists, the old copy is replaced so you
+always get the latest commit. If the clone fails, the existing copy is left
+untouched. After cloning, \code{get_app()} removes:
 \itemize{
 \item The \code{.git} directory and files
 \item Any \code{.DS_Store} files
@@ -41,11 +44,11 @@ It then renames the \code{.Rproj} file to match the cloned branch and, if
 \itemize{
 \item The \code{rstudioapi::openProject} function works in RStudio and Positron.
 The project directory is passed directly, so no \code{.Rproj} file is required.
-\item The working directory is temporarily changed during the function's
-execution but is reset at the end.
 }
 }
 
 \examples{
-# get_app("02_movies-app")
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+get_app("02.2_movies-app")
+\dontshow{\}) # examplesIf}
 }

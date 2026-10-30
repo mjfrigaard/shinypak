@@ -18,7 +18,8 @@ otherwise.
 }
 \description{
 Checks a \code{DESCRIPTION} file for the fields an R package requires: \code{Package},
-\code{Version}, \code{License}, \code{Description}, \code{Title}, \code{Author}, and \code{Maintainer}.
+\code{Version}, \code{License}, \code{Description}, \code{Title}, and either \code{Authors@R} or both
+\code{Author} and \code{Maintainer}.
 These are described in the
 \href{https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}{Writing R Extensions}
 manual.

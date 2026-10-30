@@ -81,3 +81,22 @@ describe("get_app() open = TRUE", {
   })
 
 })
+
+describe("get_app() clone failure", {
+
+  test_that("keeps the existing copy and leaves no temp folder", {
+    tmp <- withr::local_tempdir()
+    dir.create(file.path(tmp, "test-app"))
+    file.create(file.path(tmp, "test-app", "keep.R"))
+    local_mocked_bindings(
+      git_clone = function(path, url, branch, verbose) stop("network down"),
+      .package = "gert"
+    )
+    withr::with_dir(tmp, {
+      expect_error(get_app("test-app", open = FALSE), "Could not clone")
+    })
+    expect_true(file.exists(file.path(tmp, "test-app", "keep.R")))
+    expect_length(list.files(tmp, pattern = "^\\.shinypak-", all.files = TRUE), 0L)
+  })
+
+})

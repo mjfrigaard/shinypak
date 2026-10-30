@@ -10,8 +10,8 @@
 #' @keywords internal
 #'
 #' @examples
-#' check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
-#' check_text_field("Package: shinypak \n Title: Shiny App Examples",
+#' shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
+#' shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples",
 #' "Package", verbose = TRUE)
 check_text_field <- function(file, field, verbose = FALSE) {
   file_lines <- readr::read_lines(file)

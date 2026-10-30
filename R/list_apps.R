@@ -15,58 +15,47 @@
 #'    `gh-pages` are excluded.
 #'
 #' @section How it works:
-#' 1. Saves the current working directory so it can be restored later
-#' 2. Clones the [`sap`](https://github.com/mjfrigaard/sap) repository from
+#' 1. Clones the [`sap`](https://github.com/mjfrigaard/sap) repository from
 #'    GitHub into a temporary directory
-#' 3. Lists all branches of the cloned repository
-#' 4. Separates each branch `name` into `source` and `branch`
-#' 5. Filters the branches to those matching `regex`, if one is supplied
-#' 6. Deletes the temporary directory and restores the original working
-#'    directory
+#' 2. Lists all branches of the cloned repository
+#' 3. Separates each branch `name` into `source` and `branch`
+#' 4. Filters the branches to those matching `regex`, if one is supplied
+#' 5. Deletes the temporary directory (even if an earlier step fails)
 #'
 #' @export list_apps
 #'
-#' @examples
+#' @examplesIf interactive()
 #' list_apps()
 #' list_apps(regex = "tests")
 list_apps <- function(regex = NULL) {
 
-  # keep track
-  original_dir <- getwd()
+  # clone repo to a unique temp dir, removed on exit
+  tmp_git_dir <- tempfile(pattern = "sap-")
+  on.exit(unlink(tmp_git_dir, recursive = TRUE, force = TRUE), add = TRUE)
 
-  # clone repo to temp dir
-  tmp_git_dir <- file.path(tempdir(), 'sap')
-
-  gert::git_clone(url = "https://github.com/mjfrigaard/sap",
-    path =  tmp_git_dir, verbose = FALSE)
-  # switch to git folder
-  setwd(tmp_git_dir)
+  tryCatch(
+    gert::git_clone(url = "https://github.com/mjfrigaard/sap",
+      path = tmp_git_dir, verbose = FALSE),
+    error = function(e) {
+      cli::cli_abort("Could not clone 'sap' to list its branches.", parent = e)
+    }
+  )
 
   # get tibble of branch names and last update in sap
-  all_branches <- gert::git_branch_list(local = NULL, repo = ".")
+  all_branches <- gert::git_branch_list(local = NULL, repo = tmp_git_dir)
 
   branch_vars <- sep_cols(all_branches,
                           col = "name",
                           into = c("source", "branch"),
                           sep = "/")
 
-  # return to original working directory
-  setwd(original_dir)
-
-  # remove git folder
-  unlink(tmp_git_dir, force = TRUE, recursive = TRUE)
-
   # subset the branches columns
   branches_cols <- branch_vars[c("branch", "updated")]
 
-  # remove regex
+  # filter by regex
   if (!is.null(regex)) {
-
-      branch_set <- grep(regex, branches_cols[["branch"]], value = TRUE)
-      branches_cols <- subset(x = branches_cols,
-                              branch %in% branch_set,
-                              select = c(branch, updated))
-
+    keep <- grepl(regex, branches_cols[["branch"]])
+    branches_cols <- branches_cols[keep, c("branch", "updated")]
   }
 
   # return data
@@ -76,8 +65,6 @@ list_apps <- function(regex = NULL) {
   # order
   ord_branches <- unique_branches[order(unique_branches$branch),]
   # remove non-listed branches
-  branches <- subset(x = ord_branches,
-                     branch %nin% c("HEAD", "main", "gh-pages"))
+  branches <- ord_branches[ord_branches$branch %nin% c("HEAD", "main", "gh-pages"), ]
   return(branches)
 }
-

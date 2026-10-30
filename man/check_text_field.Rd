@@ -21,8 +21,8 @@ logical
 Check for fields in text file
 }
 \examples{
-check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
-check_text_field("Package: shinypak \n Title: Shiny App Examples",
+shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
+shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples",
 "Package", verbose = TRUE)
 }
 \keyword{internal}

@@ -13,13 +13,14 @@
 #' attempt to open the project directory in a new session using
 #' `rstudioapi::openProject`. Defaults to `FALSE`.
 #'
-#' @return Invisible `NULL`. The function is called for its side effects.
-#'
-#'
+#' @return The path to the cloned app, invisibly. The function is called for
+#'   its side effects.
 #'
 #' @details
-#' If the directory for the branch already exists, it's deleted and re-cloned so
-#' you always get the latest commit. After cloning, `get_app()` removes:
+#' The branch is cloned into a temporary folder first. If the clone succeeds and
+#' the directory for the branch already exists, the old copy is replaced so you
+#' always get the latest commit. If the clone fails, the existing copy is left
+#' untouched. After cloning, `get_app()` removes:
 #' - The `.git` directory and files
 #' - Any `.DS_Store` files
 #' - Any `.Rbuildignore` files
@@ -30,70 +31,67 @@
 #' @section Note:
 #' - The `rstudioapi::openProject` function works in RStudio and Positron.
 #'   The project directory is passed directly, so no `.Rproj` file is required.
-#' - The working directory is temporarily changed during the function's
-#'   execution but is reset at the end.
 #'
 #' @export
 #'
-#' @examples
-#' # get_app("02_movies-app")
+#' @examplesIf interactive()
+#' get_app("02.2_movies-app")
 get_app <- function(app = "main", open = FALSE) {
-  # keep track
-  original_dir <- getwd()
-
-  # clone repo ----
-  app_dir <- file.path(original_dir, app)
+  app_dir <- file.path(getwd(), app)
 
   cli::cli_progress_message("getting '{app}'")
 
-  if (!dir.exists(app_dir)) {
-    cli::cli_progress_step("'{app}' not in local working directory")
-    cli::cli_progress_step("downloading '{app}'")
-    gert::git_clone(
-      path = app_dir,
-      url = "https://github.com/mjfrigaard/sap",
-      branch = app,
-      verbose = FALSE
-    )
-  } else {
-    cli::cli_progress_step("'{app}' in local working directory")
-    unlink(app_dir, force = TRUE, recursive = TRUE)
-    cli::cli_progress_step("updating '{app}'")
-    gert::git_clone(
-      path = app_dir,
-      url = "https://github.com/mjfrigaard/sap",
-      branch = app,
-      verbose = FALSE
-    )
-  }
+  # clone into a temporary sibling folder so a failed clone never
+  # touches an existing local copy ----
+  clone_dir <- tempfile(pattern = ".shinypak-", tmpdir = getwd())
+  on.exit(unlink(clone_dir, recursive = TRUE, force = TRUE), add = TRUE)
 
-  # switch to app folder
-  setwd(app_dir)
+  cli::cli_progress_step("downloading '{app}'")
+  tryCatch(
+    gert::git_clone(
+      path = clone_dir,
+      url = "https://github.com/mjfrigaard/sap",
+      branch = app,
+      verbose = FALSE
+    ),
+    error = function(e) {
+      cli::cli_abort("Could not clone '{app}' from 'sap'.", parent = e)
+    }
+  )
+
+  # replace the local copy only after a successful clone ----
+  if (dir.exists(app_dir)) {
+    cli::cli_progress_step("updating '{app}'")
+    unlink(app_dir, recursive = TRUE, force = TRUE)
+  }
+  if (!file.rename(from = clone_dir, to = app_dir)) {
+    cli::cli_abort("Could not move the cloned '{app}' into '{app_dir}'.")
+  }
 
   # remove .git files ----
   git_files <- list.files(app_dir,
-    pattern = "^.git",
+    pattern = "^\\.git",
     all.files = TRUE, full.names = TRUE
   )
-  lapply(X = git_files, unlink, recursive = TRUE, force = TRUE)
+  unlink(git_files, recursive = TRUE, force = TRUE)
 
-  # remove .DS_Store files from inst/ ----
+  # remove .DS_Store files ----
   ds_store <- list.files(app_dir,
-    pattern = ".DS_Store",
+    pattern = "^\\.DS_Store$",
     all.files = TRUE, full.names = TRUE
   )
-  lapply(X = ds_store, unlink, recursive = TRUE, force = TRUE)
+  unlink(ds_store, recursive = TRUE, force = TRUE)
 
-  # remove .Rbuildignore files from inst/ ----
+  # remove .Rbuildignore files ----
   rbuild_ignore <- list.files(app_dir,
-    pattern = ".Rbuildignore",
+    pattern = "^\\.Rbuildignore$",
     all.files = TRUE, full.names = TRUE
   )
-  lapply(X = rbuild_ignore, unlink, recursive = TRUE, force = TRUE)
+  unlink(rbuild_ignore, recursive = TRUE, force = TRUE)
 
   # find rproj and rename it ----
   rproj <- list.files(app_dir,
-    pattern = "sap.Rproj",
+    pattern = "^sap\\.Rproj$",
     all.files = TRUE, full.names = TRUE
   )
   if (length(rproj) > 0) {
@@ -105,11 +103,8 @@ get_app <- function(app = "main", open = FALSE) {
   if (open) {
     cli::cli_progress_step("opening '{app}' in new session")
     rstudioapi::openProject(app_dir, newSession = TRUE)
-    # reset wd
-    setwd(original_dir)
   }
 
-  # reset wd ----
-  setwd(original_dir)
   cli::cli_progress_step("got '{app}'")
+  invisible(app_dir)
 }

@@ -29,6 +29,13 @@ describe("package DESCRIPTION", {
     expect_false(is_pkg_description(tmp))
   })
 
+  test_that("returns TRUE when Authors@R replaces Author and Maintainer", {
+    tmp <- withr::local_tempfile(fileext = "DESCRIPTION")
+    authors_r <- pkg_desc_content[!grepl("^(Author|Maintainer):", pkg_desc_content)]
+    writeLines(c(authors_r, "Authors@R: person('bla', 'bla', role = c('aut', 'cre'))"), tmp)
+    expect_true(is_pkg_description(tmp))
+  })
+
   test_that("aborts when file does not exist", {
     expect_snapshot(error = TRUE, is_pkg_description("nonexistent_DESCRIPTION"))
   })

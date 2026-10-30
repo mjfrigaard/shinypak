@@ -25,18 +25,18 @@ so nothing is left in your working directory.
 \section{How it works}{
 
 \enumerate{
-\item Saves the current working directory so it can be restored later
 \item Clones the \href{https://github.com/mjfrigaard/sap}{\code{sap}} repository from
 GitHub into a temporary directory
 \item Lists all branches of the cloned repository
 \item Separates each branch \code{name} into \code{source} and \code{branch}
 \item Filters the branches to those matching \code{regex}, if one is supplied
-\item Deletes the temporary directory and restores the original working
-directory
+\item Deletes the temporary directory (even if an earlier step fails)
 }
 }
 
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 list_apps()
 list_apps(regex = "tests")
+\dontshow{\}) # examplesIf}
 }

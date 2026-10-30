@@ -24,18 +24,19 @@ launch <- function(app) {
     cli::cli_progress_message("cloning {app} from 'sap'")
     get_app(app = app, open = FALSE)
     if (!dir.exists(app)) {
-      cli::cli_alert_success("{app} cloned from 'sap'")
+      cli::cli_abort("Could not clone '{app}' from 'sap'.")
     }
+    cli::cli_alert_success("{app} cloned from 'sap'")
   }
   app_dot_r <- list.files(
     path = app,
-    pattern = "app.R$",
+    pattern = "^app\\.R$",
     full.names = TRUE,
     all.files = FALSE,
     include.dirs = FALSE
   )
   has_app_dot_r <- any(grepl(
-    pattern = "app.R$",
+    pattern = "app\\.R$",
     x = app_dot_r
   ))
 
@@ -52,5 +53,7 @@ launch <- function(app) {
   } else if (isFALSE(is_r_package(app)) & isTRUE(has_app_dot_r)) {
     cli::cli_alert_success("Launching app with: shiny::shinyAppDir('{app_dot_r}')")
     shiny::shinyAppDir(appDir = app)
+  } else {
+    cli::cli_abort("No 'app.R' file found in '{app}'.")
   }
 }
