@@ -156,7 +156,6 @@ returns `TRUE`.
 ``` r
 
 is_r_package(path = system.file("pkg", package = "shinypak"))
-#> ✔ '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (DESCRIPTION found, no .Rproj)
 #> [1] TRUE
 ```
 
@@ -172,9 +171,11 @@ is_r_package(
 #> ✔ License found!
 #> ✔ Description found!
 #> ✔ Title found!
-#> ✔ Author found!
-#> ✔ Maintainer found!
-#> ✔ '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (DESCRIPTION found, no .Rproj)
+#> ✔ Authors@R or Author/Maintainer found!
+#> ✔ BuildType found!
+#> ✔ PackageUseDevtools found!
+#> ✔ PackageInstallArgs found!
+#> ✔ '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (RS build tools configured)
 #> [1] TRUE
 ```
 
@@ -192,9 +193,11 @@ is_r_package(
 #> ✔ License found!
 #> ✖ Description not in DESCRIPTION!
 #> ✔ Title found!
-#> ✔ Author found!
-#> ✖ Maintainer not in DESCRIPTION!
-#> ✖ '/home/runner/work/_temp/Library/shinypak/app' is not an R package (invalid DESCRIPTION, no .Rproj)
+#> ✖ Authors@R or Author/Maintainer not in DESCRIPTION!
+#> ✖ BuildType not in .Rproj!
+#> ✖ PackageUseDevtools not in .Rproj!
+#> ✖ PackageInstallArgs not in .Rproj!
+#> ✖ '/home/runner/work/_temp/Library/shinypak/app' is not an R package (no RS build tools configured)
 #> [1] FALSE
 ```
 

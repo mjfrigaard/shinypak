@@ -72,12 +72,15 @@ attempt to open the project directory in a new session using
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Invisible <code>NULL</code>. The function is called for its side effects.</p>
+    <p>The path to the cloned app, invisibly. The function is called for
+its side effects.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>If the directory for the branch already exists, it's deleted and re-cloned so
-you always get the latest commit. After cloning, <code>get_app()</code> removes:</p><ul><li><p>The <code>.git</code> directory and files</p></li>
+    <p>The branch is cloned into a temporary folder first. If the clone succeeds and
+the directory for the branch already exists, the old copy is replaced so you
+always get the latest commit. If the clone fails, the existing copy is left
+untouched. After cloning, <code>get_app()</code> removes:</p><ul><li><p>The <code>.git</code> directory and files</p></li>
 <li><p>Any <code>.DS_Store</code> files</p></li>
 <li><p>Any <code>.Rbuildignore</code> files</p></li>
 </ul><p>It then renames the <code>.Rproj</code> file to match the cloned branch and, if
@@ -89,13 +92,13 @@ you always get the latest commit. After cloning, <code>get_app()</code> removes:
 
 <ul><li><p>The <code><a href="https://rstudio.github.io/rstudioapi/reference/projects.html" class="external-link">rstudioapi::openProject</a></code> function works in RStudio and Positron.
 The project directory is passed directly, so no <code>.Rproj</code> file is required.</p></li>
-<li><p>The working directory is temporarily changed during the function's
-execution but is reset at the end.</p></li>
 </ul></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># get_app("02_movies-app")</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># interactive()</span></span></span>
+<span class="r-in"><span><span class="fu">get_app</span><span class="op">(</span><span class="st">"02.2_movies-app"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

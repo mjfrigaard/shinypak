@@ -1,8 +1,9 @@
 # Check `DESCRIPTION` File for Package Fields
 
 Checks a `DESCRIPTION` file for the fields an R package requires:
-`Package`, `Version`, `License`, `Description`, `Title`, `Author`, and
-`Maintainer`. These are described in the [Writing R
+`Package`, `Version`, `License`, `Description`, `Title`, and either
+`Authors@R` or both `Author` and `Maintainer`. These are described in
+the [Writing R
 Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file)
 manual.
 
@@ -43,7 +44,6 @@ is_pkg_description(
 #> ✔ License found!
 #> ✔ Description found!
 #> ✔ Title found!
-#> ✔ Author found!
-#> ✔ Maintainer found!
+#> ✔ Authors@R or Author/Maintainer found!
 #> [1] TRUE
 ```

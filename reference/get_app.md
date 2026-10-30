@@ -28,13 +28,15 @@ get_app(app = "main", open = FALSE)
 
 ## Value
 
-Invisible `NULL`. The function is called for its side effects.
+The path to the cloned app, invisibly. The function is called for its
+side effects.
 
 ## Details
 
-If the directory for the branch already exists, it's deleted and
-re-cloned so you always get the latest commit. After cloning,
-`get_app()` removes:
+The branch is cloned into a temporary folder first. If the clone
+succeeds and the directory for the branch already exists, the old copy
+is replaced so you always get the latest commit. If the clone fails, the
+existing copy is left untouched. After cloning, `get_app()` removes:
 
 - The `.git` directory and files
 
@@ -52,11 +54,10 @@ It then renames the `.Rproj` file to match the cloned branch and, if
   function works in RStudio and Positron. The project directory is
   passed directly, so no `.Rproj` file is required.
 
-- The working directory is temporarily changed during the function's
-  execution but is reset at the end.
-
 ## Examples
 
 ``` r
-# get_app("02_movies-app")
+if (FALSE) { # interactive()
+get_app("02.2_movies-app")
+}
 ```

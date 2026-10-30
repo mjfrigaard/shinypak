@@ -30,9 +30,23 @@ logical
 ## Examples
 
 ``` r
-check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
-#> Error in check_text_field("Package: shinypak \n Title: Shiny App Examples",     "Package"): could not find function "check_text_field"
-check_text_field("Package: shinypak \n Title: Shiny App Examples",
+shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples", "Package")
+#> Warning: The `file` argument of `vroom()` must use `I()` for literal data as of vroom
+#> 1.5.0.
+#>   
+#>   # Bad:
+#>   vroom("X,Y\n1.5,2.3\n")
+#>   
+#>   # Good:
+#>   vroom(I("X,Y\n1.5,2.3\n"))
+#> ℹ The deprecated feature was likely used in the readr package.
+#>   Please report the issue at <https://github.com/tidyverse/readr/issues>.
+#> [1] TRUE
+shinypak:::check_text_field("Package: shinypak \n Title: Shiny App Examples",
 "Package", verbose = TRUE)
-#> Error in check_text_field("Package: shinypak \n Title: Shiny App Examples",     "Package", verbose = TRUE): could not find function "check_text_field"
+#> checking 'Package' field
+#> ℹ 'Package' field found
+#> ✔ 'Package' field found [7ms]
+#> 
+#> [1] TRUE
 ```

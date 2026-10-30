@@ -29,7 +29,10 @@ A logical value; `TRUE` if all fields are found, `FALSE` otherwise.
 ``` r
 is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"),
              verbose = TRUE)
-#> Error in is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"),     verbose = TRUE): The .Rproj file '' does not exist. Please provide a valid file path.
+#> ✔ BuildType found!
+#> ✔ PackageUseDevtools found!
+#> ✔ PackageInstallArgs found!
+#> [1] TRUE
 is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak"))
-#> Error in is_pkg_rproj(system.file("pkg", "pkg.Rproj", package = "shinypak")): The .Rproj file '' does not exist. Please provide a valid file path.
+#> [1] TRUE
 ```

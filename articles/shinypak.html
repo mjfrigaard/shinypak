@@ -181,7 +181,6 @@ the three folders below:</p>
 returns <code>TRUE</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/is_r_package.html">is_r_package</a></span><span class="op">(</span>path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"pkg"</span>, package <span class="op">=</span> <span class="st">"shinypak"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (DESCRIPTION found, no .Rproj)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>Setting <code>verbose = TRUE</code> prints the details of each
 check:</p>
@@ -194,9 +193,11 @@ check:</p>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> License found!</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Description found!</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Title found!</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Author found!</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Maintainer found!</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (DESCRIPTION found, no .Rproj)</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Authors@R or Author/Maintainer found!</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> BuildType found!</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> PackageUseDevtools found!</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> PackageInstallArgs found!</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> '/home/runner/work/_temp/Library/shinypak/pkg' is an R package (RS build tools configured)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>The verbose output tells you what’s missing, not just whether the
 check failed. Consider the <code>app</code> folder, which has both a
@@ -210,9 +211,11 @@ check failed. Consider the <code>app</code> folder, which has both a
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> License found!</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> Description not in DESCRIPTION!</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Title found!</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Author found!</span></span>
-<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> Maintainer not in DESCRIPTION!</span></span>
-<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> '/home/runner/work/_temp/Library/shinypak/app' is not an R package (invalid DESCRIPTION, no .Rproj)</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> Authors@R or Author/Maintainer not in DESCRIPTION!</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> BuildType not in .Rproj!</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> PackageUseDevtools not in .Rproj!</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> PackageInstallArgs not in .Rproj!</span></span>
+<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> '/home/runner/work/_temp/Library/shinypak/app' is not an R package (no RS build tools configured)</span></span>
 <span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 <p>This tells us <code>app</code> is missing fields from its
 <code>DESCRIPTION</code>, and its <code>.Rproj</code> file isn’t

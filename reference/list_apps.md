@@ -27,41 +27,22 @@ alphabetically by branch name. Branches named `HEAD`, `main`, and
 
 ## How it works
 
-1.  Saves the current working directory so it can be restored later
-
-2.  Clones the [`sap`](https://github.com/mjfrigaard/sap) repository
+1.  Clones the [`sap`](https://github.com/mjfrigaard/sap) repository
     from GitHub into a temporary directory
 
-3.  Lists all branches of the cloned repository
+2.  Lists all branches of the cloned repository
 
-4.  Separates each branch `name` into `source` and `branch`
+3.  Separates each branch `name` into `source` and `branch`
 
-5.  Filters the branches to those matching `regex`, if one is supplied
+4.  Filters the branches to those matching `regex`, if one is supplied
 
-6.  Deletes the temporary directory and restores the original working
-    directory
+5.  Deletes the temporary directory (even if an earlier step fails)
 
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 list_apps()
-#> # A tibble: 44 × 2
-#>    branch              last_updated       
-#>    <chr>               <dttm>             
-#>  1 01_whole-app-game   2025-03-11 13:28:36
-#>  2 02.1_shiny-app      2025-03-11 13:30:37
-#>  3 02.2_movies-app     2025-03-11 13:42:22
-#>  4 02.3_proj-app       2025-03-11 13:43:18
-#>  5 03.1_description    2025-03-11 13:44:18
-#>  6 03.2_rproj          2025-03-11 13:44:55
-#>  7 03.3_create-package 2025-03-11 13:45:29
-#>  8 04_devtools         2025-03-11 13:46:59
-#>  9 05_roxygen2         2026-09-09 19:36:31
-#> 10 06.1_exports        2026-10-13 17:59:17
-#> # ℹ 34 more rows
 list_apps(regex = "tests")
-#> # A tibble: 1 × 2
-#>   branch         last_updated       
-#>   <chr>          <dttm>             
-#> 1 14_tests_suite 2026-10-13 17:58:51
+}
 ```
