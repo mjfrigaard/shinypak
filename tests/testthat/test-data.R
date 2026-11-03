@@ -1,7 +1,7 @@
 describe("branches dataset", {
 
-  test_that("contains 42 app branches", {
-    expect_equal(nrow(branches), 42L)
+  test_that("contains 44 app branches", {
+    expect_equal(nrow(branches), 44L)
   })
 
   test_that("does not contain removed branches", {
@@ -10,6 +10,7 @@ describe("branches dataset", {
       "06.1_pkg-exports", "06.2_pkg-imports",
       "08_launch-app",
       "27_llm-shinychat",
+      "23_shinyelectron", "23.1_shinyelectron-dmg", "23.2_shinyelectron-deb",
       "DEV", "gh-pages", "main"
     )
     expect_false(any(removed %in% branches$branch))
@@ -36,8 +37,8 @@ describe("branches dataset", {
 
 describe("topic_lookup dataset", {
 
-  test_that("has 42 rows and 3 columns", {
-    expect_equal(nrow(topic_lookup), 42L)
+  test_that("has 44 rows and 3 columns", {
+    expect_equal(nrow(topic_lookup), 44L)
     expect_equal(ncol(topic_lookup), 3L)
   })
 

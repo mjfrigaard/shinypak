@@ -5,7 +5,7 @@
 \alias{branches}
 \title{App branches from the sap repository}
 \format{
-A data frame with 42 rows and 1 column:
+A data frame with 44 rows and 1 column:
 \describe{
 \item{branch}{Character. The branch name (e.g., \code{"05_roxygen2"}).}
 }

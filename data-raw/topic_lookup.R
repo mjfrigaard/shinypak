@@ -33,7 +33,9 @@ topic_lookup <- data.frame(
     "21.2_gha-shiny-deploy",
     "21.3_gha-shiny-docker",
     "22_webr",
-    "23_shinyelectron",
+    "23.1_shinyelectron",
+    "23.2_shinyelectron-dmg",
+    "23.3_shinyelectron-deb",
     "24_pkgdown",
     "25_golem",
     "26_leprechaun",
@@ -77,7 +79,9 @@ topic_lookup <- data.frame(
     "Deploy",          # 21.2_gha-shiny-deploy
     "Deploy",          # 21.3_gha-shiny-docker
     "Deploy",          # 22_webr
-    "Deploy",          # 23_shinyelectron
+    "Deploy",          # 23.1_shinyelectron
+    "Deploy",          # 23.2_shinyelectron-dmg
+    "Deploy",          # 23.3_shinyelectron-deb
     "Deploy",          # 24_pkgdown
     "Frameworks",      # 25_golem
     "Frameworks",      # 26_leprechaun
@@ -121,7 +125,9 @@ topic_lookup <- data.frame(
     "Deploying shiny app with GitHub Actions",                # 21.2_gha-shiny-deploy
     "Deploying shiny app with Docker and GitHub Actions",     # 21.3_gha-shiny-docker
     "Deploying with webR and shinylive",                      # 22_webr
-    "Deploying desktop apps with shinyelectron",              # 23_shinyelectron
+    "Desktop apps with shinyelectron",                        # 23.1_shinyelectron
+    "Building a macOS installer (.dmg)",                      # 23.2_shinyelectron-dmg
+    "Building a Linux installer (.deb)",                      # 23.3_shinyelectron-deb
     "Deploying a package website",                            # 24_pkgdown
     "golem framework",                                        # 25_golem
     "leprechaun framework",                                   # 26_leprechaun
