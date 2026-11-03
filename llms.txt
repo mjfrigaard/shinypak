@@ -60,18 +60,18 @@ head(topic_lookup, 10)
 tail(topic_lookup, 10)
 ```
 
-|  | branch | part | chapter |
-|:---|:---|:---|:---|
-| 33 | 23_shinyelectron | Deploy | Deploying desktop apps with shinyelectron |
-| 34 | 24_pkgdown | Deploy | Deploying a package website |
-| 35 | 25_golem | Frameworks | golem framework |
-| 36 | 26_leprechaun | Frameworks | leprechaun framework |
-| 37 | 27_rhino | Frameworks | rhino framework |
-| 38 | 28_llm-shiny-assist | Shiny & LLMs | LLMs with Shiny Assistant |
-| 39 | 29_llm-ellmer | Shiny & LLMs | LLMs with ellmer package |
-| 40 | 30_llm-chores | Shiny & LLMs | LLMs with chores package |
-| 41 | 31_llm-gander | Shiny & LLMs | LLMs with gander package |
-| 42 | 32_llm-btw | Shiny & LLMs | LLMs with btw package |
+|     | branch                 | part         | chapter                           |
+|:----|:-----------------------|:-------------|:----------------------------------|
+| 35  | 23.3_shinyelectron-deb | Deploy       | Building a Linux installer (.deb) |
+| 36  | 24_pkgdown             | Deploy       | Deploying a package website       |
+| 37  | 25_golem               | Frameworks   | golem framework                   |
+| 38  | 26_leprechaun          | Frameworks   | leprechaun framework              |
+| 39  | 27_rhino               | Frameworks   | rhino framework                   |
+| 40  | 28_llm-shiny-assist    | Shiny & LLMs | LLMs with Shiny Assistant         |
+| 41  | 29_llm-ellmer          | Shiny & LLMs | LLMs with ellmer package          |
+| 42  | 30_llm-chores          | Shiny & LLMs | LLMs with chores package          |
+| 43  | 31_llm-gander          | Shiny & LLMs | LLMs with gander package          |
+| 44  | 32_llm-btw             | Shiny & LLMs | LLMs with btw package             |
 
 ## Launching apps and app-packages
 

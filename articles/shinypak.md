@@ -248,7 +248,9 @@ topic_lookup
 | 21.2_gha-shiny-deploy | Deploy | Deploying shiny app with GitHub Actions |
 | 21.3_gha-shiny-docker | Deploy | Deploying shiny app with Docker and GitHub Actions |
 | 22_webr | Deploy | Deploying with webR and shinylive |
-| 23_shinyelectron | Deploy | Deploying desktop apps with shinyelectron |
+| 23.1_shinyelectron | Deploy | Desktop apps with shinyelectron |
+| 23.2_shinyelectron-dmg | Deploy | Building a macOS installer (.dmg) |
+| 23.3_shinyelectron-deb | Deploy | Building a Linux installer (.deb) |
 | 24_pkgdown | Deploy | Deploying a package website |
 | 25_golem | Frameworks | golem framework |
 | 26_leprechaun | Frameworks | leprechaun framework |

@@ -36,7 +36,7 @@ shinypak:::check_text_field(pkg_rproj, "BuildType")
 shinypak:::check_text_field(pkg_rproj, "BuildType", verbose = TRUE)
 #> checking 'BuildType' field
 #> ℹ 'BuildType' field found
-#> ✔ 'BuildType' field found [8ms]
+#> ✔ 'BuildType' field found [9ms]
 #> 
 #> [1] TRUE
 ```
