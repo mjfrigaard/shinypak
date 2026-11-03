@@ -1,21 +1,33 @@
 url: https://mjfrigaard.github.io/shinypak/
 
-navbar:
-  bg: primary       # paint the bar with $primary (Atomic Blue)
-  type: dark        # light text for contrast on the deep blue bar
-
 template:
   bootstrap: 5
+  light-switch: true
   theme: arrow-light
+  theme-dark: arrow-dark
   bslib:
-    primary:   "#1E5F8C"   # Atomic Blue       — links, buttons, navbar
-    secondary: "#2B2B2B"   # Eames Charcoal    — neutral text emphasis
-    success:   "#7B8B47"   # Avocado / Olive   — retro success accent
-    info:      "#4FA5B5"   # Robin's-Egg Blue  — softer secondary blue
-    warning:   "#E87B2D"   # Atomic Tangerine  — primary orange accent
-    danger:    "#B0411C"   # Burnt Sienna      — deep orange danger
-    code-color: "#16486D"  # Deep Atomic Blue  — inline & block code text
-    code-bg:    "#FDEFE0"  # Pale Tangerine    — inline & block code background
+    # 70s palette
+    primary:   "#2A6F77"   # Teal, links and buttons
+    secondary: "#1B2A41"   # Midnight Navy
+    success:   "#5B8C5A"   # Avocado Green
+    info:      "#2A6F77"   # Teal
+    warning:   "#E8A33D"   # Harvest Gold
+    danger:    "#B83A4B"   # Brick Red
+    # light mode
+    body-bg:          "#FFFFFF"   # White
+    body-color:       "#3E2A1E"   # Chocolate Brown
+    headings-color:   "#1B2A41"   # Midnight Navy
+    link-hover-color: "#D2562B"   # Burnt Orange
+    code-color:       "#B83A4B"   # Brick Red
+    code-bg:          "#F9F3E1"   # Cream, softened
+    navbar-light-bg:  "#F9F3E1"   # Cream, softened
+    # dark mode
+    body-bg-dark:          "#1B2A41"   # Midnight Navy
+    body-color-dark:       "#F2E6C2"   # Cream
+    link-color-dark:       "#E8A33D"   # Harvest Gold
+    link-hover-color-dark: "#D2562B"   # Burnt Orange
+    code-color-dark:       "#E8A33D"   # Harvest Gold
+    navbar-dark-bg:        "#3E2A1E"   # Chocolate Brown
     base_font:
       google: Ubuntu
     heading_font:

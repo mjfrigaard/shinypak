@@ -1,40 +1,27 @@
-// Mid-century / atomic-age palette overrides.
-//
-// Bootstrap 5 dropped $code-bg, and pkgdown's `theme:` setting paints its
-// own background on <pre>, so we set both explicitly here. Loaded after
-// the syntax-highlighting theme, so these rules win without !important
-// in most cases — kept !important on the <pre>/<code> chain because
-// arrow-light's selectors are equally specific.
+// 70s palette accents (colors are set in _pkgdown.yml)
 
-$brand-peach:     #FDEFE0;  // pale tangerine, code background
-$brand-deepblue:  #16486D;  // deep atomic blue, code text
-$brand-tangerine: #E87B2D;  // atomic tangerine, link hover accent
-
-// Inline <code> (BS5 no longer styles this with a background)
-:not(pre) > code,
-code {
-  background-color: $brand-peach;
-  color: $brand-deepblue;
-  padding: 0.15em 0.35em;
-  border-radius: 3px;
+// Burnt Orange stripe under the navbar in both modes
+.navbar {
+  border-bottom: 3px solid #D2562B;
 }
 
-// Code blocks: pale tangerine container, deep-blue default text.
-// Syntax-highlighted tokens inside still come from `theme: arrow-light`.
+// Inline code: small pill
+:not(pre) > code {
+  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+}
+
+// Code blocks: Cream in light mode, tinted Navy in dark mode
 pre {
-  background-color: $brand-peach !important;
-  color: $brand-deepblue;
+  background-color: #F9F3E1 !important;
+  border: 1px solid rgba(62, 42, 30, 0.15);
+}
+
+[data-bs-theme="dark"] pre {
+  background-color: rgba(242, 230, 194, 0.06) !important;
+  border-color: rgba(242, 230, 194, 0.15);
 }
 
 pre code {
   background-color: transparent !important;
-  color: inherit;
-  padding: 0;
-}
-
-// Atomic-tangerine accent on link hover — small mid-century flourish
-// against the deep Atomic Blue primary.
-a:hover {
-  color: $brand-tangerine;
-  text-decoration-color: $brand-tangerine;
 }
