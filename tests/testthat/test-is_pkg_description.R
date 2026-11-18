@@ -45,4 +45,11 @@ describe("package DESCRIPTION", {
     expect_true(is_pkg_description(pkg_desc))
   })
 
+  test_that("verbose output names missing fields", {
+    tmp <- withr::local_tempfile(fileext = "DESCRIPTION")
+    writeLines(c("Package: bla", "Title: bla"), tmp)
+    expect_message(is_pkg_description(tmp, verbose = TRUE), "Version not in DESCRIPTION")
+    expect_message(is_pkg_description(tmp, verbose = TRUE), "Authors@R or Author/Maintainer not in")
+  })
+
 })

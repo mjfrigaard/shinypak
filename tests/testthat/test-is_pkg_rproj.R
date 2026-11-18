@@ -17,4 +17,10 @@ describe("is_pkg_rproj()", {
     expect_error(is_pkg_rproj("nonexistent.Rproj"), "does not exist")
   })
 
+  test_that("verbose output names missing fields", {
+    expect_message(
+      is_pkg_rproj(test_path("fixtures", "project_rproj.txt"), verbose = TRUE),
+      "BuildType not in .Rproj")
+  })
+
 })

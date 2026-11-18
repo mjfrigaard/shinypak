@@ -60,3 +60,33 @@ describe("list_apps()", {
   })
 
 })
+
+describe("git_clone_bare()", {
+
+  test_that("makes a bare clone of a local repository", {
+    src <- withr::local_tempdir()
+    gert::git_init(src)
+    writeLines("x", file.path(src, "x.txt"))
+    gert::git_add("x.txt", repo = src)
+    gert::git_commit("init", repo = src,
+      author = gert::git_signature("t", "t@t.com"))
+    dest <- file.path(withr::local_tempdir(), "bare.git")
+    expect_equal(git_clone_bare(url = src, path = dest), dest)
+    expect_true(file.exists(file.path(dest, "HEAD")))
+    expect_false(dir.exists(file.path(dest, ".git")))
+  })
+
+  test_that("aborts when git clone fails", {
+    missing_repo <- file.path(withr::local_tempdir(), "nope")
+    dest <- file.path(withr::local_tempdir(), "bare.git")
+    expect_error(git_clone_bare(url = missing_repo, path = dest),
+      "git clone failed")
+  })
+
+  test_that("aborts when git is not on the PATH", {
+    withr::local_envvar(PATH = "")
+    expect_error(git_clone_bare(url = "x", path = "y"),
+      "needs git installed")
+  })
+
+})

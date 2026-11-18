@@ -73,3 +73,38 @@ describe("launch() routing — plain Shiny app", {
   })
 
 })
+
+describe("launch() when the app is not local", {
+
+  test_that("clones the app with get_app() before launching", {
+    tmp <- withr::local_tempdir()
+    local_mocked_bindings(
+      get_app = function(app, open) {
+        dir.create(app)
+        file.create(file.path(app, "app.R"))
+      }
+    )
+    local_mocked_bindings(
+      shinyAppDir = function(...) invisible(NULL),
+      .package = "shiny"
+    )
+    withr::with_dir(tmp, expect_message(launch("new-app"), "cloned from"))
+  })
+
+  test_that("aborts when get_app() leaves no directory", {
+    tmp <- withr::local_tempdir()
+    local_mocked_bindings(get_app = function(app, open) invisible(NULL))
+    withr::with_dir(tmp, expect_error(launch("new-app"), "Could not clone"))
+  })
+
+})
+
+describe("launch() without app.R", {
+
+  test_that("aborts when the directory has no app.R", {
+    tmp <- withr::local_tempdir()
+    dir.create(file.path(tmp, "no-app"))
+    withr::with_dir(tmp, expect_error(launch("no-app"), "No 'app.R'"))
+  })
+
+})

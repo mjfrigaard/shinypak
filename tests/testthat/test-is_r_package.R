@@ -57,3 +57,41 @@ describe("is_r_package() without .Rproj (Positron)", {
   })
 
 })
+
+describe("is_r_package() verbose messages with .Rproj", {
+
+  pkg_rproj <- test_path("fixtures", "package_rproj.txt")
+  proj_rproj <- test_path("fixtures", "project_rproj.txt")
+
+  make_pkg <- function(desc, rproj) {
+    tmp <- withr::local_tempdir(.local_envir = parent.frame())
+    writeLines(desc, file.path(tmp, "DESCRIPTION"))
+    file.copy(rproj, file.path(tmp, "x.Rproj"))
+    tmp
+  }
+
+  test_that("valid DESCRIPTION, build tools configured", {
+    tmp <- make_pkg(pkg_desc_lines, pkg_rproj)
+    expect_message(expect_true(is_r_package(tmp, verbose = TRUE)),
+      "is an R package \\(RS build tools configured")
+  })
+
+  test_that("valid DESCRIPTION, no build tools", {
+    tmp <- make_pkg(pkg_desc_lines, proj_rproj)
+    expect_message(expect_true(is_r_package(tmp, verbose = TRUE)),
+      "is an R package \\(no RS build tools")
+  })
+
+  test_that("invalid DESCRIPTION, build tools configured", {
+    tmp <- make_pkg("Package: x", pkg_rproj)
+    expect_message(expect_false(is_r_package(tmp, verbose = TRUE)),
+      "is not an R package \\(RS build tools configured")
+  })
+
+  test_that("invalid DESCRIPTION, no build tools", {
+    tmp <- make_pkg("Package: x", proj_rproj)
+    expect_message(expect_false(is_r_package(tmp, verbose = TRUE)),
+      "is not an R package \\(no RS build tools")
+  })
+
+})
