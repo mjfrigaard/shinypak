@@ -1,9 +1,11 @@
 # List Branches of the sap Repository
 
-Clones the [`sap`](https://github.com/mjfrigaard/sap) GitHub repository
-to a temporary directory, then returns its branches and their last
-update times as a data frame. The temporary directory is removed before
-the function returns, so nothing is left in your working directory.
+Makes a bare, blobless clone of the
+[`sap`](https://github.com/mjfrigaard/sap) GitHub repository in a
+temporary directory (branch names and commit history only, no file
+contents), then returns its branches and their last update times as a
+data frame. The temporary directory is removed before the function
+returns, so nothing is left in your working directory.
 
 ## Usage
 
@@ -28,7 +30,8 @@ alphabetically by branch name. Branches named `HEAD`, `main`, and
 ## How it works
 
 1.  Clones the [`sap`](https://github.com/mjfrigaard/sap) repository
-    from GitHub into a temporary directory
+    from GitHub into a temporary directory with
+    `git clone --bare --filter=blob:none` (requires git on the `PATH`)
 
 2.  Lists all branches of the cloned repository
 

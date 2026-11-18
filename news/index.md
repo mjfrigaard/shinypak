@@ -2,6 +2,10 @@
 
 ## shinypak 0.1.1
 
+- [`list_apps()`](https://mjfrigaard.github.io/shinypak/reference/list_apps.md)
+  now makes a bare, blobless clone of `sap` (about 1 second instead of
+  several minutes). It requires git on the `PATH`.
+
 - Updated the `branches` and `topic_lookup` datasets to cover the
   current set of branches in `sap`
 

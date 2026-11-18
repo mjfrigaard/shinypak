@@ -53,14 +53,14 @@ library(shinypak)
 
 list_apps(regex = "^02.3") 
 #>          branch        last_updated
-#> 5 02.3_proj-app 2025-03-11 13:43:18
+#> 4 02.3_proj-app 2025-03-11 13:43:18
 ```
 
 ``` r
 
 list_apps(regex = "proj-app") 
 #>          branch        last_updated
-#> 5 02.3_proj-app 2025-03-11 13:43:18
+#> 4 02.3_proj-app 2025-03-11 13:43:18
 ```
 
 4.  To launch an app from the [Shiny App-Packages
