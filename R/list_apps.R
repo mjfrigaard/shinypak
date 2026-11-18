@@ -1,8 +1,9 @@
 #' List Branches of the sap Repository
 #'
 #' @description
-#' Clones the [`sap`](https://github.com/mjfrigaard/sap) GitHub repository to a
-#' temporary directory, then returns its branches and their last update times as
+#' Makes a bare, blobless clone of the [`sap`](https://github.com/mjfrigaard/sap)
+#' GitHub repository in a temporary directory (branch names and commit history
+#' only, no file contents), then returns its branches and their last update times as
 #' a data frame. The temporary directory is removed before the function returns,
 #' so nothing is left in your working directory.
 #'
@@ -16,7 +17,8 @@
 #'
 #' @section How it works:
 #' 1. Clones the [`sap`](https://github.com/mjfrigaard/sap) repository from
-#'    GitHub into a temporary directory
+#'    GitHub into a temporary directory with
+#'    `git clone --bare --filter=blob:none` (requires git on the `PATH`)
 #' 2. Lists all branches of the cloned repository
 #' 3. Separates each branch `name` into `source` and `branch`
 #' 4. Filters the branches to those matching `regex`, if one is supplied
@@ -34,8 +36,8 @@ list_apps <- function(regex = NULL) {
   on.exit(unlink(tmp_git_dir, recursive = TRUE, force = TRUE), add = TRUE)
 
   tryCatch(
-    gert::git_clone(url = "https://github.com/mjfrigaard/sap",
-      path = tmp_git_dir, verbose = FALSE),
+    git_clone_bare(url = "https://github.com/mjfrigaard/sap",
+      path = tmp_git_dir),
     error = function(e) {
       cli::cli_abort("Could not clone 'sap' to list its branches.", parent = e)
     }
@@ -67,4 +69,30 @@ list_apps <- function(regex = NULL) {
   # remove non-listed branches
   branches <- ord_branches[ord_branches$branch %nin% c("HEAD", "main", "gh-pages"), ]
   return(branches)
+}
+
+#' Bare, blobless clone with the git command line
+#'
+#' `gert` (libgit2) can't make partial clones, so this calls `git` directly.
+#'
+#' @param url Repository URL
+#' @param path Destination directory
+#'
+#' @return `path`, invisibly
+#'
+#' @noRd
+git_clone_bare <- function(url, path) {
+  if (!nzchar(Sys.which("git"))) {
+    cli::cli_abort("{.fn list_apps} needs git installed and on the PATH.")
+  }
+  out <- suppressWarnings(system2(
+    "git",
+    c("clone", "--quiet", "--bare", "--filter=blob:none", shQuote(url), shQuote(path)),
+    stdout = TRUE, stderr = TRUE
+  ))
+  status <- attr(out, "status")
+  if (!is.null(status) && status != 0) {
+    cli::cli_abort(c("git clone failed.", "x" = paste(out, collapse = "\n")))
+  }
+  invisible(path)
 }

@@ -17,8 +17,9 @@ alphabetically by branch name. Branches named \code{HEAD}, \code{main}, and
 \code{gh-pages} are excluded.
 }
 \description{
-Clones the \href{https://github.com/mjfrigaard/sap}{\code{sap}} GitHub repository to a
-temporary directory, then returns its branches and their last update times as
+Makes a bare, blobless clone of the \href{https://github.com/mjfrigaard/sap}{\code{sap}}
+GitHub repository in a temporary directory (branch names and commit history
+only, no file contents), then returns its branches and their last update times as
 a data frame. The temporary directory is removed before the function returns,
 so nothing is left in your working directory.
 }
@@ -26,7 +27,8 @@ so nothing is left in your working directory.
 
 \enumerate{
 \item Clones the \href{https://github.com/mjfrigaard/sap}{\code{sap}} repository from
-GitHub into a temporary directory
+GitHub into a temporary directory with
+\verb{git clone --bare --filter=blob:none} (requires git on the \code{PATH})
 \item Lists all branches of the cloned repository
 \item Separates each branch \code{name} into \code{source} and \code{branch}
 \item Filters the branches to those matching \code{regex}, if one is supplied
